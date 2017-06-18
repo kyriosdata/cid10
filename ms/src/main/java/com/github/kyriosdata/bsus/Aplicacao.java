@@ -10,7 +10,7 @@ public class Aplicacao {
 
 	@RequestMapping(value = "/cid", method = RequestMethod.POST)
 	public String search(@RequestParam String q) {
-		return "RECEBIDO: " + q;
+		return "r1;r2;" + q;
 	}
 
 	public static void main(String[] args) {
