@@ -20,16 +20,28 @@ public class Aplicacao {
     public static void main(String[] args) throws Exception {
         String grupos = "datasus/CID-10-GRUPOS.CSV";
         String capitulos = "datasus/CID-10-CAPITULOS.CSV";
+        String categorias = "datasus/CID-10-CATEGORIAS.CSV";
 
-        excluiDescricaoAbreviada(capitulos, 4);
+        excluiColunaDeLinha(categorias, 1);
+        //exibeConteudo(categorias);
     }
 
-    private static void excluiDescricaoAbreviada(String entrada, int ignora) {
+    private static void excluiColunaDeLinha(String entrada, int ignora) {
         List<String> linhas = getLinhas(entrada);
 
         linhas.forEach(l -> {
             String linhaPreprocessada = excluiColuna(l, ignora);
             System.out.println(linhaPreprocessada);
+        });
+    }
+
+    private static void exibeConteudo(String entrada) {
+        List<String> linhas = getLinhas(entrada);
+
+        linhas.forEach(l -> {
+            if (!l.endsWith(";;;")) {
+                System.out.println(l);
+            }
         });
     }
 
