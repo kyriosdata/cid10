@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileFromResourcesFolder.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FileFromResourcesFolder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+            <state relative-caret-position="458">
+              <caret line="35" column="71" lean-forward="false" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileFromResourcesFolderTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileFromResourcesFolderTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="480">
+              <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,9 +92,9 @@
         <option value="$PROJECT_DIR$/cid-datasus/CID-O-CATEGORIAS.CSV" />
         <option value="$PROJECT_DIR$/cid-datasus/CID-O-GRUPOS.CSV" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java" />
       </list>
     </option>
   </component>
@@ -435,7 +435,7 @@
       <updated>1512848962463</updated>
       <workItem from="1512848991933" duration="500000" />
       <workItem from="1512852688173" duration="5062000" />
-      <workItem from="1512930440511" duration="2548000" />
+      <workItem from="1512930440511" duration="2737000" />
     </task>
     <servers />
   </component>
@@ -446,9 +446,15 @@
     <history-entry file="FileFromResourcesFolderTest - 2017.12.10 at 16h 52m 29s.xml">
       <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FileFromResourcesFolderTest - 2017.12.10 at 17h 10m 39s.xml">
+      <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileFromResourcesFolderTest - 2017.12.10 at 17h 13m 42s.xml">
+      <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8110000" />
+    <option name="totallyTimeSpent" value="8299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1388" height="1170" extended-state="0" />
@@ -850,20 +856,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        <state relative-caret-position="480">
+          <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="458">
+          <caret line="35" column="71" lean-forward="false" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
