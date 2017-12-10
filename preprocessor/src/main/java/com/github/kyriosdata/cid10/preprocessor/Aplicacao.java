@@ -18,10 +18,17 @@ import java.util.List;
 
 public class Aplicacao {
     public static void main(String[] args) throws Exception {
-        List<String> linhas = getLinhas("datasus/CID-10-GRUPOS.CSV");
+        String grupos = "datasus/CID-10-GRUPOS.CSV";
+        String capitulos = "datasus/CID-10-CAPITULOS.CSV";
+
+        excluiDescricaoAbreviada(capitulos, 4);
+    }
+
+    private static void excluiDescricaoAbreviada(String entrada, int ignora) {
+        List<String> linhas = getLinhas(entrada);
 
         linhas.forEach(l -> {
-            String linhaPreprocessada = excluiColuna(l, 3);
+            String linhaPreprocessada = excluiColuna(l, ignora);
             System.out.println(linhaPreprocessada);
         });
     }
@@ -61,7 +68,7 @@ public class Aplicacao {
      *
      * @throws IOException
      */
-    private static List<String> getLinhas(String entrada) throws IOException {
+    private static List<String> getLinhas(String entrada) {
         List<String> linhas = null;
         try {
             Path grupos = FileFromResourcesFolder.getPath(entrada);
