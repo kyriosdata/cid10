@@ -43,7 +43,7 @@ A00 até a A09 (inclusive). Nesse sentido, um grupo é similar a um capítulo,
 que também reúne um conjunto de categorias.
 
 ## Estratégia
-1. Descrição abreviada não é fornecida, apenas a descrição "completa".
+1. Excluir descrição abreviada da entrada.
 1. Eliminar sinais (acentos). 
 1. Eliminar duplicidades de palavras dentro de uma linha.
 

@@ -21,7 +21,8 @@ public class Aplicacao {
         List<String> linhas = getLinhas("datasus/CID-10-GRUPOS.CSV");
 
         linhas.forEach(l -> {
-            System.out.println(excluiColuna(l, 3));
+            String linhaPreprocessada = excluiColuna(l, 3);
+            System.out.println(linhaPreprocessada);
         });
     }
 
