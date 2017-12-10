@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,12 +31,23 @@
       <file leaf-file-name="Aplicacao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="876">
-              <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+            <state relative-caret-position="338">
+              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="31" />
               <folding>
-                <element signature="e#0#1311#0" expanded="true" />
+                <element signature="e#0#1744#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <marker date="1512934231000" expanded="true" signature="848:1113" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CID-10-GRUPOS.CSV" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/datasus/CID-10-GRUPOS.CSV">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,6 +106,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/datasus/CID-10-GRUPOS.CSV" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java" />
       </list>
     </option>
@@ -435,7 +448,7 @@
       <updated>1512848962463</updated>
       <workItem from="1512848991933" duration="500000" />
       <workItem from="1512852688173" duration="5062000" />
-      <workItem from="1512930440511" duration="2814000" />
+      <workItem from="1512930440511" duration="3774000" />
     </task>
     <servers />
   </component>
@@ -454,7 +467,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8376000" />
+    <option name="totallyTimeSpent" value="9336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1388" height="1170" extended-state="0" />
@@ -865,13 +878,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/datasus/CID-10-GRUPOS.CSV">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+        <state relative-caret-position="338">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="31" />
           <folding>
-            <element signature="e#0#1311#0" expanded="true" />
+            <element signature="e#0#1744#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <marker date="1512934231000" expanded="true" signature="848:1113" ph="{...}" />
           </folding>
         </state>
       </provider>

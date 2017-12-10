@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 
 public class Aplicacao {
@@ -21,10 +22,24 @@ public class Aplicacao {
         List<String> linhas = getLinhas("datasus/CID-10-GRUPOS.CSV");
 
         linhas.forEach(l -> {
-            if (l.contains(";;")) {
-                System.out.println(l);
-            }
+            String[] campos = l.split(";");
+            List<String> listaCampos = Arrays.asList(campos);
+            System.out.println(String.join(";", listaCampos));
         });
+    }
+
+    private String remontaLinha(String[] campos, int ignora) {
+        String novaLinha = "";
+        int total = campos.length;
+        for(int i = 0; i < total; i++) {
+            if (i == ignora) {
+                continue;
+            }
+
+            novaLinha += campos[i] + ";";
+        }
+
+        return novaLinha;
     }
 
     /**
