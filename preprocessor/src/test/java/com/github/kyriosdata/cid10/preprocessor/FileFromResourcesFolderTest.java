@@ -15,6 +15,7 @@ import org.junit.Test;
 import java.nio.file.Path;
 
 import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.assertNull;
 
 public class FileFromResourcesFolderTest {
 
@@ -22,5 +23,11 @@ public class FileFromResourcesFolderTest {
     public void acessoCorretoEmResources() {
         Path p = FileFromResourcesFolder.getPath("datasus/CID-10-GRUPOS.CSV");
         assertNotNull(p);
+    }
+
+    @Test
+    public void arquivoInvalidoRetornaNull() {
+        Path p = FileFromResourcesFolder.getPath("alguma coisa");
+        assertNull(p);
     }
 }
