@@ -22,8 +22,7 @@ public class Aplicacao {
         String capitulos = "datasus/CID-10-CAPITULOS.CSV";
         String categorias = "datasus/CID-10-CATEGORIAS.CSV";
 
-        excluiColunaDeLinha(categorias, 1);
-        //exibeConteudo(categorias);
+        processaCategorias(categorias);
     }
 
     private static void excluiColunaDeLinha(String entrada, int ignora) {
@@ -35,13 +34,39 @@ public class Aplicacao {
         });
     }
 
+    /**
+     * Apenas as colunas 0 e 2 são utilizadas, demais são ignoradas.
+     *
+     * @param entrada Nome do arquivo contendo as categorias.
+     */
+    private static void processaCategorias(String entrada) {
+        List<String> linhas = getLinhas(entrada);
+
+        linhas.forEach(l -> {
+            String linhaPreprocessada = colunasZeroDois(l);
+            System.out.println(linhaPreprocessada);
+        });
+    }
+
+    /**
+     * Método que reúne as colunas (zero-based) de ordem zero e 2
+     * da linha fornecida.
+     *
+     * @param linha A linha CSV contendo várias colunas.
+     *
+     * @return A linha CSV montada apenas com as colunas 0 e 2 da
+     * linha de entrada.
+     */
+    private static String colunasZeroDois(String linha) {
+        String[] campos = linha.split(";");
+        return String.format("%s;%s;", campos[0], campos[2]);
+    }
+
     private static void exibeConteudo(String entrada) {
         List<String> linhas = getLinhas(entrada);
 
         linhas.forEach(l -> {
-            if (!l.endsWith(";;;")) {
                 System.out.println(l);
-            }
         });
     }
 
