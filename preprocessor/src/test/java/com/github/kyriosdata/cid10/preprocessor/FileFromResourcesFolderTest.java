@@ -12,7 +12,7 @@ package com.github.kyriosdata.cid10.preprocessor;
 
 import org.junit.Test;
 
-import java.io.File;
+import java.nio.file.Path;
 
 import static junit.framework.TestCase.assertNotNull;
 
@@ -20,7 +20,7 @@ public class FileFromResourcesFolderTest {
 
     @Test
     public void acessoCorretoEmResources() {
-        File f = FileFromResourcesFolder.get("datasus/CID-10-GRUPOS.CSV");
-        assertNotNull(f);
+        Path p = FileFromResourcesFolder.getPath("datasus/CID-10-GRUPOS.CSV");
+        assertNotNull(p);
     }
 }

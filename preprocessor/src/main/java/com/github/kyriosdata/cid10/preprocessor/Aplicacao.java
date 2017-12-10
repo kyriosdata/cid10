@@ -12,8 +12,14 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+
 public class Aplicacao {
-    public static void main(String[] args) {
-        System.out.println("ok");
+    public static void main(String[] args) throws Exception {
+        Path grupos = FileFromResourcesFolder.getPath("databus/CID-10-grupos.CSV");
+        List<String> linhas = Files.readAllLines(grupos);
+        linhas.forEach(l -> System.out.println(l));
     }
 }

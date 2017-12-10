@@ -11,6 +11,8 @@
 package com.github.kyriosdata.cid10.preprocessor;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * Função para recuperar conteúdo de arquivos no diretório
@@ -26,9 +28,9 @@ public class FileFromResourcesFolder {
      *
      * @return Instância de {@link File}.
      */
-    public static File get(String fileName) {
+    public static Path getPath(String fileName) {
         FileFromResourcesFolder obj = new FileFromResourcesFolder();
         ClassLoader classLoader = obj.getClass().getClassLoader();
-        return new File(classLoader.getResource(fileName).getFile());
+        return Paths.get(classLoader.getResource(fileName).getFile());
     }
 }
