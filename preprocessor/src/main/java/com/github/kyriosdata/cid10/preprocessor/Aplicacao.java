@@ -6,8 +6,6 @@
  *  Fábrica de Software - Instituto de Informática (UFG)
  *
  *  Creative Commons Attribution 4.0 International License.
- *
- *
  */
 
 package com.github.kyriosdata.cid10.preprocessor;
@@ -22,11 +20,31 @@ public class Aplicacao {
     public static void main(String[] args) throws Exception {
         List<String> linhas = getLinhas("datasus/CID-10-GRUPOS.CSV");
 
-        linhas.forEach(l -> System.out.println(l));
+        linhas.forEach(l -> {
+            if (l.contains(";;")) {
+                System.out.println(l);
+            }
+        });
     }
 
+    /**
+     * Recupera lista de linhas de arquivo CSV.
+     *
+     * @param entrada Nome do arquivo CSV.
+     *
+     * @return Lista de linhas correspondentes ao conteúdo do arquivo CSV.
+     *
+     * @throws IOException
+     */
     private static List<String> getLinhas(String entrada) throws IOException {
-        Path grupos = FileFromResourcesFolder.getPath(entrada);
-        return Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
+        List<String> linhas = null;
+        try {
+            Path grupos = FileFromResourcesFolder.getPath(entrada);
+            linhas = Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
+        } catch (IOException exp) {
+            System.err.println(exp.toString());
+        }
+
+        return linhas;
     }
 }
