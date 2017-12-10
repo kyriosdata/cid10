@@ -41,7 +41,7 @@ public class Aplicacao {
         try {
             Path grupos = FileFromResourcesFolder.getPath(entrada);
             linhas = Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
-        } catch (IOException exp) {
+        } catch (Exception exp) {
             System.err.println(exp.toString());
         }
 
