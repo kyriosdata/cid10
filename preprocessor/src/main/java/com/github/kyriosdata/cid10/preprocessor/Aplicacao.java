@@ -12,15 +12,21 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
-import java.nio.charset.Charset;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
 public class Aplicacao {
     public static void main(String[] args) throws Exception {
-        Path grupos = FileFromResourcesFolder.getPath("datasus/CID-10-GRUPOS.CSV");
-        List<String> linhas = Files.readAllLines(grupos, Charset.forName("ISO-8859-1"));
+        List<String> linhas = getLinhas("datasus/CID-10-GRUPOS.CSV");
+
         linhas.forEach(l -> System.out.println(l));
+    }
+
+    private static List<String> getLinhas(String entrada) throws IOException {
+        Path grupos = FileFromResourcesFolder.getPath(entrada);
+        return Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
     }
 }
