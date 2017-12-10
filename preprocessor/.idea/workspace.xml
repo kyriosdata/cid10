@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,12 +30,11 @@
       <file leaf-file-name="Aplicacao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="31" />
+            <state relative-caret-position="506">
+              <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
-                <element signature="e#0#1744#0" expanded="true" />
+                <element signature="e#0#1652#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <marker date="1512934231000" expanded="true" signature="848:1113" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -448,7 +446,7 @@
       <updated>1512848962463</updated>
       <workItem from="1512848991933" duration="500000" />
       <workItem from="1512852688173" duration="5062000" />
-      <workItem from="1512930440511" duration="3774000" />
+      <workItem from="1512930440511" duration="3930000" />
     </task>
     <servers />
   </component>
@@ -467,7 +465,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9336000" />
+    <option name="totallyTimeSpent" value="9492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1388" height="1170" extended-state="0" />
@@ -888,12 +886,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="31" />
+        <state relative-caret-position="506">
+          <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
           <folding>
-            <element signature="e#0#1744#0" expanded="true" />
+            <element signature="e#0#1652#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1512934231000" expanded="true" signature="848:1113" ph="{...}" />
           </folding>
         </state>
       </provider>
