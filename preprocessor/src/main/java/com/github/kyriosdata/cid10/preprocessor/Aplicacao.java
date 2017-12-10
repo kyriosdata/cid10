@@ -25,6 +25,17 @@ public class Aplicacao {
         });
     }
 
+    /**
+     * Exclui coluna de uma linha CSV.
+     *
+     * @param linha Linha CSV, cujo delimitador é ";" cuja coluna
+     *              indicada deve ser eliminada.
+     *
+     * @param ignora Número da coluna a ser ignorada (zero-based).
+     *
+     * @return A linha CSV inicialmente fornecida com a coluna
+     * indicada excluída.
+     */
     private static String excluiColuna(String linha, int ignora) {
         String novaLinha = "";
         String[] campos = linha.split((";"));
