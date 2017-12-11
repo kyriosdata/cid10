@@ -11,6 +11,7 @@
 package com.github.kyriosdata.cid10.preprocessor;
 
 import java.io.File;
+import java.net.URI;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -33,6 +34,14 @@ public class FileFromResourcesFolder {
         FileFromResourcesFolder obj = new FileFromResourcesFolder();
         ClassLoader classLoader = obj.getClass().getClassLoader();
         URL resource = classLoader.getResource(fileName);
-        return resource == null ? null : Paths.get(resource.getFile());
+        URI uri = null;
+
+        try {
+            uri = resource.toURI();
+        } catch(Exception exp) {
+            return null;
+        }
+
+        return resource == null ? null : Paths.get(uri);
     }
 }
