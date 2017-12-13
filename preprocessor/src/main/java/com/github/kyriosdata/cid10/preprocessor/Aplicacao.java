@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Aplicacao {
@@ -22,7 +23,9 @@ public class Aplicacao {
         String capitulos = "datasus/CID-10-CAPITULOS.CSV";
         String categorias = "datasus/CID-10-CATEGORIAS.CSV";
 
-        processaCategorias(categorias);
+        List<String> saida = processaCategorias(categorias);
+
+        saida.forEach(System.out::println);
     }
 
     private static void excluiColunaDeLinha(String entrada, int ignora) {
@@ -35,17 +38,22 @@ public class Aplicacao {
     }
 
     /**
-     * Apenas as colunas 0 e 2 são utilizadas, demais são ignoradas.
+     * Apenas as colunas 0 e 2 do arquivo CSV original são utilizadas,
+     * a saber, categoria e descrição. Demais colunas são ignoradas.
      *
      * @param entrada Nome do arquivo contendo as categorias.
      */
-    private static void processaCategorias(String entrada) {
+    private static List<String> processaCategorias(String entrada) {
         List<String> linhas = getLinhas(entrada);
+
+        List<String> processadas = new ArrayList<String>(linhas.size());
 
         linhas.forEach(l -> {
             String linhaPreprocessada = colunasZeroDois(l);
-            System.out.println(linhaPreprocessada);
+            processadas.add(linhaPreprocessada);
         });
+
+        return processadas;
     }
 
     /**
