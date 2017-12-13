@@ -22,19 +22,38 @@ public class Aplicacao {
         String grupos = "datasus/CID-10-GRUPOS.CSV";
         String capitulos = "datasus/CID-10-CAPITULOS.CSV";
         String categorias = "datasus/CID-10-CATEGORIAS.CSV";
+        String subcategorias = "datasus/CID-10-SUBCATEGORIAS.CSV";
 
-        List<String> saida = processaCategorias(categorias);
+        List<String> saida = processaSubcategorias(subcategorias);
 
         saida.forEach(System.out::println);
     }
 
-    private static void excluiColunaDeLinha(String entrada, int ignora) {
+    private static List<String> processaSubcategorias(String arquivo) {
+        List<String> linhas = getLinhas(arquivo);
+
+        List<String> saida = new ArrayList<String>(linhas.size());
+
+        linhas.forEach(l -> {
+            String[] c = l.split(";");
+            String filtrada = String.format("%s;%s;%s", c[0], c[2], c[4]);
+            saida.add(filtrada);
+        });
+
+        return saida;
+    }
+
+    private static List<String> excluiColunaDeLinha(String entrada, int ignora) {
         List<String> linhas = getLinhas(entrada);
+
+        List<String> processadas = new ArrayList<String>(linhas.size());
 
         linhas.forEach(l -> {
             String linhaPreprocessada = excluiColuna(l, ignora);
-            System.out.println(linhaPreprocessada);
+            processadas.add(linhaPreprocessada);
         });
+
+        return processadas;
     }
 
     /**
