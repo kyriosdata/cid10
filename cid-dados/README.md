@@ -47,19 +47,5 @@ que também reúne um conjunto de categorias.
 1. Eliminar sinais (acentos). 
 1. Eliminar duplicidades de palavras dentro de uma linha.
 
-### Conversão para JSON
-Arquivos que formam a base da CID-10 foram convertidos para o 
-formato JSON, conforme a tabela abaixo.
-
-| Original                 | Destino                   |
-|--------------------------|---------------------------|
-| CID-10-CATEGORIAS.CSV    | CID-10-CATEGORIAS.JSON    |
-| CID-10-CAPITULOS.CSV     | CID-10-CAPITULOS.JSON     |
-| CID-10-GRUPOS.CSV        | CID-10-GRUPOS.JSON        |
-| CID-10-SUBCATEGORIAS.CSV | CID-10-SUBCATEGORIAS.JSON |
-| CID-O-CATEGORIAS.CSV     | CID-O-CATEGORIAS.JSON     |
-| CID-O-GRUPOS.CSV         | CID-O-GRUPOS.JSON                |
-
-
 
 
