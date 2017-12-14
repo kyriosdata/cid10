@@ -1,5 +1,4 @@
-Implementação de microserviço que responde requisições de consulta por
-entradas da CID-10.
+Microserviço que fornece informações sobre a CID-10, inclusive consultas.
 
 # Uso
 O microserviço responde a uma única requisição POST cujo corpo fornece
