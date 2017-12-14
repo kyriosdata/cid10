@@ -14,3 +14,8 @@ Formato original dos dados de entrada deverão servir de entrada para processo a
    - Substituir terminações de plural pela palavra completa, ou seja, aceleração(oes) por "aceleração" e "acelerações", por exemplo.
    - Eliminar duplicidades.
    - Quando busca for por código realizar busca binária. 
+   
+ 
+### Organização em projetos
+
+- Produção das estruturas de dados ([preprocessor](https://github.com/kyriosdata/cid10/tree/master/preprocessor))
