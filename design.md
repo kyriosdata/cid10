@@ -20,4 +20,5 @@ Formato original dos dados de entrada deverão servir de entrada para processo a
 
 - Produção das estruturas de dados ([cid-dados](https://github.com/kyriosdata/cid10/tree/master/cid-dados)).
 - Micro-serviço que oferece busca e informações sobre a CID-10 ([cid-busca](https://github.com/kyriosdata/cid10/tree/master/cid-busca)).
+- Web App para consulta e acesso ao conteúdo da CID-10 ([cid-gui](https://github.com/kyriosdata/cid10/tree/master/cid-gui)).
 
