@@ -17,7 +17,7 @@ public class Classificacao {
 
     @RequestMapping(value="/capitulos/{capitulo}", method =RequestMethod.GET)
     public String capitulos(@PathVariable int capitulo) {
-        return"os grupos do capitulo "+ capitulo;
+        return "os grupos do capitulo indicado: " + capitulo;
     }
 
     @RequestMapping(value = "/grupos", method = RequestMethod.GET,
