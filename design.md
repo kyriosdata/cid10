@@ -1,3 +1,48 @@
+# Gerador de dados para consulta
+O presente projeto visa produzir uma estrutura de dados 
+para busca de códigos na CID-10. O principal atributo a ser
+atendido é o desempenho, ou tempo de resposta entre a submissão
+de uma consulta e a obtenção dos resultados correspondentes.
+
+### Versão original e copyright (licença) da CID-10
+A versão utilizada encontra-se disponível pelo portal do 
+DATASUS 
+([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)). 
+Em particular, trata-se da versão de 2008. Arquivos fazem uso 
+de ISO-885901. 
+
+Detalhes da licença estão disponíveis 
+[aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
+
+## Organização da CID-10
+A CID-10 está organizada conforme a hierarquia ilustrada abaixo. 
+Cada capítulo reúne grupos. Cada grupo reúne categorias que,
+por sua vez, estão dividas em sub-categorias.
+
+<pre>
+CID-10
+|
+-- Capítulo 
+   |
+   -- Grupo
+      |
+      -- Categoria
+         |
+         -- Sub-categoria
+</pre>
+
+A hierarquia acima pode ser ilustrada, por exemplo, para o capítulo 1, 
+que trada de "Algumas doenças infecciosas e parasitárias". Este capítulo contém 
+vários grupos, um deles é o grupo que vai das categorias **A00** até **A09**, inclusive.
+Este grupo é descrito por "Doenças infecciosas intestinais". 
+O capítulo 1, contudo, inclui as categorias que vão de **A00** ("Cólera") até **B99** ("Doenças infecciosas, 
+outras e as não especificadas"). A categoria **A00**, por sua vez, está subdividida
+em três subcategorias: **A000** ("Cólera devida a Vibrio cholerae 01, biótipo 
+cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e 
+**A009** ("Cólera não especificada"). 
+
+Convém esclarecer que a busca é realizada exclusivamente sobre as subcategorias e categorias. 
+
 ## Projeto (design) da solução
 
 As categorias e as subcategorias da CID-10 serão reunidas em uma única lista e a busca será realizada sequencialmente nesta lista. Dado que a busca deve ignorar o uso ou não da acentuação, uma lista adicional deverá ser confeccionada e sobre a qual a busca será, de fato, realizada. A lista original será mantida para a montagem da resposta.
