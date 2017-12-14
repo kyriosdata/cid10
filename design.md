@@ -4,6 +4,11 @@ O presente projeto visa produzir um serviço por meio do qual
 usuários possam ter acesso ao conteúdo da CID-10, inclusive
 por meio de mecanismo de busca. 
 
+## CID-10
+A Classificação Internacional de Doenças (CID) empregada pelo Brasil é a CID-10. Profissionais de saúde, em geral, empregam os códigos presentes nessa classificação para se referirem a doenças de forma não ambígua, por exemplo, usam o código **A90** em vez de "dengue". 
+
+O presente projeto implementa dois módulos: (a) um para acesso à CID-10 por meio de uma interface gráfica via browser (apenas com o propósito de ilustração) e (b) um para fornecer um serviço de busca aos códigos da CID-10. Uma [Web App](http://www.icd10codesearch.com/) similar pode ser consultada para ilustrar a intenção do presente projeto.
+
 ## Versão original e copyright (licença) da CID-10
 A versão utilizada encontra-se disponível pelo portal do 
 DATASUS 
