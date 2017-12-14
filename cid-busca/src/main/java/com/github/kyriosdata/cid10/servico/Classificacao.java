@@ -22,7 +22,8 @@ public class Classificacao {
 
     @RequestMapping(value = "/grupos", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public String grupos() {
-        return "as categorias do grupo informado";
+    public String[] grupos() {
+
+        return new String[]{ "ok", "erro" };
     }
 }
