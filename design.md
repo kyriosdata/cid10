@@ -13,7 +13,7 @@ Formato original dos dados de entrada deverão servir de entrada para processo a
    - Eliminar acentos. 
    - Substituir terminações de plural pela palavra completa, ou seja, aceleração(oes) por "aceleração" e "acelerações", por exemplo.
    - Eliminar duplicidades.
-   - Quando busca for por código realizar busca binária. 
+   - Unir conteúdo de categorias, subcategorias e categorias para oncologia e ordenar a união pelo código. 
    
  
 ### Organização em projetos
