@@ -46,7 +46,7 @@ em três subcategorias: **A000** ("Cólera devida a Vibrio cholerae 01, biótipo
 cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e 
 **A009** ("Cólera não especificada"). 
 
-Convém esclarecer que a busca é realizada exclusivamente sobre as subcategorias e categorias. 
+---
 
 ## Projeto (design) da solução
 
