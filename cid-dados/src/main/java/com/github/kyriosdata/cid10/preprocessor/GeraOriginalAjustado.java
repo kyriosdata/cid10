@@ -42,15 +42,15 @@ public class GeraOriginalAjustado {
 
         // Capítulos
         List<String> chapters = processaCapitulos(CAPITULOS);
-        FileFromResourcesFolder.armazena(chapters, "./", OUT_CAPITULOS);
+        ArquivoUtils.armazena(chapters, "./", OUT_CAPITULOS);
 
         // Grupos
         List<String> groups = processaGrupo(GRUPOS);
-        FileFromResourcesFolder.armazena(groups, "./", OUT_GRUPOS);
+        ArquivoUtils.armazena(groups, "./", OUT_GRUPOS);
 
         // Grupos oncologia
         List<String> go = processaGrupo(GRUPOS_ONCOLOGIA);
-        FileFromResourcesFolder.armazena(go, "./", OUT_GO);
+        ArquivoUtils.armazena(go, "./", OUT_GO);
 
         // Códigos = Categorias + Subcategorias + Categorias da oncologia
         List<String> categorias = processaCategorias(CATEGORIAS);
@@ -69,7 +69,7 @@ public class GeraOriginalAjustado {
         // Elimina espaço acrescentado para as categorias
         List<String> parcial = eliminaEspacoEmCategorias(codigos);
 
-        FileFromResourcesFolder.armazena(parcial, "./", OUT_CODIGOS);
+        ArquivoUtils.armazena(parcial, "./", OUT_CODIGOS);
     }
 
     private static List<String> eliminaEspacoEmCategorias(List<String> codes) {
@@ -94,7 +94,7 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> processaCapitulos(String arquivo) {
-        List<String> linhas = FileFromResourcesFolder.getLinhas(arquivo);
+        List<String> linhas = ArquivoUtils.getLinhas(arquivo);
         List<String> saida = new ArrayList<>(linhas.size());
 
         linhas.forEach(l -> {
@@ -112,7 +112,7 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> processaSubcategorias(String arquivo) {
-        List<String> linhas = FileFromResourcesFolder.getLinhas(arquivo);
+        List<String> linhas = ArquivoUtils.getLinhas(arquivo);
 
         List<String> saida = new ArrayList<String>(linhas.size());
 
@@ -130,7 +130,7 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> excluiColunaDeLinha(String entrada, int ignora) {
-        List<String> linhas = FileFromResourcesFolder.getLinhas(entrada);
+        List<String> linhas = ArquivoUtils.getLinhas(entrada);
 
         List<String> processadas = new ArrayList<String>(linhas.size());
 
@@ -151,7 +151,7 @@ public class GeraOriginalAjustado {
      * @param entrada Nome do arquivo contendo as categorias.
      */
     private static List<String> processaCategorias(String entrada) {
-        List<String> linhas = FileFromResourcesFolder.getLinhas(entrada);
+        List<String> linhas = ArquivoUtils.getLinhas(entrada);
 
         List<String> processadas = new ArrayList<String>(linhas.size());
 

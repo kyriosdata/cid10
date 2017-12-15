@@ -21,13 +21,13 @@ public class FileFromResourcesFolderTest {
 
     @Test
     public void acessoCorretoEmResources() {
-        Path p = FileFromResourcesFolder.getPath("datasus/CID-10-GRUPOS.CSV");
+        Path p = ArquivoUtils.getPath("datasus/CID-10-GRUPOS.CSV");
         assertNotNull(p);
     }
 
     @Test
     public void arquivoInvalidoRetornaNull() {
-        Path p = FileFromResourcesFolder.getPath("alguma coisa");
+        Path p = ArquivoUtils.getPath("alguma coisa");
         assertNull(p);
     }
 }

@@ -26,7 +26,7 @@ import java.util.List;
  * Função para recuperar conteúdo de arquivos no diretório
  * "resources".
  */
-public class FileFromResourcesFolder {
+public class ArquivoUtils {
 
     /**
      * Obtém instância de {@link File} correspondente ao nome de arquivo
@@ -37,7 +37,7 @@ public class FileFromResourcesFolder {
      * @return Instância de {@link File}.
      */
     public static Path getPath(String fileName) {
-        FileFromResourcesFolder obj = new FileFromResourcesFolder();
+        ArquivoUtils obj = new ArquivoUtils();
         ClassLoader classLoader = obj.getClass().getClassLoader();
         URL resource = classLoader.getResource(fileName);
         URI uri = null;
@@ -82,5 +82,17 @@ public class FileFromResourcesFolder {
         } catch (IOException e) {
             System.err.println(e);
         }
+    }
+
+    public static List<String> carrega(String dir, String file) {
+        Path path = Paths.get(dir, file);
+
+        try {
+            return Files.readAllLines(path, StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            System.err.println(e);
+        }
+
+        return null;
     }
 }
