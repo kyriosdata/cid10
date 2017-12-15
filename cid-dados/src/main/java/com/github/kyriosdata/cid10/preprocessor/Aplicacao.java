@@ -11,12 +11,22 @@
 package com.github.kyriosdata.cid10.preprocessor;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+/**
+ * Aplicação que gera em formato alternativo ao original, os dados
+ * obtidos do DATASUS. A intenção é eliminar informações que não serão
+ * empregadas durante a execução, além de reduzir o tempo necessário
+ * para "montagem" das estruturas de dados para busca. Ou seja, parte
+ * considerável das operações são feitas pela presente classe, e não
+ * em tempo de execução do serviço.
+ *
+ */
 public class Aplicacao {
 
     public static final String DIR = "datasus/";
@@ -27,11 +37,60 @@ public class Aplicacao {
     public static final String GRUPOS_ONCOLOGIA = "CID-O-GRUPOS.CSV";
     public static final String CATEGORIAS_ONCOLOGIA = "CID-O-CATEGORIAS.CSV";
 
+    public static final String OUT_CAPITULOS = "capitulos.csv";
+    public static final String OUT_GRUPOS = "grupos.csv";
+    public static final String OUT_GO = "go.csv";
+    public static final String OUT_CODIGOS = "codigos.csv";
+
     public static void main(String[] args) throws Exception {
 
         // Capítulos
-        List<String> saida = processaCapitulos(CAPITULOS);
-        saida.forEach(System.out::println);
+        List<String> chapters = processaCapitulos(CAPITULOS);
+        armazena(chapters, "./", OUT_CAPITULOS);
+
+        // Grupos
+        List<String> groups = processaGrupo(GRUPOS);
+        armazena(groups, "./", OUT_GRUPOS);
+
+        // Grupos oncologia
+        List<String> go = processaGrupo(GRUPOS_ONCOLOGIA);
+        armazena(go, "./", OUT_GO);
+
+        // Códigos = Categorias + Subcategorias + Categorias da oncologia
+        List<String> categorias = processaCategorias(CATEGORIAS);
+        List<String> subcategorias = processaSubcategorias(SUBCATEGORIAS);
+        List<String> co = processaCategoriasOncologia(CATEGORIAS_ONCOLOGIA);
+
+        // Realiza a união
+        List<String> codigos = new ArrayList<>();
+        codigos.addAll(categorias);
+        codigos.addAll(subcategorias);
+        codigos.addAll(co);
+
+        // Ordena a lista resultante contendo os códigos
+        Collections.sort(codigos);
+
+        // Elimina espaço acrescentado para as categorias
+        List<String> parcial = eliminaEspacoEmCategorias(codigos);
+
+        armazena(parcial, "./", OUT_CODIGOS);
+    }
+
+    private static List<String> eliminaEspacoEmCategorias(List<String> codes) {
+        List<String> ajustado = new ArrayList<>(codes.size());
+
+        codes.forEach(l -> {
+            String linhaAjustada = l;
+            if (l.charAt(3) == ' ') {
+                StringBuilder sb = new StringBuilder(l);
+                sb.deleteCharAt(3);
+                linhaAjustada = sb.toString();
+            }
+
+            ajustado.add(linhaAjustada);
+        });
+
+        return ajustado;
     }
 
     private static List<String> processaCategoriasOncologia(String arquivo) {
@@ -63,7 +122,11 @@ public class Aplicacao {
 
         linhas.forEach(l -> {
             String[] c = l.split(";");
-            String filtrada = String.format("%s;%s;%s", c[0], c[2], c[4]);
+            if (c[2].isEmpty()) {
+                c[2] = "-";
+            }
+
+            String filtrada = String.format("%s;%s;%s;", c[0], c[2], c[4]);
             saida.add(filtrada);
         });
 
@@ -86,6 +149,8 @@ public class Aplicacao {
     /**
      * Apenas as colunas 0 e 2 do arquivo CSV original são utilizadas,
      * a saber, categoria e descrição. Demais colunas são ignoradas.
+     * A categoria é acrescida de um espaço em branco para facilitar
+     * a ordenação lexicográfica. Este espaço é removido posteriormente.
      *
      * @param entrada Nome do arquivo contendo as categorias.
      */
@@ -113,15 +178,7 @@ public class Aplicacao {
      */
     private static String colunasZeroDois(String linha) {
         String[] campos = linha.split(";");
-        return String.format("%s;%s;", campos[0], campos[2]);
-    }
-
-    private static void exibeConteudo(String entrada) {
-        List<String> linhas = getLinhas(entrada);
-
-        linhas.forEach(l -> {
-                System.out.println(l);
-        });
+        return String.format("%s ;-;%s;", campos[0], campos[2]);
     }
 
     /**
@@ -170,5 +227,16 @@ public class Aplicacao {
         }
 
         return linhas;
+    }
+
+    private static void armazena(List<String> dados, String dir, String file) {
+        Path path = Paths.get(dir, file);
+        Charset charset = StandardCharsets.UTF_8;
+
+        try {
+            Files.write(path, dados, charset, StandardOpenOption.CREATE);
+        } catch (IOException e) {
+            System.err.println(e);
+        }
     }
 }
