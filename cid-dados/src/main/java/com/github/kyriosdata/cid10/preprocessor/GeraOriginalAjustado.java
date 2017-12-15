@@ -90,7 +90,16 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> processaCategoriasOncologia(String arquivo) {
-        return excluiColunaDeLinha(arquivo, 2);
+        List<String> linhas = ArquivoUtils.getLinhas(arquivo);
+        List<String> saida = new ArrayList<>(linhas.size());
+
+        linhas.forEach(l -> {
+            String[] c = l.split(";");
+            String ln = String.format("%s;-;%s;", c[0], c[1]);
+            saida.add(ln);
+        });
+
+        return saida;
     }
 
     private static List<String> processaCapitulos(String arquivo) {
