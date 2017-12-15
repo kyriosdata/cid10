@@ -19,14 +19,20 @@ import java.util.List;
 
 public class Aplicacao {
     public static void main(String[] args) throws Exception {
-        String grupos = "datasus/CID-10-GRUPOS.CSV";
         String capitulos = "datasus/CID-10-CAPITULOS.CSV";
+        String grupos = "datasus/CID-10-GRUPOS.CSV";
         String categorias = "datasus/CID-10-CATEGORIAS.CSV";
         String subcategorias = "datasus/CID-10-SUBCATEGORIAS.CSV";
+        String gruposOncologia = "datasus/CID-O-GRUPOS.CSV";
+        String categoriasOncologia = "datasus/CID-O-CATEGORIAS.CSV";
 
-        List<String> saida = processaCapitulos(capitulos);
+        List<String> saida = processaCategoriasOncologia(categoriasOncologia);
 
         saida.forEach(System.out::println);
+    }
+
+    private static List<String> processaCategoriasOncologia(String arquivo) {
+        return excluiColunaDeLinha(arquivo, 2);
     }
 
     private static List<String> processaCapitulos(String arquivo) {
@@ -41,6 +47,10 @@ public class Aplicacao {
         });
 
         return saida;
+    }
+
+    private static List<String> processaGrupo(String arquivo) {
+        return excluiColunaDeLinha(arquivo, 3);
     }
 
     private static List<String> processaSubcategorias(String arquivo) {
