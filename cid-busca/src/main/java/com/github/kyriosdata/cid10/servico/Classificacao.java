@@ -11,9 +11,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class Classificacao {
+
+    /**
+     * Lista contendo todas as entradas da CID-10.
+     * Sobre esta lista são feitas as operações de
+     * consulta.
+     */
+    private List<Codigo> codigos;
+
+    /**
+     * Lista de capítulos da CID-10.
+     */
+    private List<Capitulo> capitulos;
+
+    /**
+     * Lista de grupos da CID-10 por capítulo. Inclui grupos da
+     * CID-10 oncologia.
+     */
+    private Map<Integer, List<Grupo>> grupos;
 
     /**
      * Recupera todos os capítulos da CID-10.
@@ -106,7 +125,9 @@ public class Classificacao {
      *                 de categorias e/ou subcategorias correspondentes.
      *
      * @return A lista de categorias e/ou subcategorias correspondentes à
-     * busca realizada com base nas palavras fornecidas.
+     * busca realizada com base nas palavras fornecidas. De forma simplificada,
+     * cada item retornado contém em sua descrição as palavras fornecidas.
+     * Os códigos dos itens retornados também são consultados nessa busca.
      */
     @RequestMapping(value = "/busca/{palavras}", method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
