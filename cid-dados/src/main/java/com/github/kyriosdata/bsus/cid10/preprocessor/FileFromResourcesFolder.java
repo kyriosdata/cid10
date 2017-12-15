@@ -9,11 +9,20 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado;
 import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.List;
 
 /**
  * Classe utilitária para obter 'File' de arquivo incluído no
@@ -34,4 +43,5 @@ public class FileFromResourcesFolder {
         Gson gson = new Gson();
         return gson.fromJson(fileReader, classOfT);
     }
+
 }

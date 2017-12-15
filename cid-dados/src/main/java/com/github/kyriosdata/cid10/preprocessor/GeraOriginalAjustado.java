@@ -10,10 +10,6 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,7 +23,7 @@ import java.util.List;
  * em tempo de execução do serviço.
  *
  */
-public class Aplicacao {
+public class GeraOriginalAjustado {
 
     public static final String DIR = "datasus/";
     public static final String CAPITULOS = "CID-10-CAPITULOS.CSV";
@@ -46,15 +42,15 @@ public class Aplicacao {
 
         // Capítulos
         List<String> chapters = processaCapitulos(CAPITULOS);
-        armazena(chapters, "./", OUT_CAPITULOS);
+        FileFromResourcesFolder.armazena(chapters, "./", OUT_CAPITULOS);
 
         // Grupos
         List<String> groups = processaGrupo(GRUPOS);
-        armazena(groups, "./", OUT_GRUPOS);
+        FileFromResourcesFolder.armazena(groups, "./", OUT_GRUPOS);
 
         // Grupos oncologia
         List<String> go = processaGrupo(GRUPOS_ONCOLOGIA);
-        armazena(go, "./", OUT_GO);
+        FileFromResourcesFolder.armazena(go, "./", OUT_GO);
 
         // Códigos = Categorias + Subcategorias + Categorias da oncologia
         List<String> categorias = processaCategorias(CATEGORIAS);
@@ -73,7 +69,7 @@ public class Aplicacao {
         // Elimina espaço acrescentado para as categorias
         List<String> parcial = eliminaEspacoEmCategorias(codigos);
 
-        armazena(parcial, "./", OUT_CODIGOS);
+        FileFromResourcesFolder.armazena(parcial, "./", OUT_CODIGOS);
     }
 
     private static List<String> eliminaEspacoEmCategorias(List<String> codes) {
@@ -98,7 +94,7 @@ public class Aplicacao {
     }
 
     private static List<String> processaCapitulos(String arquivo) {
-        List<String> linhas = getLinhas(arquivo);
+        List<String> linhas = FileFromResourcesFolder.getLinhas(arquivo);
         List<String> saida = new ArrayList<>(linhas.size());
 
         linhas.forEach(l -> {
@@ -116,7 +112,7 @@ public class Aplicacao {
     }
 
     private static List<String> processaSubcategorias(String arquivo) {
-        List<String> linhas = getLinhas(arquivo);
+        List<String> linhas = FileFromResourcesFolder.getLinhas(arquivo);
 
         List<String> saida = new ArrayList<String>(linhas.size());
 
@@ -134,7 +130,7 @@ public class Aplicacao {
     }
 
     private static List<String> excluiColunaDeLinha(String entrada, int ignora) {
-        List<String> linhas = getLinhas(entrada);
+        List<String> linhas = FileFromResourcesFolder.getLinhas(entrada);
 
         List<String> processadas = new ArrayList<String>(linhas.size());
 
@@ -155,7 +151,7 @@ public class Aplicacao {
      * @param entrada Nome do arquivo contendo as categorias.
      */
     private static List<String> processaCategorias(String entrada) {
-        List<String> linhas = getLinhas(entrada);
+        List<String> linhas = FileFromResourcesFolder.getLinhas(entrada);
 
         List<String> processadas = new ArrayList<String>(linhas.size());
 
@@ -207,36 +203,4 @@ public class Aplicacao {
         return novaLinha;
     }
 
-    /**
-     * Recupera lista de linhas de arquivo CSV.
-     *
-     * @param entrada Nome do arquivo CSV.
-     *
-     * @return Lista de linhas correspondentes ao conteúdo do arquivo CSV.
-     *
-     * @throws IOException
-     */
-    private static List<String> getLinhas(String entrada) {
-        List<String> linhas = null;
-        try {
-            String fileName = DIR + entrada;
-            Path grupos = FileFromResourcesFolder.getPath(fileName);
-            linhas = Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
-        } catch (Exception exp) {
-            System.err.println(exp.toString());
-        }
-
-        return linhas;
-    }
-
-    private static void armazena(List<String> dados, String dir, String file) {
-        Path path = Paths.get(dir, file);
-        Charset charset = StandardCharsets.UTF_8;
-
-        try {
-            Files.write(path, dados, charset, StandardOpenOption.CREATE);
-        } catch (IOException e) {
-            System.err.println(e);
-        }
-    }
 }

@@ -11,10 +11,16 @@
 package com.github.kyriosdata.cid10.preprocessor;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.List;
 
 /**
  * Função para recuperar conteúdo de arquivos no diretório
@@ -43,5 +49,38 @@ public class FileFromResourcesFolder {
         }
 
         return resource == null ? null : Paths.get(uri);
+    }
+
+    /**
+     * Recupera lista de linhas de arquivo CSV.
+     *
+     * @param entrada Nome do arquivo CSV.
+     *
+     * @return Lista de linhas correspondentes ao conteúdo do arquivo CSV.
+     *
+     * @throws IOException
+     */
+    public static List<String> getLinhas(String entrada) {
+        List<String> linhas = null;
+        try {
+            String fileName = GeraOriginalAjustado.DIR + entrada;
+            Path grupos = getPath(fileName);
+            linhas = Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
+        } catch (Exception exp) {
+            System.err.println(exp.toString());
+        }
+
+        return linhas;
+    }
+
+    public static void armazena(List<String> dados, String dir, String file) {
+        Path path = Paths.get(dir, file);
+        Charset charset = StandardCharsets.UTF_8;
+
+        try {
+            Files.write(path, dados, charset, StandardOpenOption.CREATE);
+        } catch (IOException e) {
+            System.err.println(e);
+        }
     }
 }
