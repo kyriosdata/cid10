@@ -18,16 +18,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Aplicacao {
+
+    public static final String DIR = "datasus/";
+    public static final String CAPITULOS = "CID-10-CAPITULOS.CSV";
+    public static final String GRUPOS = "CID-10-GRUPOS.CSV";
+    public static final String CATEGORIAS = "CID-10-CATEGORIAS.CSV";
+    public static final String SUBCATEGORIAS = "CID-10-SUBCATEGORIAS.CSV";
+    public static final String GRUPOS_ONCOLOGIA = "CID-O-GRUPOS.CSV";
+    public static final String CATEGORIAS_ONCOLOGIA = "CID-O-CATEGORIAS.CSV";
+
     public static void main(String[] args) throws Exception {
-        String capitulos = "datasus/CID-10-CAPITULOS.CSV";
-        String grupos = "datasus/CID-10-GRUPOS.CSV";
-        String categorias = "datasus/CID-10-CATEGORIAS.CSV";
-        String subcategorias = "datasus/CID-10-SUBCATEGORIAS.CSV";
-        String gruposOncologia = "datasus/CID-O-GRUPOS.CSV";
-        String categoriasOncologia = "datasus/CID-O-CATEGORIAS.CSV";
 
-        List<String> saida = processaCategoriasOncologia(categoriasOncologia);
-
+        // Capítulos
+        List<String> saida = processaCapitulos(CAPITULOS);
         saida.forEach(System.out::println);
     }
 
@@ -159,7 +162,8 @@ public class Aplicacao {
     private static List<String> getLinhas(String entrada) {
         List<String> linhas = null;
         try {
-            Path grupos = FileFromResourcesFolder.getPath(entrada);
+            String fileName = DIR + entrada;
+            Path grupos = FileFromResourcesFolder.getPath(fileName);
             linhas = Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
         } catch (Exception exp) {
             System.err.println(exp.toString());
