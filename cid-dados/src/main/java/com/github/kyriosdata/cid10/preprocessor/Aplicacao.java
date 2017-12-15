@@ -24,9 +24,23 @@ public class Aplicacao {
         String categorias = "datasus/CID-10-CATEGORIAS.CSV";
         String subcategorias = "datasus/CID-10-SUBCATEGORIAS.CSV";
 
-        List<String> saida = processaSubcategorias(subcategorias);
+        List<String> saida = processaCapitulos(capitulos);
 
         saida.forEach(System.out::println);
+    }
+
+    private static List<String> processaCapitulos(String arquivo) {
+        List<String> linhas = getLinhas(arquivo);
+        List<String> saida = new ArrayList<>(linhas.size());
+
+        linhas.forEach(l -> {
+            String[] c = l.split(";");
+            c[3] = c[3].replaceAll("Capítulo\\s.*\\s\\-\\s", "");
+            String ln = String.format("%s;%s;%s;%s;", c[0], c[1], c[2], c[3]);
+            saida.add(ln);
+        });
+
+        return saida;
     }
 
     private static List<String> processaSubcategorias(String arquivo) {
