@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +58,8 @@
       <file leaf-file-name="Busca.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+            <state relative-caret-position="552">
+              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -486,7 +486,7 @@
       <workItem from="1513340158218" duration="1761000" />
       <workItem from="1513342273629" duration="11048000" />
       <workItem from="1513365259116" duration="6769000" />
-      <workItem from="1513506343408" duration="6718000" />
+      <workItem from="1513506343408" duration="7534000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -565,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513516611314</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="execucao da busca.">
+      <created>1513519940887</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1513519940887</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -589,7 +596,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50643000" />
+    <option name="totallyTimeSpent" value="51459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="1559" height="1177" extended-state="0" />
@@ -642,15 +649,28 @@
     <MESSAGE value="organizacao" />
     <MESSAGE value="elimina duplicidade de entradas com mesma chaveˆ" />
     <MESSAGE value="arquivo original nao possui duplicidades" />
-    <option name="LAST_COMMIT_MESSAGE" value="arquivo original nao possui duplicidades" />
+    <MESSAGE value="execucao da busca." />
+    <option name="LAST_COMMIT_MESSAGE" value="execucao da busca." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>base.get(1414).contains(&quot;gu&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>base.get(1414)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="setValue">
       <expression>
         <expression-string>&quot;&quot;</expression-string>
@@ -978,8 +998,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        <state relative-caret-position="552">
+          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

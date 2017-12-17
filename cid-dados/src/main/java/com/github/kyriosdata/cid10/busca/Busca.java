@@ -30,7 +30,7 @@ public class Busca {
         base = ArquivoUtils.carrega("./", "busca.csv");
         total = base.size();
 
-        List<Integer> resposta = encontre(new String[] { "/3"});
+        List<Integer> resposta = encontre(new String[] { "a" });
         resposta.forEach(indice -> System.out.println(base.get(indice)));
 
         System.out.println(resposta.size());
@@ -74,7 +74,7 @@ public class Busca {
         for (int i = 0; i < dominioBusca; i++) {
             int indiceParaBusca = parcial.get(i);
             if (base.get(indiceParaBusca).contains(criterio)) {
-               encontrados.add(i);
+               encontrados.add(indiceParaBusca);
            }
         }
 
