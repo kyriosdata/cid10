@@ -80,9 +80,7 @@ public class ArquivoUtils {
         }
     }
 
-    public static List<String> carrega(String dir, String file) {
-        Path path = Paths.get(dir, file);
-
+    public static List<String> carrega(Path path) {
         try {
             return Files.readAllLines(path, StandardCharsets.UTF_8);
         } catch (IOException e) {

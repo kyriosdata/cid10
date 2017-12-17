@@ -14,6 +14,7 @@ package com.github.kyriosdata.cid10.busca;
 
 import com.github.kyriosdata.cid10.preprocessor.ArquivoUtils;
 
+import java.nio.file.Path;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,6 @@ import java.util.List;
  * Implementa busca sobre informações contidas na CID-10.
  */
 public class Cid {
-
 
     /**
      * Estrutura sobre a qual a busca é feita.
@@ -44,13 +44,17 @@ public class Cid {
     private static int total;
 
     static {
-        busca = ArquivoUtils.carrega("./", "busca.csv");
+        Path path = ArquivoUtils.getPath("cid/busca.csv");
+
+        busca = ArquivoUtils.carrega(path);
         total = busca.size();
 
-        original = ArquivoUtils.carrega("./", "codigos.csv");
+        Path codigos = ArquivoUtils.getPath("cid/codigos.csv");
+        original = ArquivoUtils.carrega(codigos);
 
         // Recupera capítulos e remove header.
-        capitulos = ArquivoUtils.carrega("./", "capitulos.csv");
+        Path chapter = ArquivoUtils.getPath("cid/capitulos.csv");
+        capitulos = ArquivoUtils.carrega(chapter);
         capitulos.remove(0);
     }
 

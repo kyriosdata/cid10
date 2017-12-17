@@ -33,7 +33,9 @@ public class GeraDadosAjustadosParaBusca {
 
     public static void main(String[] args) {
         List<String> busca = new ArrayList<>();
-        List<String> codes = ArquivoUtils.carrega("./", "codigos.csv");
+
+        Path path = Paths.get(OUT_DIR, "codigos.csv");
+        List<String> codes = ArquivoUtils.carrega(path);
 
         codes.forEach(l -> {
             String nl = l;
@@ -75,8 +77,8 @@ public class GeraDadosAjustadosParaBusca {
             busca.add(nl);
         });
 
-        Path path = Paths.get(OUT_DIR, "busca.csv");
-        ArquivoUtils.armazena(busca, path);
+        Path pathBusca = Paths.get(OUT_DIR, "busca.csv");
+        ArquivoUtils.armazena(busca, pathBusca);
     }
 
     /**

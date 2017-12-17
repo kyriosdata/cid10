@@ -51,6 +51,6 @@ public class CidTest {
 
     @Test
     public void verificaCapitulos() {
-        Cid.capitulos().forEach(System.out::println);
+        assertEquals(22, Cid.capitulos().size());
     }
 }
