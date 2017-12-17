@@ -12,13 +12,9 @@
 
 package com.github.kyriosdata.cid10.busca;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,41 +48,35 @@ public class Cid {
     private int total;
 
     public Cid() {
-        Path path = getPath("cid/busca.csv");
-        busca = ArquivoUtils.carrega(path);
+        busca = getConteudo("cid/busca.csv");
         total = busca.size();
 
-        Path codigos = getPath("cid/codigos.csv");
-        original = carrega(codigos);
+        original = getConteudo("cid/codigos.csv");
+        original.remove(0);
 
         // Recupera capítulos e remove header.
-        Path chapter = getPath("cid/capitulos.csv");
-        capitulos = carrega(chapter);
+        capitulos = getConteudo("cid/capitulos.csv");
         capitulos.remove(0);
     }
 
-    public Path getPath(String fileName) {
+    public List<String> getConteudo(String fileName) {
         ClassLoader classLoader = getClass().getClassLoader();
-        URL resource = classLoader.getResource(fileName);
-        URI uri = null;
+        InputStream is = classLoader.getResourceAsStream(fileName);
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+        List<String> conteudo = new ArrayList<>();
+
+        String linha;
 
         try {
-            uri = resource.toURI();
+            while ((linha = br.readLine()) != null) {
+                conteudo.add(linha);
+            }
         } catch (Exception exp) {
             return null;
         }
 
-        return resource == null ? null : Paths.get(uri);
-    }
-
-    public static List<String> carrega(Path path) {
-        try {
-            return Files.readAllLines(path, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            System.err.println(e);
-        }
-
-        return null;
+        return conteudo;
     }
 
     /**
