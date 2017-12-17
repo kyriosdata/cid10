@@ -47,7 +47,7 @@
                     <excludes>
                         <exclude>datasus/**</exclude>
                         <exclude>META-INF/**</exclude>
-                        <exclu>resources/**</exclu>
+                        <exclude>**/preprocessor/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>

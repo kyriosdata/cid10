@@ -10,6 +10,7 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
+import com.github.kyriosdata.cid10.busca.ArquivoUtils;
 import org.junit.Test;
 
 import java.nio.file.Path;

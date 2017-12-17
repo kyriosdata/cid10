@@ -1,14 +1,18 @@
 /*
  *
- * Copyright (c) 2017
+ *  * Copyright (c) 2017
+ *  *
+ *  * Fábio Nogueira de Lucena
+ *  * Fábrica de Software - Instituto de Informática (UFG)
+ *  *
+ *  * Creative Commons Attribution 4.0 International License.
  *
- * Fábio Nogueira de Lucena
- * Fábrica de Software - Instituto de Informática (UFG)
  *
- * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.cid10.preprocessor;
+package com.github.kyriosdata.cid10.busca;
+
+import com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado;
 
 import java.io.File;
 import java.io.IOException;

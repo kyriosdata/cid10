@@ -12,8 +12,6 @@
 
 package com.github.kyriosdata.cid10.busca;
 
-import com.github.kyriosdata.cid10.preprocessor.ArquivoUtils;
-
 import java.nio.file.Path;
 import java.text.Normalizer;
 import java.util.ArrayList;
