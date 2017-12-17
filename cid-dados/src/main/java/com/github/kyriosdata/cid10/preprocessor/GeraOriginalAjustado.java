@@ -41,6 +41,16 @@ public class GeraOriginalAjustado {
     public static final String OUT_GO = "go.csv";
     public static final String OUT_CODIGOS = "codigos.csv";
 
+    /**
+     * Apenas para viabilizar geração automática via Maven.
+     *
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+        gerador();
+    }
+
     public static void gerador() throws Exception {
 
         Path outPath = Paths.get(OUT_DIR);

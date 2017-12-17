@@ -12,32 +12,23 @@
 
 package com.github.kyriosdata.cid10.busca;
 
-import com.github.kyriosdata.cid10.preprocessor.ArquivoUtils;
-import com.github.kyriosdata.cid10.preprocessor.GeraDadosAjustadosParaBusca;
-import com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.File;
-import java.nio.file.Path;
-
 import static junit.framework.Assert.assertEquals;
 
+/**
+ * IMPORTANTE: você deve executar as classes
+ * {@link com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado} e
+ * {@link com.github.kyriosdata.cid10.preprocessor.GeraDadosAjustadosParaBusca}
+ * antes que os testes desta classe possam ser executados. 
+ */
 public class CidTest {
 
     private static Cid cid;
 
     @BeforeClass
     public static void setUp() throws Exception {
-        GeraOriginalAjustado.gerador();
-        GeraDadosAjustadosParaBusca.gerador();
-
-        Path dir = ArquivoUtils.getPath("cid/capitulos.csv");
-
-        Path parent = dir.getParent();
-        File[] arquivos = parent.toFile().listFiles();
-        assertEquals(5, arquivos.length);
-
         cid = new Cid();
     }
 

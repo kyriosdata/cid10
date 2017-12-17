@@ -31,6 +31,10 @@ public class GeraDadosAjustadosParaBusca {
 
     public static final String OUT_DIR = "./src/main/resources/cid";
 
+    public static void main(String[] args) {
+        gerador();
+    }
+
     public static void gerador() {
         List<String> busca = new ArrayList<>();
 
