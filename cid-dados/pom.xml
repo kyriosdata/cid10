@@ -41,10 +41,14 @@
                 <configuration>
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
+                        <manifest>
+                            <addClasspath>false</addClasspath>
+                        </manifest>
                     </archive>
                     <excludes>
                         <exclude>datasus/**</exclude>
                         <exclude>META-INF/**</exclude>
+                        <exclu>resources/**</exclu>
                     </excludes>
                 </configuration>
             </plugin>
