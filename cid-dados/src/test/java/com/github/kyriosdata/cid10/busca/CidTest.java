@@ -18,10 +18,9 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 
 /**
- * IMPORTANTE: você deve executar as classes
- * {@link com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado} e
- * {@link com.github.kyriosdata.cid10.preprocessor.GeraDadosAjustadosParaBusca}
- * antes que os testes desta classe possam ser executados.
+ * IMPORTANTE: os arquivos empregados nos testes desta classe são gerados por
+ * {@link com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado}.
+ * Por comodidade estes arquivos já são persistidos no dirório resources/cid.
  */
 public class CidTest {
 
