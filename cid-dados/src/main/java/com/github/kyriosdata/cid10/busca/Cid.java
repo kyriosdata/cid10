@@ -21,10 +21,25 @@ import java.util.List;
 /**
  * Implementa busca sobre informações contidas na CID-10.
  */
-public class Busca {
+public class Cid {
 
+
+    /**
+     * Estrutura sobre a qual a busca é feita.
+     */
     private static List<String> busca;
+
+    /**
+     * Estrutura que contém a versão "original" das
+     * entradas da CID. Empregada para montagem do
+     * retorno.
+     */
     private static List<String> original;
+
+    /**
+     * Estrutura que mantém os capítulos.
+     */
+    private static List<String> capitulos;
 
     private static int total;
 
@@ -33,6 +48,19 @@ public class Busca {
         total = busca.size();
 
         original = ArquivoUtils.carrega("./", "codigos.csv");
+
+        // Recupera capítulos e remove header.
+        capitulos = ArquivoUtils.carrega("./", "capitulos.csv");
+        capitulos.remove(0);
+    }
+
+    /**
+     * O conjunto de capítulos da CID-10.
+     *
+     * @return Lista contendo os capítulos da CID-10.
+     */
+    public static List<String> capitulos() {
+        return capitulos;
     }
 
     /**

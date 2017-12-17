@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class BuscaTest {
+public class CidTest {
 
     private static Transformador sc;
 
