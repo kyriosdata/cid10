@@ -19,21 +19,15 @@ import java.util.List;
 
 /**
  * Implementa busca sobre informações contidas na CID-10.
- *
  */
 public class Busca {
 
     private static List<String> base;
     private static int total;
 
-    public static void main(String[] args) {
+    static {
         base = ArquivoUtils.carrega("./", "busca.csv");
         total = base.size();
-
-        List<Integer> resposta = encontre(new String[] { "a" });
-        resposta.forEach(indice -> System.out.println(base.get(indice)));
-
-        System.out.println(resposta.size());
     }
 
     /**
@@ -42,11 +36,13 @@ public class Busca {
      *
      * @param criterios Elementos que devem estar presentes
      *                  em toda entrada da CID-10 que os contêm.
-     *
      * @return Lista com os identificadores de ordem das
      * entradas na CID-10 que satisfazem os critérios fornecidos.
      */
     public static List<Integer> encontre(String[] criterios) {
+
+        ajustaCriterios(criterios);
+
         List<Integer> resultado = new ArrayList<>();
 
         if (criterios.length == 0) {
@@ -67,6 +63,18 @@ public class Busca {
         return resultado;
     }
 
+    public static void ajustaCriterios(String[] criterios) {
+        for (int i = 0; i < criterios.length; i++) {
+            criterios[i] = ajustaCriterio(criterios[i]);
+        }
+    }
+
+    public static String ajustaCriterio(String criterio) {
+        String ajustado = criterio.toLowerCase();
+
+        return ajustado;
+    }
+
     private static List<Integer> consultaEm(String criterio, List<Integer> parcial) {
         List<Integer> encontrados = new ArrayList<>();
         int dominioBusca = parcial.size();
@@ -74,8 +82,8 @@ public class Busca {
         for (int i = 0; i < dominioBusca; i++) {
             int indiceParaBusca = parcial.get(i);
             if (base.get(indiceParaBusca).contains(criterio)) {
-               encontrados.add(indiceParaBusca);
-           }
+                encontrados.add(indiceParaBusca);
+            }
         }
 
         return encontrados;

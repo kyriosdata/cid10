@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="">
+    <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="pequeno erro na busca.">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/BuscaTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java" />
     </list>
@@ -48,8 +49,8 @@
       <file leaf-file-name="busca.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/busca.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38426">
-              <caret line="15017" column="29" lean-forward="false" selection-start-line="15017" selection-start-column="29" selection-end-line="15017" selection-end-column="29" />
+            <state relative-caret-position="322176">
+              <caret line="13424" column="35" lean-forward="false" selection-start-line="13424" selection-start-column="35" selection-end-line="13424" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -58,8 +59,20 @@
       <file leaf-file-name="Busca.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuscaTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/BuscaTest.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="552">
-              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+              <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,6 +142,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/BuscaTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java" />
       </list>
     </option>
@@ -240,6 +254,56 @@
               <item name="cid10" type="462c0819:PsiDirectoryNode" />
               <item name="preprocessor" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kyriosdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kyriosdata" type="462c0819:PsiDirectoryNode" />
+              <item name="cid10" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kyriosdata" type="462c0819:PsiDirectoryNode" />
+              <item name="cid10" type="462c0819:PsiDirectoryNode" />
+              <item name="busca" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kyriosdata" type="462c0819:PsiDirectoryNode" />
+              <item name="cid10" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessor" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -282,7 +346,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Busca">
+  <component name="RunManager" selected="JUnit.BuscaTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -360,20 +424,45 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="FileFromResourcesFolderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BuscaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.github.kyriosdata.cid10.preprocessor.*" />
+          <option name="PATTERN" value="com.github.kyriosdata.cid10.busca.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="preprocessor" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.github.kyriosdata.cid10.preprocessor" />
-      <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.cid10.preprocessor.FileFromResourcesFolderTest" />
+      <option name="PACKAGE_NAME" value="com.github.kyriosdata.cid10.busca" />
+      <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.cid10.busca.BuscaTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="BuscaTest.algunsExistentes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.github.kyriosdata.cid10.busca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="preprocessor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.github.kyriosdata.cid10.busca" />
+      <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.cid10.busca.BuscaTest" />
+      <option name="METHOD_NAME" value="algunsExistentes" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -445,18 +534,20 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.FileFromResourcesFolderTest" />
-      <item index="2" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Busca" />
+      <item index="1" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Busca" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BuscaTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BuscaTest.algunsExistentes" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.Busca" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FileFromResourcesFolderTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BuscaTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BuscaTest.algunsExistentes" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Busca" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
+        <item index="4" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
       </list>
     </recent_temporary>
   </component>
@@ -486,7 +577,7 @@
       <workItem from="1513340158218" duration="1761000" />
       <workItem from="1513342273629" duration="11048000" />
       <workItem from="1513365259116" duration="6769000" />
-      <workItem from="1513506343408" duration="7534000" />
+      <workItem from="1513506343408" duration="9083000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -572,31 +663,50 @@
       <option name="project" value="LOCAL" />
       <updated>1513519940887</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="pequeno erro na busca.">
+      <created>1513520754848</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1513520754848</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FileFromResourcesFolderTest - 2017.12.10 at 16h 44m 57s.xml">
-      <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 35m 19s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileFromResourcesFolderTest - 2017.12.10 at 16h 52m 29s.xml">
-      <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 36m 18s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileFromResourcesFolderTest - 2017.12.10 at 17h 10m 39s.xml">
-      <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 37m 34s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileFromResourcesFolderTest - 2017.12.10 at 17h 13m 42s.xml">
-      <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 38m 12s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileFromResourcesFolderTest - 2017.12.17 at 08h 26m 59s.xml">
-      <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 40m 31s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileFromResourcesFolderTest - 2017.12.17 at 08h 29m 06s.xml">
-      <configuration name="FileFromResourcesFolderTest" configurationId="JUnit" />
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 41m 44s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 50m 16s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 50m 32s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BuscaTest - 2017.12.17 at 12h 51m 21s.xml">
+      <configuration name="BuscaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BuscaTest_algunsExistentes - 2017.12.17 at 12h 39m 34s.xml">
+      <configuration name="BuscaTest.algunsExistentes" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51459000" />
+    <option name="totallyTimeSpent" value="53008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="1559" height="1177" extended-state="0" />
@@ -611,7 +721,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32809612" sideWeight="0.50224215" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32809612" sideWeight="0.49775785" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32809612" sideWeight="0.49775785" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -650,16 +760,30 @@
     <MESSAGE value="elimina duplicidade de entradas com mesma chaveˆ" />
     <MESSAGE value="arquivo original nao possui duplicidades" />
     <MESSAGE value="execucao da busca." />
-    <option name="LAST_COMMIT_MESSAGE" value="execucao da busca." />
+    <MESSAGE value="pequeno erro na busca." />
+    <option name="LAST_COMMIT_MESSAGE" value="pequeno erro na busca." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/BuscaTest.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>base.get(0)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>base.get(1414).contains(&quot;gu&quot;)</expression-string>
         <language-id>JAVA</language-id>
@@ -692,13 +816,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Gerador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cid-datasus/CID-O-GRUPOS.CSV" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Transformador.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -940,14 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codigos.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="556">
@@ -988,18 +1097,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/busca.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38426">
-          <caret line="15017" column="29" lean-forward="false" selection-start-line="15017" selection-start-column="29" selection-end-line="15017" selection-end-column="29" />
+        <state relative-caret-position="322176">
+          <caret line="13424" column="35" lean-forward="false" selection-start-line="13424" selection-start-column="35" selection-end-line="13424" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/BuscaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        <state relative-caret-position="407">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
