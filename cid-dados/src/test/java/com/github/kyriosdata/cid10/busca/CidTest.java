@@ -21,7 +21,7 @@ import static junit.framework.Assert.assertEquals;
  * IMPORTANTE: você deve executar as classes
  * {@link com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado} e
  * {@link com.github.kyriosdata.cid10.preprocessor.GeraDadosAjustadosParaBusca}
- * antes que os testes desta classe possam ser executados. 
+ * antes que os testes desta classe possam ser executados.
  */
 public class CidTest {
 
