@@ -18,8 +18,6 @@ import static org.junit.Assert.assertEquals;
 
 public class BuscaTest {
 
-    private Busca b;
-
     @Test
     public void criterioInexistenteNenhumCodigoEncontrado() {
         assertEquals(0, Busca.encontre(new String[] { "xyzw" }).size());
