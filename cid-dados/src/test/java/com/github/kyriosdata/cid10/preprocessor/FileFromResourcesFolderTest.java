@@ -10,12 +10,12 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.nio.file.Path;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static junit.framework.Assert.assertNull;
+import static org.junit.Assert.assertNotNull;
 
 public class FileFromResourcesFolderTest {
 

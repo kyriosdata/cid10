@@ -15,24 +15,25 @@ package com.github.kyriosdata.cid10.busca;
 import com.github.kyriosdata.cid10.preprocessor.ArquivoUtils;
 import com.github.kyriosdata.cid10.preprocessor.GeraDadosAjustadosParaBusca;
 import com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.io.File;
 import java.nio.file.Path;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static junit.framework.Assert.assertEquals;
 
 public class CidTest {
 
     private static Cid cid;
 
-    @BeforeAll
+    @BeforeClass
     public static void setUp() throws Exception {
         GeraOriginalAjustado.gerador();
         GeraDadosAjustadosParaBusca.gerador();
 
         Path dir = ArquivoUtils.getPath("cid/capitulos.csv");
+
         Path parent = dir.getParent();
         File[] arquivos = parent.toFile().listFiles();
         assertEquals(5, arquivos.length);
