@@ -12,6 +12,8 @@ package com.github.kyriosdata.cid10.preprocessor;
 
 import com.github.kyriosdata.cid10.busca.ArquivoUtils;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -120,7 +122,7 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> processaCategoriasOncologia(String arquivo) {
-        List<String> linhas = ArquivoUtils.getLinhas(arquivo);
+        List<String> linhas = getLinhas(arquivo);
         List<String> saida = new ArrayList<>(linhas.size());
 
         linhas.forEach(l -> {
@@ -133,7 +135,7 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> processaCapitulos(String arquivo) {
-        List<String> linhas = ArquivoUtils.getLinhas(arquivo);
+        List<String> linhas = getLinhas(arquivo);
         List<String> saida = new ArrayList<>(linhas.size());
 
         linhas.forEach(l -> {
@@ -151,7 +153,7 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> processaSubcategorias(String arquivo) {
-        List<String> linhas = ArquivoUtils.getLinhas(arquivo);
+        List<String> linhas = getLinhas(arquivo);
 
         List<String> saida = new ArrayList<String>(linhas.size());
 
@@ -169,7 +171,7 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> excluiColunaDeLinha(String entrada, int ignora) {
-        List<String> linhas = ArquivoUtils.getLinhas(entrada);
+        List<String> linhas = getLinhas(entrada);
 
         List<String> processadas = new ArrayList<String>(linhas.size());
 
@@ -190,7 +192,7 @@ public class GeraOriginalAjustado {
      * @param entrada Nome do arquivo contendo as categorias.
      */
     private static List<String> processaCategorias(String entrada) {
-        List<String> linhas = ArquivoUtils.getLinhas(entrada);
+        List<String> linhas = getLinhas(entrada);
 
         List<String> processadas = new ArrayList<String>(linhas.size());
 
@@ -239,4 +241,23 @@ public class GeraOriginalAjustado {
         return novaLinha;
     }
 
+    /**
+     * Recupera lista de linhas de arquivo CSV.
+     *
+     * @param entrada Nome do arquivo CSV.
+     * @return Lista de linhas correspondentes ao conteúdo do arquivo CSV.
+     * @throws IOException
+     */
+    public static List<String> getLinhas(String entrada) {
+        List<String> linhas = null;
+        try {
+            String fileName = DIR + entrada;
+            Path grupos = ArquivoUtils.getPath(fileName);
+            linhas = Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
+        } catch (Exception exp) {
+            System.err.println(exp.toString());
+        }
+
+        return linhas;
+    }
 }
