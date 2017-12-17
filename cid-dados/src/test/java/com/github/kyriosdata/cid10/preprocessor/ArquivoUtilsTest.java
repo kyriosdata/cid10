@@ -18,7 +18,7 @@ import java.nio.file.Path;
 import static junit.framework.Assert.assertNull;
 import static org.junit.Assert.assertNotNull;
 
-public class FileFromResourcesFolderTest {
+public class ArquivoUtilsTest {
 
     @Test
     public void acessoCorretoEmResources() {
