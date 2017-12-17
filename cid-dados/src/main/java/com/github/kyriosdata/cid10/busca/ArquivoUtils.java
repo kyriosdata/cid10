@@ -54,16 +54,6 @@ public class ArquivoUtils {
         return resource == null ? null : Paths.get(uri);
     }
 
-    public static void armazena(List<String> dados, Path path) {
-        Charset charset = StandardCharsets.UTF_8;
-
-        try {
-            Files.write(path, dados, charset, StandardOpenOption.CREATE);
-        } catch (IOException e) {
-            System.err.println(e);
-        }
-    }
-
     public static List<String> carrega(Path path) {
         try {
             return Files.readAllLines(path, StandardCharsets.UTF_8);

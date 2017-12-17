@@ -13,10 +13,12 @@ package com.github.kyriosdata.cid10.preprocessor;
 import com.github.kyriosdata.cid10.busca.ArquivoUtils;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,15 +70,15 @@ public class GeraOriginalAjustado {
         // Capítulos
         List<String> chapters = processaCapitulos(CAPITULOS);
         Path chapter = Paths.get(OUT_DIR, OUT_CAPITULOS);
-        ArquivoUtils.armazena(chapters, chapter);
+        armazena(chapters, chapter);
 
         // Grupos
         List<String> groups = processaGrupo(GRUPOS);
-        ArquivoUtils.armazena(groups, Paths.get(OUT_DIR, OUT_GRUPOS));
+        armazena(groups, Paths.get(OUT_DIR, OUT_GRUPOS));
 
         // Grupos oncologia
         List<String> go = processaGrupo(GRUPOS_ONCOLOGIA);
-        ArquivoUtils.armazena(go, Paths.get(OUT_DIR, OUT_GO));
+        armazena(go, Paths.get(OUT_DIR, OUT_GO));
 
         // Códigos = Categorias + Subcategorias + Categorias da oncologia
         List<String> categorias = processaCategorias(CATEGORIAS);
@@ -104,7 +106,7 @@ public class GeraOriginalAjustado {
             }
         }
 
-        ArquivoUtils.armazena(parcial, Paths.get(OUT_DIR, OUT_CODIGOS));
+        armazena(parcial, Paths.get(OUT_DIR, OUT_CODIGOS));
     }
 
     private static List<String> eliminaEspacoEmCategorias(List<String> codes) {
@@ -311,7 +313,7 @@ public class GeraOriginalAjustado {
         });
 
         Path pathBusca = Paths.get(OUT_DIR, "busca.csv");
-        ArquivoUtils.armazena(busca, pathBusca);
+        armazena(busca, pathBusca);
     }
 
     /**
@@ -344,5 +346,15 @@ public class GeraOriginalAjustado {
         }
 
         return saida;
+    }
+
+    public static void armazena(List<String> dados, Path path) {
+        Charset charset = StandardCharsets.UTF_8;
+
+        try {
+            Files.write(path, dados, charset, StandardOpenOption.CREATE);
+        } catch (IOException e) {
+            System.err.println(e);
+        }
     }
 }
