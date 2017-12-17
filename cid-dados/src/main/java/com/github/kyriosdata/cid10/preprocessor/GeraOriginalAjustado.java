@@ -10,9 +10,7 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Aplicação que gera em formato alternativo ao original, os dados
@@ -21,7 +19,6 @@ import java.util.List;
  * para "montagem" das estruturas de dados para busca. Ou seja, parte
  * considerável das operações são feitas pela presente classe, e não
  * em tempo de execução do serviço.
- *
  */
 public class GeraOriginalAjustado {
 
@@ -68,6 +65,15 @@ public class GeraOriginalAjustado {
 
         // Elimina espaço acrescentado para as categorias
         List<String> parcial = eliminaEspacoEmCategorias(codigos);
+
+        // Eliminar duplicidade de linha com mesma chave
+        for (int i = 0; i < parcial.size() - 1; i++) {
+            String item = parcial.get(i).split(";")[0];
+            String next = parcial.get(i + 1).split(";")[0];
+            if (item.equals(next)) {
+                parcial.remove(i);
+            }
+        }
 
         ArquivoUtils.armazena(parcial, "./", OUT_CODIGOS);
     }
@@ -177,7 +183,6 @@ public class GeraOriginalAjustado {
      * da linha fornecida.
      *
      * @param linha A linha CSV contendo várias colunas.
-     *
      * @return A linha CSV montada apenas com as colunas 0 e 2 da
      * linha de entrada.
      */
@@ -189,11 +194,9 @@ public class GeraOriginalAjustado {
     /**
      * Exclui coluna de uma linha CSV.
      *
-     * @param linha Linha CSV, cujo delimitador é ";" cuja coluna
-     *              indicada deve ser eliminada.
-     *
+     * @param linha  Linha CSV, cujo delimitador é ";" cuja coluna
+     *               indicada deve ser eliminada.
      * @param ignora Número da coluna a ser ignorada (zero-based).
-     *
      * @return A linha CSV inicialmente fornecida com a coluna
      * indicada excluída.
      */
@@ -201,7 +204,7 @@ public class GeraOriginalAjustado {
         String novaLinha = "";
         String[] campos = linha.split((";"));
         int total = campos.length;
-        for(int i = 0; i < total; i++) {
+        for (int i = 0; i < total; i++) {
             if (i == ignora) {
                 continue;
             }
