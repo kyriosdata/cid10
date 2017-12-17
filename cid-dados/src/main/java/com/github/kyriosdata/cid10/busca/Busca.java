@@ -23,12 +23,12 @@ import java.util.List;
  */
 public class Busca {
 
-    private static List<String> base;
+    private static List<String> busca;
     private static int total;
 
     static {
-        base = ArquivoUtils.carrega("./", "busca.csv");
-        total = base.size();
+        busca = ArquivoUtils.carrega("./", "busca.csv");
+        total = busca.size();
     }
 
     /**
@@ -52,7 +52,7 @@ public class Busca {
 
         String primeiro = criterios[0];
         for (int i = 0; i < total; i++) {
-            if (base.get(i).contains(primeiro)) {
+            if (busca.get(i).contains(primeiro)) {
                 resultado.add(i);
             }
         }
@@ -95,7 +95,7 @@ public class Busca {
 
         for (int i = 0; i < dominioBusca; i++) {
             int indiceParaBusca = parcial.get(i);
-            if (base.get(indiceParaBusca).contains(criterio)) {
+            if (busca.get(indiceParaBusca).contains(criterio)) {
                 encontrados.add(indiceParaBusca);
             }
         }

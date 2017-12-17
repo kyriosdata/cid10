@@ -44,4 +44,10 @@ public class BuscaTest {
         String[] termos = { "CÓLERA", "NÃO" };
         assertEquals(1, Busca.encontre(termos).size());
     }
+
+    @Test
+    public void outrosCasos() {
+        String[] termos = { "Paratifóide", "A" };
+        assertEquals(1, Busca.encontre(termos).size());
+    }
 }
