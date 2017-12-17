@@ -24,11 +24,15 @@ import java.util.List;
 public class Busca {
 
     private static List<String> busca;
+    private static List<String> original;
+
     private static int total;
 
     static {
         busca = ArquivoUtils.carrega("./", "busca.csv");
         total = busca.size();
+
+        original = ArquivoUtils.carrega("./", "codigos.csv");
     }
 
     /**
@@ -40,14 +44,14 @@ public class Busca {
      * @return Lista com os identificadores de ordem das
      * entradas na CID-10 que satisfazem os critérios fornecidos.
      */
-    public static List<Integer> encontre(String[] criterios) {
+    public static List<String> encontre(String[] criterios) {
 
         ajustaCriterios(criterios);
 
         List<Integer> resultado = new ArrayList<>();
 
         if (criterios.length == 0) {
-            return resultado;
+            return new ArrayList<>(0);
         }
 
         String primeiro = criterios[0];
@@ -61,16 +65,26 @@ public class Busca {
             resultado = consultaEm(criterios[i], resultado);
         }
 
-        return resultado;
+        return codigos(resultado);
     }
 
-    public static void ajustaCriterios(String[] criterios) {
+    private static List<String> codigos(List<Integer> lista) {
+        List<String> strs = new ArrayList<>(lista.size());
+
+        lista.forEach(i -> {
+            strs.add(original.get(i));
+        });
+
+        return strs;
+    }
+
+    private static void ajustaCriterios(String[] criterios) {
         for (int i = 0; i < criterios.length; i++) {
             criterios[i] = ajustaCriterio(criterios[i]);
         }
     }
 
-    public static String ajustaCriterio(String criterio) {
+    private static String ajustaCriterio(String criterio) {
         StringBuilder ajustado = new StringBuilder(criterio.toLowerCase());
 
         for (int i = 0; i < ajustado.length(); i++) {
