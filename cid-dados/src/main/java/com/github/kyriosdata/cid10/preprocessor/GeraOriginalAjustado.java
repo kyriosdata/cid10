@@ -10,8 +10,6 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
-import com.github.kyriosdata.cid10.busca.ArquivoUtils;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

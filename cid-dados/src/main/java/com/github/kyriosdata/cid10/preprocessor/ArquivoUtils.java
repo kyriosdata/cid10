@@ -10,7 +10,7 @@
  *
  */
 
-package com.github.kyriosdata.cid10.busca;
+package com.github.kyriosdata.cid10.preprocessor;
 
 import java.io.File;
 import java.io.IOException;
