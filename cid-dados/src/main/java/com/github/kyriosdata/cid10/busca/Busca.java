@@ -1,0 +1,83 @@
+/*
+ *
+ *  * Copyright (c) 2017
+ *  *
+ *  * Fábio Nogueira de Lucena
+ *  * Fábrica de Software - Instituto de Informática (UFG)
+ *  *
+ *  * Creative Commons Attribution 4.0 International License.
+ *
+ *
+ */
+
+package com.github.kyriosdata.cid10.busca;
+
+import com.github.kyriosdata.cid10.preprocessor.ArquivoUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Implementa busca sobre informações contidas na CID-10.
+ *
+ */
+public class Busca {
+
+    private static List<String> base;
+    private static int total;
+
+    public static void main(String[] args) {
+        base = ArquivoUtils.carrega("./", "busca.csv");
+        total = base.size();
+
+        List<Integer> resposta = encontre(new String[] { "/3"});
+        resposta.forEach(indice -> System.out.println(base.get(indice)));
+
+        System.out.println(resposta.size());
+    }
+
+    /**
+     * Procura por entradas na CID-10 que contêm todos os
+     * critérios fornecidos.
+     *
+     * @param criterios Elementos que devem estar presentes
+     *                  em toda entrada da CID-10 que os contêm.
+     *
+     * @return Lista com os identificadores de ordem das
+     * entradas na CID-10 que satisfazem os critérios fornecidos.
+     */
+    public static List<Integer> encontre(String[] criterios) {
+        List<Integer> resultado = new ArrayList<>();
+
+        if (criterios.length == 0) {
+            return resultado;
+        }
+
+        String primeiro = criterios[0];
+        for (int i = 0; i < total; i++) {
+            if (base.get(i).contains(primeiro)) {
+                resultado.add(i);
+            }
+        }
+
+        for (int i = 1; i < criterios.length; i++) {
+            resultado = consultaEm(criterios[i], resultado);
+        }
+
+        return resultado;
+    }
+
+    private static List<Integer> consultaEm(String criterio, List<Integer> parcial) {
+        List<Integer> encontrados = new ArrayList<>();
+        int dominioBusca = parcial.size();
+
+        for (int i = 0; i < dominioBusca; i++) {
+            int indiceParaBusca = parcial.get(i);
+            if (base.get(indiceParaBusca).contains(criterio)) {
+               encontrados.add(i);
+           }
+        }
+
+        return encontrados;
+    }
+}
