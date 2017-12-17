@@ -33,4 +33,15 @@ public class BuscaTest {
         assertEquals(1, Busca.encontre(new String[] { "A000" }).size());
         assertEquals(1, Busca.encontre(new String[] { "a000" }).size());
     }
+
+    @Test
+    public void algunsSimbolosSaoIgnorados() {
+        assertEquals(1, Busca.encontre(new String[] { "a000,;" }).size());
+    }
+
+    @Test
+    public void acentosIgnorados() {
+        String[] termos = { "CÓLERA", "NÃO" };
+        assertEquals(1, Busca.encontre(termos).size());
+    }
 }

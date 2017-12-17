@@ -70,9 +70,16 @@ public class Busca {
     }
 
     public static String ajustaCriterio(String criterio) {
-        String ajustado = criterio.toLowerCase();
+        StringBuilder ajustado = new StringBuilder(criterio.toLowerCase());
 
-        return ajustado;
+        for (int i = 0; i < ajustado.length(); i++) {
+            char letra = ajustado.charAt(i);
+            if (letra == ';' || letra == ',') {
+                ajustado.deleteCharAt(i);
+            }
+        }
+
+        return ajustado.toString();
     }
 
     private static List<Integer> consultaEm(String criterio, List<Integer> parcial) {
