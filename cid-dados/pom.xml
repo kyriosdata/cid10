@@ -69,17 +69,6 @@
                             <classpathScope>test</classpathScope>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>build-test-environment-busca</id>
-                        <phase>generate-test-resources</phase>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                        <configuration>
-                            <mainClass>com.github.kyriosdata.cid10.preprocessor.GeraDadosAjustadosParaBusca</mainClass>
-                            <classpathScope>test</classpathScope>
-                        </configuration>
-                    </execution>
                 </executions>
             </plugin>
 

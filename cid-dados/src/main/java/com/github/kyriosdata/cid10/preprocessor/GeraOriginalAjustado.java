@@ -17,7 +17,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.Normalizer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -53,6 +55,7 @@ public class GeraOriginalAjustado {
      */
     public static void main(String[] args) throws Exception {
         gerador();
+        geraEstruturaParaBusca();
     }
 
     public static void gerador() throws Exception {
@@ -259,5 +262,87 @@ public class GeraOriginalAjustado {
         }
 
         return linhas;
+    }
+
+    public static void geraEstruturaParaBusca() {
+        List<String> busca = new ArrayList<>();
+
+        Path path = Paths.get(OUT_DIR, "codigos.csv");
+        List<String> codes = ArquivoUtils.carrega(path);
+
+        codes.forEach(l -> {
+            String nl = l;
+
+            // Minúsculas apenas
+            nl = l.toLowerCase();
+
+            // Eliminar vírgulas
+            nl = nl.replaceAll(",", "");
+
+            // Plural simples, troca "(s)" por "s" e "(es)" por "es"
+            nl = nl.replaceAll("\\(s\\)", "s");
+            nl = nl.replaceAll("\\(es\\)", "es");
+
+            // Troca colchete e parêntese por espaço
+            nl = nl.replaceAll("[\\[\\]\\(\\)]", " ");
+
+            // Troca hífen por espaço
+            nl = nl.replaceAll("-", " ");
+
+            // Remove acentos
+            nl = removeSinais(nl);
+
+            // Troca aspa por espaço
+            nl = nl.replaceAll("\"", " ");
+
+            // Elimina preposições, artigos,...
+            nl = eliminaAlgumasPalavras(nl);
+
+            // Troca dois ou mais espaços por apenas um espaço
+            nl = nl.replaceAll("[ ]{2,}", " ");
+
+            // Coluna sexo não empregada na busca
+            String[] campos = nl.split(";");
+            campos[0] = campos[0].trim();
+            campos[2] = campos[2].trim();
+            nl = String.format("%s;%s", campos[0], campos[2]);
+
+            busca.add(nl);
+        });
+
+        Path pathBusca = Paths.get(OUT_DIR, "busca.csv");
+        ArquivoUtils.armazena(busca, pathBusca);
+    }
+
+    /**
+     * Assume palavras apenas com letras minúsculas.
+     */
+    private static String removeSinais(String entrada) {
+        String sa = Normalizer.normalize(entrada, Normalizer.Form.NFD);
+
+        return sa.replaceAll("\\p{M}", "");
+    }
+
+    private static String eliminaAlgumasPalavras(String entrada) {
+        List<String> paraRemover = Arrays.asList(new String[]{
+                " de ", " da ", " das ", " do ", " dos ",
+                " a ", " as ", " e ", " o ", " os ",
+                " na ", " nas ", " no ", " nos ",
+                " para ",
+                " que ", " com ", " ou ",
+                " em ", " por "
+        });
+
+        String saida = entrada;
+
+        for (int i = 0; i < paraRemover.size(); i++) {
+            for (String eliminar : paraRemover) {
+                if (saida.contains(eliminar)) {
+                    saida = saida.replaceAll(eliminar, " ");
+                }
+            }
+        }
+
+        return saida;
     }
 }
