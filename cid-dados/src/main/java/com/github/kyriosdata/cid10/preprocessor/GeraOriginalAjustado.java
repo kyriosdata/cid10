@@ -41,7 +41,7 @@ public class GeraOriginalAjustado {
     public static final String OUT_GO = "go.csv";
     public static final String OUT_CODIGOS = "codigos.csv";
 
-    public static void main(String[] args) throws Exception {
+    public static void gerador() throws Exception {
 
         Path outPath = Paths.get(OUT_DIR);
         if (!Files.exists(outPath)) {

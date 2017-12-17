@@ -31,7 +31,7 @@ public class GeraDadosAjustadosParaBusca {
 
     public static final String OUT_DIR = "./src/main/resources/cid";
 
-    public static void main(String[] args) {
+    public static void gerador() {
         List<String> busca = new ArrayList<>();
 
         Path path = Paths.get(OUT_DIR, "codigos.csv");

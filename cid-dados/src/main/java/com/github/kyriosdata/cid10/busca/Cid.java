@@ -27,25 +27,24 @@ public class Cid {
     /**
      * Estrutura sobre a qual a busca é feita.
      */
-    private static List<String> busca;
+    private List<String> busca;
 
     /**
      * Estrutura que contém a versão "original" das
      * entradas da CID. Empregada para montagem do
      * retorno.
      */
-    private static List<String> original;
+    private List<String> original;
 
     /**
      * Estrutura que mantém os capítulos.
      */
-    private static List<String> capitulos;
+    private List<String> capitulos;
 
-    private static int total;
+    private int total;
 
-    static {
+    public Cid() {
         Path path = ArquivoUtils.getPath("cid/busca.csv");
-
         busca = ArquivoUtils.carrega(path);
         total = busca.size();
 
@@ -63,7 +62,7 @@ public class Cid {
      *
      * @return Lista contendo os capítulos da CID-10.
      */
-    public static List<String> capitulos() {
+    public List<String> capitulos() {
         return capitulos;
     }
 
@@ -76,7 +75,7 @@ public class Cid {
      * @return Lista com os identificadores de ordem das
      * entradas na CID-10 que satisfazem os critérios fornecidos.
      */
-    public static List<String> encontre(String[] criterios) {
+    public List<String> encontre(String[] criterios) {
 
         ajustaCriterios(criterios);
 
@@ -100,7 +99,7 @@ public class Cid {
         return codigos(resultado);
     }
 
-    private static List<String> codigos(List<Integer> lista) {
+    private List<String> codigos(List<Integer> lista) {
         List<String> strs = new ArrayList<>(lista.size());
 
         lista.forEach(i -> {
@@ -135,7 +134,7 @@ public class Cid {
         return sa.replaceAll("\\p{M}", "");
     }
 
-    private static List<Integer> consultaEm(String criterio, List<Integer> parcial) {
+    private List<Integer> consultaEm(String criterio, List<Integer> parcial) {
         List<Integer> encontrados = new ArrayList<>();
         int dominioBusca = parcial.size();
 
