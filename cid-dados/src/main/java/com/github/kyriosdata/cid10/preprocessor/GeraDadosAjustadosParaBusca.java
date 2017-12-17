@@ -12,6 +12,7 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
+import java.text.Normalizer;
 import java.util.*;
 
 /**
@@ -74,20 +75,9 @@ public class GeraDadosAjustadosParaBusca {
      * Assume palavras apenas com letras minúsculas.
      */
     private static String removeSinais(String entrada) {
-        String comAcentos = "äáâàãéêëèíîïìöóôòõüúûùçª";
-        String semAcentos = "aaaaaeeeeiiiiooooouuuuca";
+        String sa = Normalizer.normalize(entrada, Normalizer.Form.NFD);
 
-        final int SIZE = comAcentos.length();
-
-        String saida = entrada;
-
-        for (int j = 0; j < SIZE; j++) {
-            String acento = "" + comAcentos.charAt(j);
-            String semAcento = "" + semAcentos.charAt(j);
-            saida = saida.replaceAll(acento, semAcento);
-        }
-
-        return saida;
+        return sa.replaceAll("\\p{M}", "");
     }
 
     private static String eliminaAlgumasPalavras(String entrada) {

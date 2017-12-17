@@ -14,6 +14,7 @@ package com.github.kyriosdata.cid10.busca;
 
 import com.github.kyriosdata.cid10.preprocessor.ArquivoUtils;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,7 +80,13 @@ public class Busca {
             }
         }
 
-        return ajustado.toString();
+        return removeAcentos(ajustado.toString());
+    }
+
+    private static String removeAcentos(String original) {
+        String sa = Normalizer.normalize(original, Normalizer.Form.NFD);
+
+        return sa.replaceAll("\\p{M}", "");
     }
 
     private static List<Integer> consultaEm(String criterio, List<Integer> parcial) {
