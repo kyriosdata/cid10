@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="pequeno erro na busca.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/ArquivoUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtilsTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtilsTest.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,12 +18,52 @@
       <file leaf-file-name="Cid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="199">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="e#553#554#0" expanded="true" />
                 <element signature="e#622#623#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="busca.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/cid/busca.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codigos.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/cid/codigos.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grupos.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/cid/grupos.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="go.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/cid/go.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArquivoUtils.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArquivoUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="418">
+              <caret line="36" column="7" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -130,8 +169,8 @@
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/ArquivoUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java" />
       </list>
     </option>
   </component>
@@ -570,7 +609,7 @@
       <workItem from="1513340158218" duration="1761000" />
       <workItem from="1513342273629" duration="11048000" />
       <workItem from="1513365259116" duration="6769000" />
-      <workItem from="1513506343408" duration="34130000" />
+      <workItem from="1513506343408" duration="34620000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -670,9 +709,6 @@
     <history-entry file="ArquivoUtilsTest - 2017.12.17 at 19h 55m 36s.xml">
       <configuration name="ArquivoUtilsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CidTest - 2017.12.17 at 18h 52m 18s.xml">
-      <configuration name="CidTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CidTest - 2017.12.17 at 18h 55m 21s.xml">
       <configuration name="CidTest" configurationId="JUnit" />
     </history-entry>
@@ -697,9 +733,12 @@
     <history-entry file="CidTest - 2017.12.17 at 20h 31m 15s.xml">
       <configuration name="CidTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CidTest - 2017.12.17 at 20h 32m 24s.xml">
+      <configuration name="CidTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78055000" />
+    <option name="totallyTimeSpent" value="78545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="1559" height="1177" extended-state="0" />
@@ -832,27 +871,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Gerador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/FileFromResourcesFolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Busca.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Agrupador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1112,14 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/grupos.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1156,6 +1166,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="36" column="7" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -1164,10 +1182,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/grupos.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/go.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/busca.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="199">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="e#553#554#0" expanded="true" />
             <element signature="e#622#623#0" expanded="true" />
@@ -1175,10 +1217,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/codigos.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        <state relative-caret-position="72">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
           <folding />
         </state>
       </provider>

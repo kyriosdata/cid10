@@ -52,7 +52,6 @@ public class Cid {
         total = busca.size();
 
         original = getConteudo("cid/codigos.csv");
-        original.remove(0);
 
         // Recupera capítulos e remove header.
         capitulos = getConteudo("cid/capitulos.csv");
