@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../cid-busca/pom.xml" afterPath="$PROJECT_DIR$/../cid-busca/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/../cid-busca/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../cid-busca/src/main/resources/application.properties" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,21 +25,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="codigos.csv" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/codigos.csv">
+      <file leaf-file-name="GeraDadosAjustadosParaBusca.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="15047" column="36" lean-forward="true" selection-start-line="15047" selection-start-column="36" selection-end-line="15047" selection-end-column="36" />
+            <state relative-caret-position="297">
+              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeraDadosAjustadosParaBusca.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java">
+      <file leaf-file-name="busca.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/busca.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state relative-caret-position="22333">
+              <caret line="15017" column="29" lean-forward="false" selection-start-line="15017" selection-start-column="29" selection-end-line="15017" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -107,8 +105,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/FileFromResourcesFolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" />
       </list>
     </option>
   </component>
@@ -199,36 +197,6 @@
               <item name="kyriosdata" type="462c0819:PsiDirectoryNode" />
               <item name="preprocessor" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kyriosdata" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kyriosdata" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocessor" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -271,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GeraOriginalAjustado">
+  <component name="RunManager" selected="Application.GeraDadosAjustadosParaBusca">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -422,9 +390,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.FileFromResourcesFolderTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
+        <item index="0" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.FileFromResourcesFolderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -454,7 +422,7 @@
       <workItem from="1513340158218" duration="1761000" />
       <workItem from="1513342273629" duration="11048000" />
       <workItem from="1513365259116" duration="6769000" />
-      <workItem from="1513506343408" duration="3052000" />
+      <workItem from="1513506343408" duration="3398000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -519,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513367456200</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="elimina duplicidade de entradas com mesma chaveˆ">
+      <created>1513516284024</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1513516284024</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -543,7 +518,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46977000" />
+    <option name="totallyTimeSpent" value="47323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="1559" height="1177" extended-state="0" />
@@ -594,7 +569,8 @@
     <MESSAGE value="grupos oncologia" />
     <MESSAGE value="versao original (ajustada) concluída" />
     <MESSAGE value="organizacao" />
-    <option name="LAST_COMMIT_MESSAGE" value="organizacao" />
+    <MESSAGE value="elimina duplicidade de entradas com mesma chaveˆ" />
+    <option name="LAST_COMMIT_MESSAGE" value="elimina duplicidade de entradas com mesma chaveˆ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -624,7 +600,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cid-datasus/CID-10-SUBCATEGORIAS.CSV" />
     <entry file="file://$PROJECT_DIR$/cid-datasus/CID-O-CATEGORIAS.CSV" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Gerador.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -890,10 +865,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java">
+    <entry file="file://$PROJECT_DIR$/codigos.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+        <state relative-caret-position="556">
+          <caret line="15051" column="0" lean-forward="true" selection-start-line="15051" selection-start-column="0" selection-end-line="15051" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grupos.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6068">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busca.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22333">
+          <caret line="15017" column="29" lean-forward="false" selection-start-line="15017" selection-start-column="29" selection-end-line="15017" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -906,18 +897,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grupos.csv">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codigos.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="15047" column="36" lean-forward="true" selection-start-line="15047" selection-start-column="36" selection-end-line="15047" selection-end-column="36" />
+        <state relative-caret-position="297">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>

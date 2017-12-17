@@ -67,24 +67,7 @@ public class GeraDadosAjustadosParaBusca {
             busca.add(nl);
         });
 
-        // Elimina duplicidades pelas chaves
-        List<String> semDuplicidades = new ArrayList<>();
-
-        Set<String> chaves = new HashSet<>();
-
-        busca.forEach(l -> {
-            String[] c = l.split(";");
-            if (c.length != 2) {
-                throw new RuntimeException("apenas duas colunas");
-            }
-
-            if (!chaves.contains(c[0])) {
-                chaves.add(c[0]);
-                semDuplicidades.add(l);
-            }
-        });
-
-        ArquivoUtils.armazena(semDuplicidades, "./", "busca.csv");
+        ArquivoUtils.armazena(busca, "./", "busca.csv");
     }
 
     /**
