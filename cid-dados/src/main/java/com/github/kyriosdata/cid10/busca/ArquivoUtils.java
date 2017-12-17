@@ -33,7 +33,7 @@ public class ArquivoUtils {
      * depositado no diretório "resources".
      *
      * @param fileName Nome do arquivo relativo ao diretório "resources".
-     * @return Instância de {@link File}.
+     * @return Instância de {@link Path}.
      */
     public static Path getPath(String fileName) {
         ArquivoUtils obj = new ArquivoUtils();

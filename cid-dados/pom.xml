@@ -42,6 +42,7 @@
                         <addMavenDescriptor>false</addMavenDescriptor>
                         <manifest>
                             <addClasspath>false</addClasspath>
+                            <mainClass>com.github.kyriosdata.cid10.busca.Cid</mainClass>
                         </manifest>
                     </archive>
                     <excludes>

@@ -12,7 +12,13 @@
 
 package com.github.kyriosdata.cid10.busca;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +27,10 @@ import java.util.List;
  * Implementa busca sobre informações contidas na CID-10.
  */
 public class Cid {
+
+    public static void main(String[] args) {
+        new Cid().encontre(args).forEach(System.out::println);
+    }
 
     /**
      * Estrutura sobre a qual a busca é feita.
@@ -42,17 +52,41 @@ public class Cid {
     private int total;
 
     public Cid() {
-        Path path = ArquivoUtils.getPath("cid/busca.csv");
+        Path path = getPath("cid/busca.csv");
         busca = ArquivoUtils.carrega(path);
         total = busca.size();
 
-        Path codigos = ArquivoUtils.getPath("cid/codigos.csv");
-        original = ArquivoUtils.carrega(codigos);
+        Path codigos = getPath("cid/codigos.csv");
+        original = carrega(codigos);
 
         // Recupera capítulos e remove header.
-        Path chapter = ArquivoUtils.getPath("cid/capitulos.csv");
-        capitulos = ArquivoUtils.carrega(chapter);
+        Path chapter = getPath("cid/capitulos.csv");
+        capitulos = carrega(chapter);
         capitulos.remove(0);
+    }
+
+    public Path getPath(String fileName) {
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL resource = classLoader.getResource(fileName);
+        URI uri = null;
+
+        try {
+            uri = resource.toURI();
+        } catch (Exception exp) {
+            return null;
+        }
+
+        return resource == null ? null : Paths.get(uri);
+    }
+
+    public static List<String> carrega(Path path) {
+        try {
+            return Files.readAllLines(path, StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            System.err.println(e);
+        }
+
+        return null;
     }
 
     /**
