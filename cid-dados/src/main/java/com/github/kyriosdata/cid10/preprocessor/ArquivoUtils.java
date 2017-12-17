@@ -33,7 +33,6 @@ public class ArquivoUtils {
      * depositado no diretório "resources".
      *
      * @param fileName Nome do arquivo relativo ao diretório "resources".
-     *
      * @return Instância de {@link File}.
      */
     public static Path getPath(String fileName) {
@@ -44,7 +43,7 @@ public class ArquivoUtils {
 
         try {
             uri = resource.toURI();
-        } catch(Exception exp) {
+        } catch (Exception exp) {
             return null;
         }
 
@@ -55,9 +54,7 @@ public class ArquivoUtils {
      * Recupera lista de linhas de arquivo CSV.
      *
      * @param entrada Nome do arquivo CSV.
-     *
      * @return Lista de linhas correspondentes ao conteúdo do arquivo CSV.
-     *
      * @throws IOException
      */
     public static List<String> getLinhas(String entrada) {
@@ -73,8 +70,7 @@ public class ArquivoUtils {
         return linhas;
     }
 
-    public static void armazena(List<String> dados, String dir, String file) {
-        Path path = Paths.get(dir, file);
+    public static void armazena(List<String> dados, Path path) {
         Charset charset = StandardCharsets.UTF_8;
 
         try {

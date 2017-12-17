@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="pequeno erro na busca.">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CID-10-CAPITULOS.JSON" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CID-10-CATEGORIAS.JSON" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CID-10-GRUPOS.JSON" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CID-10-SUBCATEGORIAS.JSON" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CID-O-CATEGORIAS.JSON" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CID-O-GRUPOS.JSON" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid-10-capitulos-lower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid-10-categorias-lower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid-10-grupos-lower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid-10-subcategorias-lower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid-o-categorias-lower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid-o-grupos-lower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid10.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid10.org" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid10.ser" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +17,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GeraDadosAjustadosParaBusca.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GeraOriginalAjustado.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeraDadosAjustadosParaBusca.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1608">
-              <caret line="77" column="15" lean-forward="false" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
+            <state relative-caret-position="300">
+              <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,8 +44,18 @@
       <file leaf-file-name="ArquivoUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="95" column="20" lean-forward="false" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
+            <state relative-caret-position="247">
+              <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Agrupador.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Agrupador.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-838">
+              <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -53,8 +64,8 @@
       <file leaf-file-name="Cid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="51" column="46" lean-forward="false" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+            <state relative-caret-position="-180">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1369#1370#0" expanded="true" />
@@ -64,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+            <state relative-caret-position="415">
+              <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -149,14 +160,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/Aplicacao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/FileFromResourcesFolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/BuscaTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Busca.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" />
       </list>
     </option>
   </component>
@@ -297,6 +308,22 @@
               <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
               <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="cid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="datasus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cid-dados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cid-dados" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -386,7 +413,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GeraOriginalAjustado">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -589,10 +616,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CidTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CidTest.verificaCapitulos" />
-        <item index="2" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
-        <item index="3" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
+        <item index="0" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CidTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CidTest.verificaCapitulos" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.CidTest.acentosIgnorados" />
       </list>
     </recent_temporary>
@@ -623,7 +650,7 @@
       <workItem from="1513340158218" duration="1761000" />
       <workItem from="1513342273629" duration="11048000" />
       <workItem from="1513365259116" duration="6769000" />
-      <workItem from="1513506343408" duration="17610000" />
+      <workItem from="1513506343408" duration="20790000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -752,10 +779,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61535000" />
+    <option name="totallyTimeSpent" value="64715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="1559" height="1177" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -777,7 +805,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32809612" sideWeight="0.49775785" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2346737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2346737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994455" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -810,12 +838,41 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>getPath(&quot;./&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getPath(&quot;cid/cidades.csv&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getPath(&quot;cidades.csv&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Normalizer.normalize(&quot;cólera&quot;,Normalizer.Form.NFD).replaceAll(&quot;\\p{M}&quot;,&quot;&quot;)</expression-string>
         <language-id>JAVA</language-id>
@@ -1005,13 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Agrupador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-766">
-          <caret line="17" column="59" lean-forward="true" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/Cid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1099,14 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="95" column="20" lean-forward="false" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1123,14 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/busca.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321792">
@@ -1139,33 +1173,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1608">
-          <caret line="77" column="15" lean-forward="false" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/capitulos.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="51" column="46" lean-forward="false" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1369#1370#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1191,19 +1203,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/cid-o-grupos-lower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/bsus/cid10/preprocessor/Agrupador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-838">
+          <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1369#1370#0" expanded="true" />
+            <element signature="e#1401#1402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

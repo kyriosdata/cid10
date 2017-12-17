@@ -12,8 +12,12 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.Normalizer;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Produz arquivos contendo versão da CID-10 utilizada no processo
@@ -24,6 +28,9 @@ import java.util.*;
  * <p>Várias alterações são feitas para "otimizar" a busca.</p>
  */
 public class GeraDadosAjustadosParaBusca {
+
+    public static final String OUT_DIR = "./src/main/resources/cid";
+
     public static void main(String[] args) {
         List<String> busca = new ArrayList<>();
         List<String> codes = ArquivoUtils.carrega("./", "codigos.csv");
@@ -68,7 +75,8 @@ public class GeraDadosAjustadosParaBusca {
             busca.add(nl);
         });
 
-        ArquivoUtils.armazena(busca, "./", "busca.csv");
+        Path path = Paths.get(OUT_DIR, "busca.csv");
+        ArquivoUtils.armazena(busca, path);
     }
 
     /**

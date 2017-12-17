@@ -10,7 +10,12 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
-import java.util.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Aplicação que gera em formato alternativo ao original, os dados
@@ -30,6 +35,7 @@ public class GeraOriginalAjustado {
     public static final String GRUPOS_ONCOLOGIA = "CID-O-GRUPOS.CSV";
     public static final String CATEGORIAS_ONCOLOGIA = "CID-O-CATEGORIAS.CSV";
 
+    public static final String OUT_DIR = "./src/main/resources/cid/";
     public static final String OUT_CAPITULOS = "capitulos.csv";
     public static final String OUT_GRUPOS = "grupos.csv";
     public static final String OUT_GO = "go.csv";
@@ -37,17 +43,23 @@ public class GeraOriginalAjustado {
 
     public static void main(String[] args) throws Exception {
 
+        Path outPath = Paths.get(OUT_DIR);
+        if (!Files.exists(outPath)) {
+            Files.createDirectories(outPath);
+        }
+
         // Capítulos
         List<String> chapters = processaCapitulos(CAPITULOS);
-        ArquivoUtils.armazena(chapters, "./", OUT_CAPITULOS);
+        Path chapter = Paths.get(OUT_DIR, OUT_CAPITULOS);
+        ArquivoUtils.armazena(chapters, chapter);
 
         // Grupos
         List<String> groups = processaGrupo(GRUPOS);
-        ArquivoUtils.armazena(groups, "./", OUT_GRUPOS);
+        ArquivoUtils.armazena(groups, Paths.get(OUT_DIR, OUT_GRUPOS));
 
         // Grupos oncologia
         List<String> go = processaGrupo(GRUPOS_ONCOLOGIA);
-        ArquivoUtils.armazena(go, "./", OUT_GO);
+        ArquivoUtils.armazena(go, Paths.get(OUT_DIR, OUT_GO));
 
         // Códigos = Categorias + Subcategorias + Categorias da oncologia
         List<String> categorias = processaCategorias(CATEGORIAS);
@@ -75,7 +87,7 @@ public class GeraOriginalAjustado {
             }
         }
 
-        ArquivoUtils.armazena(parcial, "./", OUT_CODIGOS);
+        ArquivoUtils.armazena(parcial, Paths.get(OUT_DIR, OUT_CODIGOS));
     }
 
     private static List<String> eliminaEspacoEmCategorias(List<String> codes) {
