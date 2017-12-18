@@ -1,4 +1,4 @@
-## Geração de dados em formato alternativo
+## CID-10 (inclusive oncologia) (Versão 2008)
 
 O conteúdo da CID-10 (versão 2008), obtido do DATASUS, é processado e um 
 formato alternativo, produzido com foco na eficiência da busca, é utilizado
