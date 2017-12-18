@@ -1428,7 +1428,6 @@ c963;linfoma histiocitico verdadeiro
 c967;outras neoplasias malignas especificadas tecidos linfatico hematopoetico tecidos correlatos
 c969;neoplasia maligna tecidos linfatico hematopoetico tecidos correlatos nao especificada
 c97;neoplasias malignas localizacoes multiplas independentes primarias
-cat;descricao
 d00;carcinoma in situ cavidade oral esofago estomago
 d000;carcinoma in situ labios cavidade oral faringe
 d001;carcinoma in situ esofago
@@ -9876,7 +9875,6 @@ s99;outros traumatismos nao especificados tornozelo pe
 s997;traumatismos multiplos tornozelo pe
 s998;outros traumatismos especificados tornozelo pe
 s999;traumatismos nao especificados tornozelo pe
-subcat;descricao
 t00;traumatismos superficiais envolvendo multiplas regioes corpo
 t000;traumatismos superficiais envolvendo cabeca pescoco
 t001;traumatismos superficiais envolvendo torax abdome parte inferior dorso pelve

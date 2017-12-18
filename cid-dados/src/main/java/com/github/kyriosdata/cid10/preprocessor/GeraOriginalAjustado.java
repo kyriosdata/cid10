@@ -10,6 +10,7 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -24,12 +25,17 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Aplicação que gera em formato alternativo ao original, os dados
- * obtidos do DATASUS. A intenção é eliminar informações que não serão
+ * Aplicação que gera dados em formato alternativo ao original
+ * obtido do DATASUS. Os dados são gerados no diretório "resources/cid".
+ *
+ * <p><b>IMPORTANTE:</b> dados gerados pelo presente programa são necessários
+ * para a execução dos testes da classe {@link com.github.kyriosdata.cid10.busca.Cid}.</p>
+ *
+ * <p>A intenção é eliminar informações que não serão
  * empregadas durante a execução, além de reduzir o tempo necessário
  * para "montagem" das estruturas de dados para busca. Ou seja, parte
  * considerável das operações são feitas pela presente classe, e não
- * em tempo de execução do serviço.
+ * em tempo de execução do serviço.</p>
  */
 public class GeraOriginalAjustado {
 
@@ -60,10 +66,7 @@ public class GeraOriginalAjustado {
 
     public static void gerador() throws Exception {
 
-        Path outPath = Paths.get(OUT_DIR);
-        if (!Files.exists(outPath)) {
-            Files.createDirectories(outPath);
-        }
+        preparaDiretorio();
 
         // Capítulos
         List<String> chapters = processaCapitulos(CAPITULOS);
@@ -107,6 +110,27 @@ public class GeraOriginalAjustado {
         armazena(parcial, Paths.get(OUT_DIR, OUT_CODIGOS));
     }
 
+    private static void preparaDiretorio() throws IOException {
+        Path outPath = Paths.get(OUT_DIR);
+
+        if (Files.exists(outPath)) {
+            deleteDir(outPath.toFile());
+        }
+
+        Files.createDirectories(outPath);
+    }
+
+    private static void deleteDir(File file) {
+        File[] contents = file.listFiles();
+        if (contents != null) {
+            for (File f : contents) {
+                deleteDir(f);
+            }
+        }
+
+        file.delete();
+    }
+
     private static List<String> eliminaEspacoEmCategorias(List<String> codes) {
         List<String> ajustado = new ArrayList<>(codes.size());
 
@@ -126,6 +150,10 @@ public class GeraOriginalAjustado {
 
     private static List<String> processaCategoriasOncologia(String arquivo) {
         List<String> linhas = getLinhas(arquivo);
+
+        // Remove header (nomes das colunas)
+        linhas.remove(0);
+
         List<String> saida = new ArrayList<>(linhas.size());
 
         linhas.forEach(l -> {
@@ -156,11 +184,26 @@ public class GeraOriginalAjustado {
     }
 
     private static List<String> processaGrupo(String arquivo) {
-        return excluiColunaDeLinha(arquivo, 3);
+        List<String> linhas = getLinhas(arquivo);
+
+        // Remove header (nomes das colunas)
+        linhas.remove(0);
+
+        List<String> processadas = new ArrayList<>(linhas.size());
+
+        linhas.forEach(l -> {
+            String linhaPreprocessada = excluiColuna(l, 3);
+            processadas.add(linhaPreprocessada);
+        });
+
+        return processadas;
     }
 
     private static List<String> processaSubcategorias(String arquivo) {
         List<String> linhas = getLinhas(arquivo);
+
+        // Remove header (nomes das colunas)
+        linhas.remove(0);
 
         List<String> saida = new ArrayList<String>(linhas.size());
 
@@ -177,19 +220,6 @@ public class GeraOriginalAjustado {
         return saida;
     }
 
-    private static List<String> excluiColunaDeLinha(String entrada, int ignora) {
-        List<String> linhas = getLinhas(entrada);
-
-        List<String> processadas = new ArrayList<String>(linhas.size());
-
-        linhas.forEach(l -> {
-            String linhaPreprocessada = excluiColuna(l, ignora);
-            processadas.add(linhaPreprocessada);
-        });
-
-        return processadas;
-    }
-
     /**
      * Apenas as colunas 0 e 2 do arquivo CSV original são utilizadas,
      * a saber, categoria e descrição. Demais colunas são ignoradas.
@@ -200,6 +230,9 @@ public class GeraOriginalAjustado {
      */
     private static List<String> processaCategorias(String entrada) {
         List<String> linhas = getLinhas(entrada);
+
+        // Remove header (nomes das colunas)
+        linhas.remove(0);
 
         List<String> processadas = new ArrayList<String>(linhas.size());
 
@@ -307,6 +340,11 @@ public class GeraOriginalAjustado {
 
             // Coluna sexo não empregada na busca
             String[] campos = nl.split(";");
+            if (campos.length < 3) {
+                System.out.println(nl);
+                System.out.println(l);
+                return;
+            }
             campos[0] = campos[0].trim();
             campos[2] = campos[2].trim();
             nl = String.format("%s;%s", campos[0], campos[2]);
