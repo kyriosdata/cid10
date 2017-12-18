@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="pequeno erro na busca.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid/busca.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid/capitulos.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid/codigos.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid/go.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid/grupos.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,21 +15,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CidTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CidTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="774">
+              <caret line="66" column="23" lean-forward="false" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+              <folding>
+                <element signature="e#1798#1799#0" expanded="true" />
+                <element signature="e#1854#1855#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeraOriginalAjustado.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeraOriginalAjustado.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="119" column="8" lean-forward="false" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
+            <state relative-caret-position="399">
+              <caret line="113" column="42" lean-forward="false" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -107,12 +105,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraDadosAjustadosParaBusca.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/FileFromResourcesFolderTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtilsTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/ArquivoUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java" />
       </list>
     </option>
   </component>
@@ -281,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GeraOriginalAjustado">
+  <component name="RunManager" selected="JUnit.CidTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -484,8 +482,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CidTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CidTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GeraOriginalAjustado" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.ArquivoUtilsTest" />
         <item index="3" class="java.lang.String" itemvalue="Application.GeraDadosAjustadosParaBusca" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.ArquivoUtilsTest.acessoCorretoEmResources" />
@@ -521,7 +519,7 @@
       <workItem from="1513506343408" duration="34620000" />
       <workItem from="1513600266379" duration="70000" />
       <workItem from="1513600503833" duration="435000" />
-      <workItem from="1513600959882" duration="1395000" />
+      <workItem from="1513600959882" duration="1497000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -618,12 +616,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArquivoUtilsTest - 2017.12.17 at 19h 55m 36s.xml">
-      <configuration name="ArquivoUtilsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CidTest - 2017.12.17 at 18h 55m 21s.xml">
-      <configuration name="CidTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CidTest - 2017.12.17 at 19h 43m 54s.xml">
       <configuration name="CidTest" configurationId="JUnit" />
     </history-entry>
@@ -648,9 +640,15 @@
     <history-entry file="CidTest - 2017.12.17 at 20h 32m 24s.xml">
       <configuration name="CidTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CidTest - 2017.12.18 at 11h 07m 16s.xml">
+      <configuration name="CidTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CidTest - 2017.12.18 at 11h 07m 39s.xml">
+      <configuration name="CidTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80445000" />
+    <option name="totallyTimeSpent" value="80547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="2513" height="1997" extended-state="0" />
@@ -662,7 +660,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295519" sideWeight="0.5014107" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32785025" sideWeight="0.49775785" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32785025" sideWeight="0.49775785" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26924628" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -901,14 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/datasus/CID-10-CAPITULOS.CSV">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
@@ -967,9 +957,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="119" column="8" lean-forward="false" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
+        <state relative-caret-position="399">
+          <caret line="113" column="42" lean-forward="false" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="66" column="23" lean-forward="false" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+          <folding>
+            <element signature="e#1798#1799#0" expanded="true" />
+            <element signature="e#1854#1855#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
