@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="pequeno erro na busca.">
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/preprocessor.iml" afterPath="$PROJECT_DIR$/.idea/preprocessor.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,27 +30,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="1033">
+              <caret line="215" column="20" lean-forward="false" selection-start-line="215" selection-start-column="20" selection-end-line="215" selection-end-column="20" />
               <folding>
                 <element signature="n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#0;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#1;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#2;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#3;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#4;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#5;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#6;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#7;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="561">
-                <caret line="17" column="99" lean-forward="false" selection-start-line="17" selection-start-column="99" selection-end-line="17" selection-end-column="99" />
+              <first_editor relative-caret-position="495">
+                <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -138,8 +147,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -556,7 +565,7 @@
       <workItem from="1513506343408" duration="34620000" />
       <workItem from="1513600266379" duration="70000" />
       <workItem from="1513600503833" duration="435000" />
-      <workItem from="1513600959882" duration="9710000" />
+      <workItem from="1513600959882" duration="10788000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -685,7 +694,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88760000" />
+    <option name="totallyTimeSpent" value="89838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="2513" height="1997" extended-state="0" />
@@ -993,27 +1002,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="561">
-            <caret line="17" column="99" lean-forward="false" selection-start-line="17" selection-start-column="99" selection-end-line="17" selection-end-column="99" />
+          <first_editor relative-caret-position="495">
+            <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1033">
+          <caret line="215" column="20" lean-forward="false" selection-start-line="215" selection-start-column="20" selection-end-line="215" selection-end-column="20" />
+          <folding>
+            <element signature="n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#0;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#1;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#2;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#3;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#4;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#5;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#6;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#7;n#plugins#0;n#build#0;n#profile#0;n#profiles#0;n#project#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
