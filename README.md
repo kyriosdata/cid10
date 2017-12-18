@@ -14,7 +14,7 @@ A versão utilizada encontra-se disponível pelo portal do
 DATASUS 
 ([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)). 
 Em particular, trata-se da versão de 2008. Arquivos fazem uso 
-de ISO-885901. 
+de ISO-8859-1. 
 
 Detalhes da licença estão disponíveis 
 [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
