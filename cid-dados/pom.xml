@@ -9,6 +9,13 @@
     <version>2008.1.0</version>
     <packaging>jar</packaging>
 
+    <name>cid10-dados</name>
+
+    <description>
+        Oferece código e dados para acesso eficiente (inclusive busca), ao conteúdo da
+        CID-10 (inclusive Oncologia), versão 2008, disponibilizada pelo DATASUS.
+    </description>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
