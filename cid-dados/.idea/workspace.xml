@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="pequeno erro na busca.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,14 +29,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
+                <element signature="n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#build#0;n#project#0;n#!!top" expanded="false" />
                 <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#plugin#1;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
                 <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
                 <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
               </folding>
@@ -57,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeraOriginalAjustado.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GeraOriginalAjustado.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="113" column="42" lean-forward="false" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
+            <state relative-caret-position="528">
+              <caret line="288" column="74" lean-forward="false" selection-start-line="288" selection-start-column="74" selection-end-line="288" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -137,10 +138,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/ArquivoUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/ArquivoUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/kyriosdata/cid10/busca/CidTest.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
       </list>
     </option>
   </component>
@@ -549,7 +550,7 @@
       <workItem from="1513506343408" duration="34620000" />
       <workItem from="1513600266379" duration="70000" />
       <workItem from="1513600503833" duration="435000" />
-      <workItem from="1513600959882" duration="2461000" />
+      <workItem from="1513600959882" duration="3770000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -678,7 +679,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81511000" />
+    <option name="totallyTimeSpent" value="82820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="2513" height="1997" extended-state="0" />
@@ -740,7 +741,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java</url>
-          <line>182</line>
+          <line>183</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
@@ -951,14 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="113" column="42" lean-forward="false" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/datasus/CID-10-SUBCATEGORIAS.CSV">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -999,14 +992,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="528">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
+            <element signature="n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#build#0;n#project#0;n#!!top" expanded="false" />
             <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#plugin#1;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
             <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
             <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="288" column="74" lean-forward="false" selection-start-line="288" selection-start-column="74" selection-end-line="288" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>

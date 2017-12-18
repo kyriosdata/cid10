@@ -56,8 +56,9 @@ public class GeraOriginalAjustado {
     /**
      * Apenas para viabilizar geração automática via Maven.
      *
-     * @param args
-     * @throws Exception
+     * @param args Nenhum argumento é esperado.
+     * @throws Exception Operações com leitura e escrita de arquivos podem
+     * gerar exceções.
      */
     public static void main(String[] args) throws Exception {
         gerador();
@@ -286,7 +287,6 @@ public class GeraOriginalAjustado {
      *
      * @param entrada Nome do arquivo CSV.
      * @return Lista de linhas correspondentes ao conteúdo do arquivo CSV.
-     * @throws IOException
      */
     public static List<String> getLinhas(String entrada) {
         List<String> linhas = null;
