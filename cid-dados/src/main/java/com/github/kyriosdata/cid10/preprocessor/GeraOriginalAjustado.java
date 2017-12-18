@@ -139,6 +139,10 @@ public class GeraOriginalAjustado {
 
     private static List<String> processaCapitulos(String arquivo) {
         List<String> linhas = getLinhas(arquivo);
+
+        // Remove header (nomes das colunas)
+        linhas.remove(0);
+
         List<String> saida = new ArrayList<>(linhas.size());
 
         linhas.forEach(l -> {
