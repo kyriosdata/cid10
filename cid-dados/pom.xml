@@ -16,6 +16,15 @@
         CID-10 (inclusive Oncologia), versão 2008, disponibilizada pelo DATASUS.
     </description>
 
+    <url>https://github.com/kyriosdata/cid10</url>
+
+    <organization>
+        <name>Instituto de Informática (UFG) - Fábrica de Software</name>
+        <url>http://www.inf.ufg.br/fabrica/</url>
+    </organization>
+
+    <inceptionYear>2016</inceptionYear>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
