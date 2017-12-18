@@ -11,6 +11,19 @@ para produzir uma versão correspondente.
 
 ### Geração dos aplicativos
 1. Execute `mvn package` 
+1. Na linha de comandos `java -jar cid10-dados-2008.1.0.jar dengue` fará com que todas as entradas contendo "dengue" sejam exibidas na saída padrão. Experimente com outros argumentos e o resultado deverá incluir todos os termos fornecidos.
 
+### Como usar (Maven)
+
+Obtenha o arquivo **jar** correspondente à versão mais recente ou via Maven conforme a dependência indicada 
+abaixo. 
+
+```
+<dependency>
+  <groupId>com.github.kyriosdata.cid10</groupId>
+  <artifactId>cid10-dados</artifactId>
+  <version>2008.1.0</version>
+</dependency>
+```
 
 
