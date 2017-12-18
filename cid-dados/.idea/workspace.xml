@@ -31,8 +31,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+            <state relative-caret-position="205">
+              <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
               <folding>
                 <element signature="n#dependencies#0;n#project#0;n#!!top" expanded="false" />
                 <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
@@ -548,7 +548,7 @@
       <workItem from="1513506343408" duration="34620000" />
       <workItem from="1513600266379" duration="70000" />
       <workItem from="1513600503833" duration="435000" />
-      <workItem from="1513600959882" duration="4782000" />
+      <workItem from="1513600959882" duration="5184000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -677,7 +677,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83832000" />
+    <option name="totallyTimeSpent" value="84234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="23" width="2513" height="1997" extended-state="0" />
@@ -998,8 +998,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        <state relative-caret-position="205">
+          <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
           <folding>
             <element signature="n#dependencies#0;n#project#0;n#!!top" expanded="false" />
             <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
