@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.kyriosdata.bsus</groupId>
-    <artifactId>cid10-preprocessor</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>cid10-dados</artifactId>
+    <version>2008.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <dependencies>
