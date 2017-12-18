@@ -6,7 +6,7 @@
 
     <groupId>com.github.kyriosdata.cid10</groupId>
     <artifactId>cid10-dados</artifactId>
-    <version>2008.1-SNAPSHOT</version>
+    <version>2008.1.0</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -100,7 +100,7 @@
                 </executions>
             </plugin>
 
-            <!-- Gerar documentação -->
+            <!-- Gerar documentação (javadoc) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -108,6 +108,22 @@
                 <executions>
                     <execution>
                         <id>package-javadoc</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Agrega sources em jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>package-sources</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jar</goal>
