@@ -15,7 +15,7 @@ para produzir uma versão correspondente.
 
 ### Como usar (desenvolvedores)
 
-A documentação via [![Javadocs](http://javadoc.io/badge/com.github.kyriosdata.cid10/cid10-dados.svg)](http://javadoc.io/doc/com.github.kyriosdata.cid10/cid10-dados)
+A documentação via [![Javadocs](https://img.shields.io/badge/javadoc-2008.1.0-brightgreen.svg?)](http://javadoc.io/doc/com.github.kyriosdata.cid10/cid10-dados)
 fornece detalhes para desenvolvedores que desejam empregar a CID-10 em seus projetos.
 
 Além da documentação será necessário acesso ao software e dados pertinentes. 
