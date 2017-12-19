@@ -7,5 +7,5 @@ public class Capitulo {
     public int num;
     public String ci;
     public String cf;
-    public String descricao;
+    public String info;
 }

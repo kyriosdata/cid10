@@ -64,6 +64,6 @@ public class CidTest {
 
     @Test
     public void verificaCapitulos() {
-        assertEquals(21, cid.capitulos().size());
+        assertEquals(22, cid.capitulos().size());
     }
 }

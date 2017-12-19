@@ -25,6 +25,13 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.github.kyriosdata.cid10</groupId>
+			<artifactId>cid10-dados</artifactId>
+			<version>2008.1.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

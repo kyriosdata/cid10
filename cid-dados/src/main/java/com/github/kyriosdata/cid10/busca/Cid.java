@@ -55,7 +55,6 @@ public class Cid {
 
         // Recupera capítulos e remove header.
         capitulos = getConteudo("cid/capitulos.csv");
-        capitulos.remove(0);
     }
 
     public List<String> getConteudo(String fileName) {

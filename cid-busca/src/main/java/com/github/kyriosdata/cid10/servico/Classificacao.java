@@ -1,6 +1,6 @@
 package com.github.kyriosdata.cid10.servico;
 
-import com.github.kyriosdata.cid10.servico.modelo.Capitulo;
+import com.github.kyriosdata.cid10.busca.Cid;
 import com.github.kyriosdata.cid10.servico.modelo.Codigo;
 import com.github.kyriosdata.cid10.servico.modelo.Grupo;
 import org.springframework.http.MediaType;
@@ -17,6 +17,11 @@ import java.util.Map;
 public class Classificacao {
 
     /**
+     * Classe que oferece acesso ao conteúdo da CID-10.
+     */
+    private Cid cid;
+
+    /**
      * Lista contendo todas as entradas da CID-10.
      * Sobre esta lista são feitas as operações de
      * consulta.
@@ -26,13 +31,19 @@ public class Classificacao {
     /**
      * Lista de capítulos da CID-10.
      */
-    private List<Capitulo> capitulos;
+    private String capitulos;
 
     /**
      * Lista de grupos da CID-10 por capítulo. Inclui grupos da
      * CID-10 oncologia.
      */
     private Map<Integer, List<Grupo>> grupos;
+
+    public Classificacao() {
+        cid = new Cid();
+
+
+    }
 
     /**
      * Recupera todos os capítulos da CID-10.
@@ -41,14 +52,7 @@ public class Classificacao {
      */
     @RequestMapping(value = "/capitulos", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Capitulo> capitulos() {
-        Capitulo c = new Capitulo();
-        c.num = 1;
-        c.ci = "A00";
-        c.cf = "B99";
-        c.descricao = "Algumas doenças infecciosas e parasitárias";
-        List<Capitulo> capitulos = new ArrayList<>();
-        capitulos.add(c);
+    public String capitulos() {
 
         return capitulos;
     }
