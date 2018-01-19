@@ -10,8 +10,6 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
-import com.google.gson.Gson;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -77,7 +75,6 @@ public class GeraOriginalAjustado {
         armazena(chapters, chapter);
 
         // Monta "cache" de capítulos
-        // TODO: transferir para cid-dados
         final List<Capitulo> capitulos = new ArrayList<>(22);
 
         chapters.forEach(c -> {
@@ -89,9 +86,6 @@ public class GeraOriginalAjustado {
             cap.info = campos[3];
             capitulos.add(cap);
         });
-
-        Gson gson = new Gson();
-        capitulos = gson.toJson(chapters);
 
         // Grupos
         List<String> groups = processaGrupo(GRUPOS);

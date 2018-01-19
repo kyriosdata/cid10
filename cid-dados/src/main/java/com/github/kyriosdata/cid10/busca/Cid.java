@@ -1,12 +1,11 @@
+
 /*
+ * Copyright (c) 2018
  *
- *  * Copyright (c) 2017
- *  *
- *  * Fábio Nogueira de Lucena
- *  * Fábrica de Software - Instituto de Informática (UFG)
- *  *
- *  * Creative Commons Attribution 4.0 International License.
+ * Fábio Nogueira de Lucena
+ * Fábrica de Software - Instituto de Informática (UFG)
  *
+ * Creative Commons Attribution 4.0 International License.
  *
  */
 
@@ -20,7 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implementa busca sobre informações contidas na CID-10.
+ * Implementa serviço de busca na CID-10.
+ * <p>O uso é trivial, basta enviar a mensagem
+ * {@link #encontre(String[])}} para uma instância
+ * da classe {@link Cid}.</p>
  */
 public class Cid {
 
@@ -91,7 +93,8 @@ public class Cid {
      * critérios fornecidos.
      *
      * @param criterios Elementos que devem estar presentes
-     *                  em toda entrada da CID-10 que os contêm.
+     *                  em toda entrada da CID-10 retornada.
+     *
      * @return Lista com os identificadores de ordem das
      * entradas na CID-10 que satisfazem os critérios fornecidos.
      */
