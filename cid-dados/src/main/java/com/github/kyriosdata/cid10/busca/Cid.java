@@ -14,6 +14,8 @@ package com.github.kyriosdata.cid10.busca;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +64,9 @@ public class Cid {
     public List<String> getConteudo(String fileName) {
         ClassLoader classLoader = getClass().getClassLoader();
         InputStream is = classLoader.getResourceAsStream(fileName);
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        Charset utf8 = StandardCharsets.UTF_8;
+        InputStreamReader isr = new InputStreamReader(is, utf8);
+        BufferedReader br = new BufferedReader(isr);
 
         List<String> conteudo = new ArrayList<>();
 

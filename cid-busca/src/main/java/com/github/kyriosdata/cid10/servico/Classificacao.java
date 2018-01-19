@@ -3,10 +3,8 @@ package com.github.kyriosdata.cid10.servico;
 import com.github.kyriosdata.cid10.busca.Cid;
 import com.github.kyriosdata.cid10.servico.modelo.Codigo;
 import com.github.kyriosdata.cid10.servico.modelo.Grupo;
-import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -41,8 +39,6 @@ public class Classificacao {
 
     public Classificacao() {
         cid = new Cid();
-
-
     }
 
     /**
@@ -50,8 +46,7 @@ public class Classificacao {
      *
      * @return Os capítulos da CID-10.
      */
-    @RequestMapping(value = "/capitulos", method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/capitulos")
     public String capitulos() {
 
         return capitulos;
@@ -64,7 +59,7 @@ public class Classificacao {
      *
      * @return A lista de grupos contida no capítulo.
      */
-    @RequestMapping(value="/grupos/{capitulo}", method =RequestMethod.GET)
+    @GetMapping(value="/grupos/{capitulo}")
     public List<Grupo> grupos(@PathVariable int capitulo) {
         Grupo g = new Grupo();
         g.ci = "A00";
@@ -86,8 +81,7 @@ public class Classificacao {
      *
      * @return Todas as categorias incluídas na faixa (inclusive os limites).
      */
-    @RequestMapping(value = "/categorias/{faixa}", method = RequestMethod.GET,
-        produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/categorias/{faixa}")
     public List<Codigo> categorias(@PathVariable String faixa) {
         Codigo c = new Codigo();
         c.codigo = "A00";
@@ -107,8 +101,7 @@ public class Classificacao {
      *
      * @return A lista de subcategorias da categoria informada.
      */
-    @RequestMapping(value = "/subcategorias/{categoria}", method = RequestMethod.GET,
-        produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/subcategorias/{categoria}")
     public List<Codigo> subcategorias(@PathVariable String categoria) {
         Codigo c = new Codigo();
         c.codigo = "B00";
@@ -133,8 +126,7 @@ public class Classificacao {
      * cada item retornado contém em sua descrição as palavras fornecidas.
      * Os códigos dos itens retornados também são consultados nessa busca.
      */
-    @RequestMapping(value = "/busca/{palavras}", method = RequestMethod.GET,
-        produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/busca/{palavras}")
     public List<Codigo> busca(@PathVariable String palavras) {
         List<Codigo> resposta = new ArrayList<>();
         return resposta;
