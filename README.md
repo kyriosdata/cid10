@@ -1,10 +1,12 @@
 # Acesso à classificação internacional de doenças (CID-10)
 
-O presente projeto visa produzir um serviço por meio do qual
-é oferecido acesso ao conteúdo da CID-10. 
+O presente projeto visa oferecer acesso eletrônico ao conteúdo da CID-10. Profissionais de saúde empregam os códigos presentes na CID-10 para se referirem a doenças de forma não ambígua, por exemplo, usam o código **A90** em vez de "dengue". 
 
-## CID-10
-A Classificação Internacional de Doenças (CID) empregada pelo Brasil é a CID-10. Profissionais de saúde, em geral, empregam os códigos presentes nessa classificação para se referirem a doenças de forma não ambígua, por exemplo, usam o código **A90** em vez de "dengue". 
+A solução proposta inclui os seguintes componentes:
+
+- Produção das estruturas de dados ([cid-dados](https://github.com/kyriosdata/cid10/tree/master/cid-dados)).
+- Micro-serviço que oferece busca e informações sobre a CID-10 ([cid-busca](https://github.com/kyriosdata/cid10/tree/master/cid-busca)).
+- Web App para consulta e acesso ao conteúdo da CID-10 ([cid-gui](https://github.com/kyriosdata/cid10/tree/master/cid-gui)).
 
 O presente projeto implementa dois módulos: (a) um para acesso à CID-10 por meio de uma interface gráfica via browser (apenas com o propósito de ilustração) e (b) um para fornecer um serviço de busca aos códigos da CID-10. Uma [Web App](http://www.icd10codesearch.com/) similar pode ser consultada para ilustrar a intenção do presente projeto.
 
@@ -69,10 +71,4 @@ Formato original dos dados de entrada deverão servir de entrada para processo a
    - Eliminar duplicidades.
    - Unir conteúdo de categorias, subcategorias e categorias para oncologia e ordenar a união pelo código. 
    
- 
-### Organização em projetos
-
-- Produção das estruturas de dados ([cid-dados](https://github.com/kyriosdata/cid10/tree/master/cid-dados)).
-- Micro-serviço que oferece busca e informações sobre a CID-10 ([cid-busca](https://github.com/kyriosdata/cid10/tree/master/cid-busca)).
-- Web App para consulta e acesso ao conteúdo da CID-10 ([cid-gui](https://github.com/kyriosdata/cid10/tree/master/cid-gui)).
 
