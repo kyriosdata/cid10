@@ -1,8 +1,7 @@
 ## CID-10 (inclusive oncologia) (Versão 2008)
 
-O conteúdo da CID-10 (versão 2008), obtido do DATASUS, é processado e um 
-formato alternativo, produzido com foco na eficiência da busca, é utilizado
-para produzir uma versão correspondente. 
+O presente projeto processa o conteúdo da CID-10 (versão 2008), obtido do DATASUS, visando a
+obtenço de um formato alternativo com foco na eficiência da busca.
 
 ### Estratégia (ações realizadas)
 1. Descrição abreviada foi ignorada.
