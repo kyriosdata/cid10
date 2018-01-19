@@ -8,8 +8,6 @@ A solução proposta inclui os seguintes componentes:
 - Micro-serviço que oferece busca e informações sobre a CID-10 ([cid-busca](https://github.com/kyriosdata/cid10/tree/master/cid-busca)).
 - Web App para consulta e acesso ao conteúdo da CID-10 ([cid-gui](https://github.com/kyriosdata/cid10/tree/master/cid-gui)).
 
-O presente projeto implementa dois módulos: (a) um para acesso à CID-10 por meio de uma interface gráfica via browser (apenas com o propósito de ilustração) e (b) um para fornecer um serviço de busca aos códigos da CID-10. Uma [Web App](http://www.icd10codesearch.com/) similar pode ser consultada para ilustrar a intenção do presente projeto.
-
 ## Versão original e copyright (licença) da CID-10
 A versão utilizada encontra-se disponível pelo portal do 
 DATASUS 
