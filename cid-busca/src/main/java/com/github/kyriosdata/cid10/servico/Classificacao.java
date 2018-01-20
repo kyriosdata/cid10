@@ -1,3 +1,13 @@
+
+/*
+ *
+ *  Copyright (c) 2018
+ *
+ *  Fábio Nogueira de Lucena
+ *  Fábrica de Software - Instituto de Informática (UFG)
+ *
+ */
+
 package com.github.kyriosdata.cid10.servico;
 
 import com.github.kyriosdata.cid10.busca.Cid;
@@ -127,8 +137,8 @@ public class Classificacao {
      * Os códigos dos itens retornados também são consultados nessa busca.
      */
     @GetMapping(value = "/busca/{palavras}")
-    public List<Codigo> busca(@PathVariable String palavras) {
-        List<Codigo> resposta = new ArrayList<>();
-        return resposta;
+    public List<String> busca(@PathVariable String palavras) {
+        String[] words = palavras.split(" ");
+        return cid.encontre(words);
     }
 }

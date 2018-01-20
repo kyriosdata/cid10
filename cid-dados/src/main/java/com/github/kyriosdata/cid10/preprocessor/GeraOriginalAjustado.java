@@ -121,7 +121,13 @@ public class GeraOriginalAjustado {
             }
         }
 
-        armazena(parcial, Paths.get(OUT_DIR, OUT_CODIGOS));
+        // Elimina o ; ao final de cada linha
+        List<String> pronta = new ArrayList<>(parcial.size());
+        parcial.forEach(l -> {
+            pronta.add(l.substring(0, l.length() - 1));
+        });
+
+        armazena(pronta, Paths.get(OUT_DIR, OUT_CODIGOS));
     }
 
     private static void preparaDiretorio() throws IOException {

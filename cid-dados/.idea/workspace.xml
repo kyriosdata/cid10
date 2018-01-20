@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08b84ad-760b-44b8-b52d-24dc2da1cd35" name="Default" comment="pequeno erro na busca.">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change beforePath="$PROJECT_DIR$/../cid-busca/src/main/java/com/github/kyriosdata/cid10/servico/Classificacao.java" afterPath="$PROJECT_DIR$/../cid-busca/src/main/java/com/github/kyriosdata/cid10/servico/Classificacao.java" />
+      <change beforePath="$PROJECT_DIR$/../cid-busca/src/main/java/com/github/kyriosdata/cid10/servico/ClassificacaoApplication.java" afterPath="$PROJECT_DIR$/../cid-busca/src/main/java/com/github/kyriosdata/cid10/servico/ClassificacaoApplication.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cid/busca.csv" afterPath="$PROJECT_DIR$/src/main/resources/cid/busca.csv" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cid/codigos.csv" afterPath="$PROJECT_DIR$/src/main/resources/cid/codigos.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeraOriginalAjustado.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeraOriginalAjustado.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+            <state relative-caret-position="614">
+              <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -75,8 +76,8 @@
       <file leaf-file-name="Cid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="67" column="58" lean-forward="false" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
+            <state relative-caret-position="328">
+              <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
               <folding>
                 <element signature="e#0#4683#0" expanded="true" />
                 <element signature="e#717#718#0" expanded="true" />
@@ -99,18 +100,18 @@
       <file leaf-file-name="capitulos.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/cid/capitulos.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="504">
+              <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="codigos.csv" pinned="false" current-in-tab="false">
+      <file leaf-file-name="codigos.csv" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/cid/codigos.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="15049" column="0" lean-forward="false" selection-start-line="15049" selection-start-column="0" selection-end-line="15049" selection-end-column="0" />
+            <state relative-caret-position="536">
+              <caret line="437" column="29" lean-forward="false" selection-start-line="437" selection-start-column="29" selection-end-line="437" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -155,6 +156,8 @@
       <find>O471</find>
       <find>U99</find>
       <find>hemorragia ante</find>
+      <find>A90;</find>
+      <find>OUT_CO</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -644,7 +647,7 @@
       <workItem from="1513600503833" duration="435000" />
       <workItem from="1513600959882" duration="11118000" />
       <workItem from="1513637879074" duration="1537000" />
-      <workItem from="1516387230368" duration="4212000" />
+      <workItem from="1516387230368" duration="6012000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -773,7 +776,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95917000" />
+    <option name="totallyTimeSpent" value="97717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="322" y="23" width="1591" height="1177" extended-state="0" />
@@ -1037,39 +1040,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/capitulos.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/codigos.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="15049" column="0" lean-forward="false" selection-start-line="15049" selection-start-column="0" selection-end-line="15049" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="67" column="58" lean-forward="false" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#4683#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,10 +1064,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/capitulos.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/busca/Cid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#4683#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/kyriosdata/cid10/preprocessor/GeraOriginalAjustado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+        <state relative-caret-position="614">
+          <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/codigos.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="437" column="29" lean-forward="false" selection-start-line="437" selection-start-column="29" selection-end-line="437" selection-end-column="29" />
           <folding />
         </state>
       </provider>
