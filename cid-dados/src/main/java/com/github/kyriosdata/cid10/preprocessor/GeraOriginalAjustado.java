@@ -342,6 +342,9 @@ public class GeraOriginalAjustado {
             // Remove acentos
             nl = removeSinais(nl);
 
+            // Troca ª por a
+            nl = nl.replaceAll("ª", "a");
+
             // Troca aspa por espaço
             nl = nl.replaceAll("\"", " ");
 
@@ -370,7 +373,7 @@ public class GeraOriginalAjustado {
     }
 
     /**
-     * Assume palavras apenas com letras minúsculas.
+     * Palavras serão consultadas sem sinais ou acentos
      */
     private static String removeSinais(String entrada) {
         String sa = Normalizer.normalize(entrada, Normalizer.Form.NFD);
