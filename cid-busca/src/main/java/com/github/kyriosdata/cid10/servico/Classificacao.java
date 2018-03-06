@@ -19,33 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class Classificacao {
 
     /**
-     * Classe que oferece acesso ao conteúdo da CID-10 (inclusive busca).
+     * Conteúdo da CID-10 (inclusive busca).
      */
     private Cid cid;
-
-    /**
-     * Lista contendo todas as entradas da CID-10.
-     * Sobre esta lista são feitas as operações de
-     * consulta.
-     */
-    private List<Codigo> codigos;
-
-    /**
-     * Lista de capítulos da CID-10.
-     */
-    private String capitulos;
-
-    /**
-     * Lista de grupos da CID-10 por capítulo. Inclui grupos da
-     * CID-10 oncologia.
-     */
-    private Map<Integer, List<Grupo>> grupos;
 
     public Classificacao() {
         cid = new Cid();
@@ -95,7 +76,7 @@ public class Classificacao {
     public List<Codigo> categorias(@PathVariable String faixa) {
         Codigo c = new Codigo();
         c.codigo = "A00";
-        c.descrica = "A descrição da categoria";
+        c.descricao = "A descrição da categoria";
         c.sexo = '-';
 
         List<Codigo> categorias = new ArrayList<>();
@@ -115,7 +96,7 @@ public class Classificacao {
     public List<Codigo> subcategorias(@PathVariable String categoria) {
         Codigo c = new Codigo();
         c.codigo = "B00";
-        c.descrica = "subcategoria";
+        c.descricao = "subcategoria";
         c.sexo = 'M';
 
         List<Codigo> subcategorias = new ArrayList<>();
@@ -138,7 +119,6 @@ public class Classificacao {
      */
     @GetMapping(value = "/busca/{palavras}/{bloco}")
     public List<String> busca(@PathVariable String palavras, @PathVariable int bloco) {
-        System.out.println(bloco);
         String[] words = palavras.split(" ");
         return cid.encontre(words);
     }

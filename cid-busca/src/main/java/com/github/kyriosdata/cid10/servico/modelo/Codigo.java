@@ -10,6 +10,6 @@ package com.github.kyriosdata.cid10.servico.modelo;
  */
 public class Codigo {
     public String codigo;
-    public String descrica;
+    public String descricao;
     public char sexo;
 }
