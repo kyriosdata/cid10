@@ -28,6 +28,13 @@ import java.util.List;
  */
 public class Cid {
 
+    /**
+     * Trata argumentos fornecido ao aplicativo como partes de entradas da CID-10
+     * a serem localizadas. O conjunto daquelas encontradas é retornado.
+     *
+     * @param args Argumentos que serão tratados como partes ou componentes
+     *             de código e/ou descrição das entradas da CID-10.
+     */
     public static void main(String[] args) {
         new Cid().encontre(args).forEach(System.out::println);
     }
@@ -49,11 +56,8 @@ public class Cid {
      */
     private List<String> capitulos;
 
-    private int total;
-
     public Cid() {
         busca = getConteudo("cid/busca.csv");
-        total = busca.size();
 
         original = getConteudo("cid/codigos.csv");
 
@@ -113,6 +117,7 @@ public class Cid {
         }
 
         String primeiro = criterios[0];
+        int total = busca.size();
         for (int i = 0; i < total; i++) {
             if (busca.get(i).contains(primeiro)) {
                 resultado.add(i);

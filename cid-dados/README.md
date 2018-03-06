@@ -38,7 +38,7 @@ cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e
 
 ---
 
-### Função principal
+### Características principais
 - _A busca pode ser feita apenas por parte do código e/ou parte da descrição_. A saída produzida deve ser uma entrada da CID-10 que contém todos os elementos fornecidos na entrada, conforme ilustrado abaixo. A busca por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue". A busca por "90" e por "dengue" apenas produz a entrada de código A90.
 
 - _Acentos podem ou não ser fornecidos_. Por exemplo, a busca por "infecção" e "infeccao" vão produzir o mesmo resultado. 
@@ -53,16 +53,12 @@ _Decisão 2_. O formato original dos dados de entrada servem de entrada para pro
 ### Produção dos dados para busca (lista adicional)
 
 1. Produzir dados que serão empregados pela solução a partir dos arquivos originais.
-   - Eliminar colunas não utilizadas.
+   - Eliminar colunas não utilizadas, por exemplo, "descrição abreviada".
    - Eliminar acentos. 
    - Substituir terminações de plural pela palavra completa, ou seja, aceleração(oes) por "aceleração" e "acelerações", por exemplo.
    - Eliminar duplicidades.
    - Unir conteúdo de categorias, subcategorias e categorias para oncologia e ordenar a união pelo código. 
    
-### Estratégia (ações realizadas)
-1. Descrição abreviada foi ignorada.
-1. 
-
 ### Geração dos aplicativos (e uso via linha de comandos)
 1. Execute `mvn package` 
 1. Na linha de comandos `java -jar cid10-dados-2008.1.0.jar dengue` fará com que todas as entradas contendo "dengue" sejam exibidas na saída padrão. Experimente com outros argumentos e o resultado deverá incluir todos os termos fornecidos.
