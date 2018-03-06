@@ -1,7 +1,7 @@
 ## CID-10 (inclusive oncologia) (Versão 2008)
 
 O presente projeto processa o conteúdo da CID-10 (versão 2008), obtido do DATASUS ([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)), visando a
-produção de um formato alternativo ao original com foco na eficiência da busca.
+produção de um formato alternativo ao original adequado para a busca (localização de um código ou uma entrada a partir de parte da informação da entrada).
 
 ## Versão original e copyright (licença) da CID-10
 A versão utilizada encontra-se disponível pelo portal do 
@@ -39,9 +39,12 @@ cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e
 ---
 
 ### Função principal
-- A busca pode ser feita apenas por parte do código e/ou parte da descrição. 
-- A busca por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue".
-- A busca por "90" e por "dengue" apenas produz a entrada de código A90.
+_A busca pode ser feita apenas por parte do código e/ou parte da descrição_. A saída produzida deve ser uma entrada da CID-10 que contém
+todos os elementos fornecidos na entrada, conforme ilustrado abaixo.
+
+A busca por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue".
+
+A busca por "90" e por "dengue" apenas produz a entrada de código A90.
 
 ### Projeto (design) da solução
 
