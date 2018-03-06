@@ -38,7 +38,7 @@ cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e
 
 ---
 
-### Requisitos
+### Função principal
 - A busca pode ser feita apenas por parte do código e/ou parte da descrição. 
 - A busca por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue".
 - A busca por "90" e por "dengue" apenas produz a entrada de código A90.

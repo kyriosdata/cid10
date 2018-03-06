@@ -80,21 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="capitulos.csv" pinned="false" current-in-tab="false">
+      <file leaf-file-name="capitulos.csv" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/cid/capitulos.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="693">
               <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="codigos.csv" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/cid/codigos.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="67" column="63" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -608,7 +598,7 @@
       <workItem from="1513600959882" duration="11118000" />
       <workItem from="1513637879074" duration="1537000" />
       <workItem from="1516387230368" duration="6012000" />
-      <workItem from="1520335867556" duration="153000" />
+      <workItem from="1520335867556" duration="751000" />
     </task>
     <task id="LOCAL-00001" summary="categorias">
       <created>1513179847758</created>
@@ -737,7 +727,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97870000" />
+    <option name="totallyTimeSpent" value="98468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="322" y="23" width="2329" height="2024" extended-state="0" />
@@ -1040,18 +1030,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/capitulos.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/cid/codigos.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="67" column="63" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cid/capitulos.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
           <folding />
         </state>
       </provider>
