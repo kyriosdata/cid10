@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cid-dados" />
+        <module name="cid10-dados" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cid-dados" target="1.8" />
+      <module name="cid10-dados" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
