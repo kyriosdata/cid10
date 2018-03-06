@@ -4,7 +4,7 @@ O presente projeto visa oferecer acesso ao conteúdo da CID-10. Profissionais de
 
 A solução proposta inclui os seguintes componentes:
 
-- Fornece informações gerais sobre a CID-10 e produção de estruturas de dados para agilizar a consulta aos códigos ([cid-dados](https://github.com/kyriosdata/cid10/tree/master/cid-dados)).
+- Informações gerais sobre a CID-10 e produção de estruturas de dados para agilizar a consulta aos códigos ([cid-dados](https://github.com/kyriosdata/cid10/tree/master/cid-dados)).
 - Micro-serviço que oferece busca e informações sobre a CID-10 ([cid-busca](https://github.com/kyriosdata/cid10/tree/master/cid-busca)).
 - Web App para consulta e acesso ao conteúdo da CID-10 ([cid-gui](https://github.com/kyriosdata/cid10/tree/master/cid-gui)).
 

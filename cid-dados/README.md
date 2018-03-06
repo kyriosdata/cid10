@@ -1,7 +1,7 @@
 ## CID-10 (inclusive oncologia) (Versão 2008)
 
-O presente projeto processa o conteúdo da CID-10 (versão 2008), obtido do DATASUS, visando a
-obtenço de um formato alternativo com foco na eficiência da busca.
+O presente projeto processa o conteúdo da CID-10 (versão 2008), obtido do DATASUS ([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)), visando a
+produção de um formato alternativo ao original com foco na eficiência da busca.
 
 ## Versão original e copyright (licença) da CID-10
 A versão utilizada encontra-se disponível pelo portal do 
@@ -31,11 +31,7 @@ CID-10
 </pre>
 
 A hierarquia acima pode ser ilustrada, por exemplo, para o capítulo 1, 
-que trada de "Algumas doenças infecciosas e parasitárias". Este capítulo contém 
-vários grupos, um deles é o grupo que vai das categorias **A00** até **A09**, inclusive.
-Este grupo é descrito por "Doenças infecciosas intestinais". 
-O capítulo 1, contudo, inclui as categorias que vão de **A00** ("Cólera") até **B99** ("Doenças infecciosas, 
-outras e as não especificadas"). A categoria **A00**, por sua vez, está subdividida
+que trada de "Algumas doenças infecciosas e parasitárias". Este capítulo contém vários grupos, dentre eles o grupo "Doenças infecciosas intestinais" que, por sua vez, inclui as categorias que vão da **A00** até **A09**, inclusive. A categoria **A00** é denominada de "Cólera", enquanto a categoria **A09** é "Diarréia e gastroenterite de origem infecciosa presumível". Conforme acima, cada uma destas categorias está organizada em sub-categorias. A categoria **A00** está subdividida
 em três subcategorias: **A000** ("Cólera devida a Vibrio cholerae 01, biótipo 
 cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e 
 **A009** ("Cólera não especificada"). 
