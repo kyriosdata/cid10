@@ -53,6 +53,13 @@ public class Cid {
      */
     private List<String> capitulos;
 
+    /**
+     * A resposta será paginada, ou seja, conterá no máximo a quantidade
+     * de entradas dada pelo valor da presente variável. O valor padrão
+     * é 50.
+     */
+    private float tamanhoBloco = 50;
+
     public Cid() {
         busca = getConteudo("cid/busca.csv");
 
@@ -102,6 +109,18 @@ public class Cid {
      */
     public List<String> capitulos() {
         return capitulos;
+    }
+
+    public List<String> encontre(String[] criterios, int bloco) {
+        List<String> parcial = encontre(criterios);
+
+        // Ajusta
+        int totalPaginas = (int)Math.ceil(parcial.size() / tamanhoBloco);
+
+        // Ajusta página se requisição está "fora" dos limites.
+        int pagina = bloco < 0 ? 0 : (bloco < tamanhoBloco ? bloco : (int)tamanhoBloco - 1);
+
+
     }
 
     /**

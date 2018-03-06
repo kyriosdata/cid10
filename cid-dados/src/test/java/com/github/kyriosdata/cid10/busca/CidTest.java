@@ -27,7 +27,7 @@ public class CidTest {
     private static Cid cid;
 
     @BeforeClass
-    public static void setUp() throws Exception {
+    public static void setUp() {
         cid = new Cid();
     }
 
