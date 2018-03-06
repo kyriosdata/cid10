@@ -21,10 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implementa serviço de busca na CID-10.
- * <p>O uso é trivial, basta enviar a mensagem
- * {@link #encontre(String[])}} para uma instância
- * da classe {@link Cid}.</p>
+ * Serviço de busca na CID-10.
  */
 public class Cid {
 
@@ -65,6 +62,17 @@ public class Cid {
         capitulos = getConteudo("cid/capitulos.csv");
     }
 
+    /**
+     * Recupera conteúdo de arquivo contido no próprio jar file,
+     * diretório "resources".
+     *
+     * @param fileName O nome do arquivo contido no diretório "resources".
+     *                 Por exemplo, "x.txt" para o arquivo em questão ou
+     *                 "dir/x.txt" se este arquivo estiver no diretório
+     *                 "dir", contido no diretório "resources'.
+     *
+     * @return O conteúdo do arquivo em uma lista de linhas.
+     */
     public List<String> getConteudo(String fileName) {
         ClassLoader classLoader = getClass().getClassLoader();
         InputStream is = classLoader.getResourceAsStream(fileName);
@@ -141,6 +149,9 @@ public class Cid {
         return strs;
     }
 
+    // TODO limitar total de critérios (talvez 5, por exemplo) (ignora demais).
+    // TODO limitar tamanho maximo de cada critério (talvez 10 caracteres, ignore demais)
+    // TODO não alterar array original.
     private static void ajustaCriterios(String[] criterios) {
         for (int i = 0; i < criterios.length; i++) {
             criterios[i] = ajustaCriterio(criterios[i]);

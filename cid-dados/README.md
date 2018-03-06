@@ -65,7 +65,7 @@ _Decisão 2_. O formato original dos dados de entrada servem de entrada para pro
 
 ### Como usar (desenvolvedores)
 
-A documentação fornece detalhes para desenvolvedores que desejam empregar a CID-10 em seus projetos.
+A documentação fornece detalhes para desenvolvedores que desejam empregar a CID-10 em seus projetos.<br>
 [![Javadocs](https://img.shields.io/badge/javadoc-2008--1.0-brightgreen.svg)](http://javadoc.io/doc/com.github.kyriosdata.cid10/cid10-dados)
 
 Além da documentação será necessário acesso ao software e dados pertinentes. 
