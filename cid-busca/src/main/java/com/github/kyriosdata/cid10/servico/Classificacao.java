@@ -25,7 +25,7 @@ import java.util.Map;
 public class Classificacao {
 
     /**
-     * Classe que oferece acesso ao conteúdo da CID-10.
+     * Classe que oferece acesso ao conteúdo da CID-10 (inclusive busca).
      */
     private Cid cid;
 
@@ -57,9 +57,9 @@ public class Classificacao {
      * @return Os capítulos da CID-10.
      */
     @GetMapping(value = "/capitulos")
-    public String capitulos() {
+    public List<String> capitulos() {
 
-        return capitulos;
+        return cid.capitulos();
     }
 
     /**
@@ -136,8 +136,9 @@ public class Classificacao {
      * cada item retornado contém em sua descrição as palavras fornecidas.
      * Os códigos dos itens retornados também são consultados nessa busca.
      */
-    @GetMapping(value = "/busca/{palavras}")
-    public List<String> busca(@PathVariable String palavras) {
+    @GetMapping(value = "/busca/{palavras}/{bloco}")
+    public List<String> busca(@PathVariable String palavras, @PathVariable int bloco) {
+        System.out.println(bloco);
         String[] words = palavras.split(" ");
         return cid.encontre(words);
     }
