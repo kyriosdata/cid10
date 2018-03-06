@@ -39,20 +39,16 @@ cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e
 ---
 
 ### Função principal
-_A busca pode ser feita apenas por parte do código e/ou parte da descrição_. A saída produzida deve ser uma entrada da CID-10 que contém
-todos os elementos fornecidos na entrada, conforme ilustrado abaixo.
+- _A busca pode ser feita apenas por parte do código e/ou parte da descrição_. A saída produzida deve ser uma entrada da CID-10 que contém todos os elementos fornecidos na entrada, conforme ilustrado abaixo. A busca por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue". A busca por "90" e por "dengue" apenas produz a entrada de código A90.
 
-A busca por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue".
-
-A busca por "90" e por "dengue" apenas produz a entrada de código A90.
+- _Acentos podem ou não ser fornecidos_. Por exemplo, a busca por "infecção" e "infeccao" vão produzir o mesmo resultado. 
+- _Maiúsculas e minúsculas são tratadas igualmente_. Ou seja, "HIV" e "hIv" produzem o mesmo resultado.
 
 ### Projeto (design) da solução
 
-As categorias e as subcategorias da CID-10 serão reunidas em uma única lista e a busca será realizada sequencialmente nesta lista. Dado que a busca deve ignorar o uso ou não da acentuação, uma lista adicional deverá ser confeccionada e sobre a qual a busca será, de fato, realizada. A lista original será mantida para a montagem da resposta.
+_Decisão 1_. As categorias e as subcategorias da CID-10 serão reunidas em uma única lista e a busca será realizada sequencialmente nesta lista. Dado que a busca deve ignorar o uso ou não da acentuação, uma lista adicional deverá ser confeccionada e sobre a qual a busca será, de fato, realizada. A lista original será mantida para a montagem da resposta.
 
-### Orientação principal
-
-Formato original dos dados de entrada deverão servir de entrada para processo automático que produz dados usados pela solução. Ou seja, nenhum processo manual deverá ser utilizado para a produção da estrutura de dados usada pela solução.
+_Decisão 2_. O formato original dos dados de entrada servem de entrada para processo automático que produz dados usados pela solução. Ou seja, nenhum processo manual deverá ser utilizado para a produção da estrutura de dados usada pela solução.
 
 ### Produção dos dados para busca (lista adicional)
 
@@ -65,8 +61,7 @@ Formato original dos dados de entrada deverão servir de entrada para processo a
    
 ### Estratégia (ações realizadas)
 1. Descrição abreviada foi ignorada.
-1. A busca admite o uso ou não de acentos, ou seja, "infecção" e "infeccao" são tratadas igualmente. 
-1. O uso de maiúscula ou minúscula é ignorado, ou seja, "HIV" e "hIv" são iguais.
+1. 
 
 ### Geração dos aplicativos (e uso via linha de comandos)
 1. Execute `mvn package` 
