@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c166b3e-28fe-40c3-aa44-0c34b0e6c085" name="Default" comment="" />
+    <list default="true" id="5c166b3e-28fe-40c3-aa44-0c34b0e6c085" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/helpers/exibe-entrada-cid.js" afterPath="$PROJECT_DIR$/app/helpers/exibe-entrada-cid.js" />
+      <change beforePath="$PROJECT_DIR$/tests/integration/helpers/exibe-entrada-cid-test.js" afterPath="$PROJECT_DIR$/tests/integration/helpers/exibe-entrada-cid-test.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bower_components.ember-try/" />
     <ignored path="$PROJECT_DIR$/.node_modules.ember-try/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -28,8 +31,8 @@
       <file leaf-file-name="exibe-entrada-cid.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/exibe-entrada-cid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="120">
+              <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -38,8 +41,8 @@
       <file leaf-file-name="exibe-entrada-cid-test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/integration/helpers/exibe-entrada-cid-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -111,6 +114,7 @@
         <option value="$PROJECT_DIR$/app/routes/busca.js" />
         <option value="$PROJECT_DIR$/app/templates/busca.hbs" />
         <option value="$PROJECT_DIR$/app/helpers/exibe-entrada-cid.js" />
+        <option value="$PROJECT_DIR$/tests/integration/helpers/exibe-entrada-cid-test.js" />
       </list>
     </option>
   </component>
@@ -394,12 +398,12 @@
       <workItem from="1520532778177" duration="2274000" />
       <workItem from="1520536928868" duration="1973000" />
       <workItem from="1520539874475" duration="939000" />
-      <workItem from="1520540900024" duration="1643000" />
+      <workItem from="1520540900024" duration="2972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8266000" />
+    <option name="totallyTimeSpent" value="9595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="20" width="1911" height="2039" extended-state="0" />
@@ -742,16 +746,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/exibe-entrada-cid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="120">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/integration/helpers/exibe-entrada-cid-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>

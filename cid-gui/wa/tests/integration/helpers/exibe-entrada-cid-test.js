@@ -6,12 +6,11 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Helper | exibe-entrada-cid', function(hooks) {
   setupRenderingTest(hooks);
 
-  // Replace this with your real tests.
-  test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+  test("formata entrada CID-10", async function(assert) {
+    this.set('inputValue', "atenção;ok;descrição");
 
     await render(hbs`{{exibe-entrada-cid inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), "atenção - descrição");
   });
 });
