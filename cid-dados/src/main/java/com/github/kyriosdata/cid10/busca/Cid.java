@@ -19,6 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Serviço de busca na CID-10.
@@ -87,19 +88,7 @@ public class Cid {
         InputStreamReader isr = new InputStreamReader(is, utf8);
         BufferedReader br = new BufferedReader(isr);
 
-        List<String> conteudo = new ArrayList<>();
-
-        String linha;
-
-        try {
-            while ((linha = br.readLine()) != null) {
-                conteudo.add(linha);
-            }
-        } catch (Exception exp) {
-            return null;
-        }
-
-        return conteudo;
+        return br.lines().collect(Collectors.toList());
     }
 
     /**
