@@ -1,0 +1,37 @@
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Classificação Internacional de Doenças (CID-10)
+      </h1>
+      <h2 class="subtitle">
+        Encontre o código correto.
+      </h2>
+      {{#link-to "about" class="button about"}}
+        Informações
+      {{/link-to}}
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light">
+
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">CID-10</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Por exemplo, 'a9 w'">
+            </div>
+            <p class="help">Digite parte do código e/ou da descrição.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{{outlet}}
