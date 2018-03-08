@@ -58,7 +58,7 @@ public class Cid {
      * de entradas dada pelo valor da presente variável. O valor padrão
      * é 50.
      */
-    private float tamanhoBloco = 50;
+    private int tamanhoPagina = 50;
 
     public Cid() {
         busca = getConteudo("cid/busca.csv");
@@ -111,16 +111,49 @@ public class Cid {
         return capitulos;
     }
 
-    public List<String> encontre(String[] criterios, int bloco) {
+    /**
+     * Localiza entradas da CID-10 que contém os critérios fornecidos e
+     * retorna apenas aquelas a partir da ordem fornecida até o limite de
+     * {@link #tamanhoPagina}.
+     *
+     * <p>Em geral este método é chamado inicialmente com o valor 0 para a
+     * ordem e, para requisições seguintes, o valores múltiplos de
+     * {@link #tamanhoPagina}.</p>
+     *
+     * @param criterios Se uma entrada é retornada, então satisfaz ou contém
+     *                  os critérios fornecidos.
+     *
+     * @param ordem A ordem da entrada a partir da qual será montada a
+     *               resposta. Se os critérios identificam N entradas, então
+     *              nenhuma resposta será fornecida se a ordem indicada
+     *              for igual ou superior a N. Se for igual a N - 1, então
+     *              apenas a última entrada das N encontradas será retornada.
+     *              Se a ordem for inferior a N - 1, serão retornadas todas as
+     *              entradas a partir da ordem fornecida até o limite de
+     *              {@link #tamanhoPagina}.
+     *
+     * @return As entradas que satisfazem os critérios a partir da ordem
+     * indicada.
+     */
+    public List<String> encontre(String[] criterios, int ordem) {
+        if (ordem < 0) {
+            return new ArrayList<>(0);
+        }
+
         List<String> parcial = encontre(criterios);
 
-        // Ajusta
-        int totalPaginas = (int)Math.ceil(parcial.size() / tamanhoBloco);
+        // Ordem além da resposta.
+        int tamanhoRespostaParcial = parcial.size();
+        if (ordem >= tamanhoRespostaParcial) {
+            return new ArrayList<>(0);
+        }
 
-        // Ajusta página se requisição está "fora" dos limites.
-        int pagina = bloco < 0 ? 0 : (bloco < tamanhoBloco ? bloco : (int)tamanhoBloco - 1);
+        int superior = ordem + tamanhoPagina;
+        if (superior > tamanhoRespostaParcial) {
+            superior = tamanhoRespostaParcial;
+        }
 
-
+        return parcial.subList(ordem, superior);
     }
 
     /**

@@ -20,6 +20,7 @@ import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * IMPORTANTE: os arquivos empregados nos testes desta classe são gerados por
@@ -46,10 +47,25 @@ public class PaginacaoTest {
     }
 
     @Test
-    public void primeiroBloco() {
-        assertEquals(50, cid.encontre(new String[] {"a"}, 0).size());
+    public void primeiraPagina() {
+        verificaPagina(0, 50);
+        verificaPagina(950, 50);
+        verificaPagina(951, 49);
+        verificaPagina(952, 48);
+        verificaPagina(998, 2);
+        verificaPagina(999, 1);
     }
 
+    @Test
+    public void casosAlemDosLimites() {
+        verificaPagina(-1, 0);
+        verificaPagina(1000, 0);
+    }
+
+    private void verificaPagina(int ordem, int esperado) {
+        List<String> encontradas = cid.encontre(new String[]{"a"}, ordem);
+        assertEquals(esperado, encontradas.size());
+    }
 }
 
 class CidPaginacao extends Cid {
