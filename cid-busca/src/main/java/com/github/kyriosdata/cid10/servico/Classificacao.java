@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Acesso aos serviços de informações sobre a CID-10.
+ */
 @RestController
 public class Classificacao {
 
@@ -112,14 +115,18 @@ public class Classificacao {
      * @param palavras Uma ou mais palavras que serão empregadas na busca
      *                 de categorias e/ou subcategorias correspondentes.
      *
+     * @param ordem A ordem do primeiro elemento da CID-10 a ser fornecido
+     *              como resposta.
+     *
      * @return A lista de categorias e/ou subcategorias correspondentes à
      * busca realizada com base nas palavras fornecidas. De forma simplificada,
      * cada item retornado contém em sua descrição as palavras fornecidas.
      * Os códigos dos itens retornados também são consultados nessa busca.
      */
-    @GetMapping(value = "/busca/{palavras}/{bloco}")
-    public List<String> busca(@PathVariable String palavras, @PathVariable int bloco) {
+    @GetMapping(value = "/busca/{palavras}/{ordem}")
+    public List<String> busca(@PathVariable String palavras,
+                              @PathVariable int ordem) {
         String[] words = palavras.split(" ");
-        return cid.encontre(words);
+        return cid.encontre(words, ordem);
     }
 }

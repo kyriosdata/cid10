@@ -18,6 +18,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,10 +32,14 @@ public class Cid {
      * a serem localizadas. O conjunto daquelas encontradas é retornado.
      *
      * @param args Argumentos que serão tratados como partes ou componentes
-     *             de código e/ou descrição das entradas da CID-10.
+     *             de código e/ou descrição das entradas da CID-10. O primeiro
+     *             deles é a ordem inicial da entrada a ser considerada. Ou
+     *             seja, são esperados pelo menos dois argumentos.
      */
     public static void main(String[] args) {
-        new Cid().encontre(args).forEach(System.out::println);
+        int ordem = Integer.parseInt(args[0]);
+        String[] criterios = Arrays.copyOfRange(args, 1, args.length);
+        new Cid().encontre(criterios, ordem).forEach(System.out::println);
     }
 
     /**
