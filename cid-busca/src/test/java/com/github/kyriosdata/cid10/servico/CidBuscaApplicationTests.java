@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -26,13 +27,23 @@ public class CidBuscaApplicationTests {
 
 	@Test
 	public void recuperaEntradaUnica() throws Exception {
-		String url = "/busca/a9 w/6";
+		String url = "/busca/a9 w/0";
 		MockHttpServletRequestBuilder mock = MockMvcRequestBuilders.get(url);
 		mock.accept(MediaType.APPLICATION_JSON);
 		ResultActions resultado = mvc.perform(mock);
 		resultado.andExpect(status().isOk());
 		resultado.andExpect(content().string(containsString("A923")));
 		resultado.andExpect(content().json("[\"A923;-;Infecção pelo vírus West Nile\"]"));
+	}
+
+	@Test
+	public void ordemAlemDoTamanhoDaRespostaNadaProduzido() throws Exception {
+		String url = "/busca/a9 w/1";
+		MockHttpServletRequestBuilder mock = MockMvcRequestBuilders.get(url);
+		mock.accept(MediaType.APPLICATION_JSON);
+		ResultActions resultado = mvc.perform(mock);
+		resultado.andExpect(status().isOk());
+		resultado.andExpect(content().string(equalTo("[]")));
 	}
 
 }
