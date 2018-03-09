@@ -14,16 +14,10 @@
   </div>
 </section>
 
-<ul>
-  {{#each model as |entrada|}}
-    <li>{{entrada}}</li>
-  {{/each}}
-</ul>
-
 {{#filtra-cid filter=(action "filtraPorParte") as |entradas|}}
   <ul>
     {{#each entradas as |entrada|}}
-      <li>{{entrada}}</li>
+      <li>{{exibe-entrada-cid entrada}}</li>
     {{/each}}
   </ul>
 {{/filtra-cid}}

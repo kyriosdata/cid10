@@ -11,6 +11,7 @@ export default Component.extend({
 
   actions : {
     handleEntradaFiltro() {
+      console.log("handleEntradaFiltro");
       let filterInputValue = this.get("value");
       let filterAction = this.get("filter");
       filterAction(filterInputValue).then((filterResults) => this.set("results", filterResults));

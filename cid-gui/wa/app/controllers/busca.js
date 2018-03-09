@@ -4,9 +4,12 @@ export default Controller.extend({
   actions: {
     filtraPorParte(param) {
       if (param != "") {
-        return this.get("store").query("entrada", { city: param })
+        // return this.get("store").query("entrada", { city: param })
+        console.log("Parametro: " + param);
+        const sentenca = "código " + param + ";-; descricao " + param;
+        return Promise.resolve([sentenca]);
       } else {
-        return this.get("store").findAll("cid-10");
+        return this.get("store").findAll("cid10");
       }
     }
   }
