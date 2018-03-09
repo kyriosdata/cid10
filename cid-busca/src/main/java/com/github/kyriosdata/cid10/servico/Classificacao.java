@@ -13,6 +13,7 @@ package com.github.kyriosdata.cid10.servico;
 import com.github.kyriosdata.cid10.busca.Cid;
 import com.github.kyriosdata.cid10.servico.modelo.Codigo;
 import com.github.kyriosdata.cid10.servico.modelo.Grupo;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -123,6 +124,7 @@ public class Classificacao {
      * cada item retornado contém em sua descrição as palavras fornecidas.
      * Os códigos dos itens retornados também são consultados nessa busca.
      */
+    @CrossOrigin
     @GetMapping(value = "/busca/{palavras}/{ordem}")
     public List<String> busca(@PathVariable String palavras,
                               @PathVariable int ordem) {
