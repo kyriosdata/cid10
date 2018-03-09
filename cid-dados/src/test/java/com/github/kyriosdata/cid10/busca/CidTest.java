@@ -15,7 +15,10 @@ package com.github.kyriosdata.cid10.busca;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.List;
+
 import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * IMPORTANTE: os arquivos empregados nos testes desta classe são gerados por
@@ -29,6 +32,13 @@ public class CidTest {
     @BeforeClass
     public static void setUp() {
         cid = new Cid();
+    }
+
+    @Test
+    public void umaEntradaExistente() {
+        List<String> search = cid.encontre(new String[]{"a9", "w"}, 0);
+        assertEquals(1, search.size());
+        assertTrue(search.get(0).startsWith("A923"));
     }
 
     @Test
