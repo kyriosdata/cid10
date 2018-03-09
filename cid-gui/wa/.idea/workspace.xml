@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5c166b3e-28fe-40c3-aa44-0c34b0e6c085" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/components/filtra-cid.js" afterPath="$PROJECT_DIR$/app/components/filtra-cid.js" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/busca.js" afterPath="$PROJECT_DIR$/app/controllers/busca.js" />
-      <change beforePath="$PROJECT_DIR$/app/routes/busca.js" afterPath="$PROJECT_DIR$/app/routes/busca.js" />
-      <change beforePath="$PROJECT_DIR$/app/templates/busca.hbs" afterPath="$PROJECT_DIR$/app/templates/busca.hbs" />
-      <change beforePath="$PROJECT_DIR$/app/templates/components/filtra-cid.hbs" afterPath="$PROJECT_DIR$/app/templates/components/filtra-cid.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.bower_components.ember-try/" />
     <ignored path="$PROJECT_DIR$/.node_modules.ember-try/" />
@@ -26,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/app/templates/busca.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,11 +57,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="busca.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="busca.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/busca.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/adapters/application.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -97,6 +102,7 @@
         <option value="$PROJECT_DIR$/app/components/filtra-cid.js" />
         <option value="$PROJECT_DIR$/app/templates/busca.hbs" />
         <option value="$PROJECT_DIR$/app/controllers/busca.js" />
+        <option value="$PROJECT_DIR$/app/adapters/application.js" />
       </list>
     </option>
   </component>
@@ -188,74 +194,7 @@
               <item name="wa" type="b2602c69:ProjectViewProjectNode" />
               <item name="wa" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="acceptance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wa" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wa" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="unit" type="462c0819:PsiDirectoryNode" />
+              <item name="adapters" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -397,12 +336,12 @@
       <workItem from="1520536928868" duration="1973000" />
       <workItem from="1520539874475" duration="939000" />
       <workItem from="1520540900024" duration="3047000" />
-      <workItem from="1520616531602" duration="2054000" />
+      <workItem from="1520616531602" duration="3316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11724000" />
+    <option name="totallyTimeSpent" value="12986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="20" width="1911" height="2039" extended-state="0" />
@@ -415,7 +354,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988003" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2726773" sideWeight="0.50284785" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2726773" sideWeight="0.50284785" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2726773" sideWeight="0.49715215" order="0" side_tool="false" content_ui="tabs" />
@@ -804,14 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/busca.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/filtra-cid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -820,10 +751,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/busca.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/busca.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/adapters/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
           <folding />
         </state>
       </provider>
