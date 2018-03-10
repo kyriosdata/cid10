@@ -9,7 +9,7 @@ export default Controller.extend({
         const sentenca = "código " + param + ";-; descricao " + param;
         return Promise.resolve([sentenca]);
       } else {
-        return this.get("store").findAll("cid10");
+        return this.get("store").query("cid10", { texto: "a923" });
       }
     }
   }

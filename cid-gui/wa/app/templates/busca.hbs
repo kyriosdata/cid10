@@ -14,9 +14,9 @@
   </div>
 </section>
 
-{{#filtra-cid filter=(action "filtraPorParte") as |entradas|}}
+{{#filtra-cid filter=(action "filtraPorParte") as |resultado|}}
   <ul>
-    {{#each entradas as |entrada|}}
+    {{#each resultado as |entrada|}}
       <li>{{exibe-entrada-cid entrada}}</li>
     {{/each}}
   </ul>
