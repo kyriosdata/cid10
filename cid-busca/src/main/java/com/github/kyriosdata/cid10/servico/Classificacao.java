@@ -41,6 +41,7 @@ public class Classificacao {
      *
      * @return Os capítulos da CID-10.
      */
+    @CrossOrigin
     @GetMapping(value = "/capitulos")
     public List<String> capitulos() {
 
