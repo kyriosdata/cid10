@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c166b3e-28fe-40c3-aa44-0c34b0e6c085" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/adapters/cid10.js" afterPath="$PROJECT_DIR$/app/adapters/cid10.js" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/busca.js" afterPath="$PROJECT_DIR$/app/controllers/busca.js" />
-      <change beforePath="$PROJECT_DIR$/app/models/cid10.js" afterPath="$PROJECT_DIR$/app/models/cid10.js" />
-      <change beforePath="$PROJECT_DIR$/app/templates/busca.hbs" afterPath="$PROJECT_DIR$/app/templates/busca.hbs" />
-    </list>
+    <list default="true" id="5c166b3e-28fe-40c3-aa44-0c34b0e6c085" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bower_components.ember-try/" />
     <ignored path="$PROJECT_DIR$/.node_modules.ember-try/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -51,31 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="busca.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="busca.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/busca.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
               <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cid10.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/adapters/cid10.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="70" lean-forward="false" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cid10.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/cid10.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -121,7 +95,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="69" />
     <option name="y" value="115" />
     <option name="width" value="1435" />
@@ -390,15 +364,15 @@
       <workItem from="1520539874475" duration="939000" />
       <workItem from="1520540900024" duration="3047000" />
       <workItem from="1520616531602" duration="4203000" />
-      <workItem from="1520640108849" duration="5359000" />
+      <workItem from="1520640108849" duration="5483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19232000" />
+    <option name="totallyTimeSpent" value="19356000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="69" y="115" width="1435" height="1036" extended-state="1" />
+    <frame x="69" y="115" width="1435" height="1036" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -790,14 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/cid10.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/busca.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -822,10 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/busca.js">
+    <entry file="file://$PROJECT_DIR$/app/models/cid10.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+        <state relative-caret-position="72">
+          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -834,6 +800,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="70" lean-forward="false" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/busca.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
           <folding />
         </state>
       </provider>
