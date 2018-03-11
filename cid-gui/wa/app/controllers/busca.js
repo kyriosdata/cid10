@@ -1,15 +1,17 @@
 import Controller from '@ember/controller';
+import $ from "jquery";
 
 export default Controller.extend({
   actions: {
     filtraPorParte(param) {
       if (param != "") {
         // return this.get("store").query("entrada", { city: param })
-        console.log("Parametro: " + param);
-        const sentenca = "código " + param + ";-; descricao " + param;
-        return Promise.resolve([sentenca]);
+        const tratado = param.toString().trim();
+        const url = "http://localhost:8080/busca/" + param + "/0";
+        console.log(url);
+        return $.getJSON(url);
       } else {
-        return this.get("store").query("cid10", { texto: "a923" });
+        return $.getJSON("http://localhost:8080/busca/a923/0");
       }
     }
   }
