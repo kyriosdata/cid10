@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import $ from "jquery";
 
-const HOST = "http://localhost:8080/busca/";
+const HOST = "https://localhost:8080/busca/";
 
 function montaURL(argumentos, ordem) {
   return HOST + argumentos + "/" + ordem;
