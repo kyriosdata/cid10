@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c166b3e-28fe-40c3-aa44-0c34b0e6c085" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/busca.js" afterPath="$PROJECT_DIR$/app/controllers/busca.js" />
-      <change beforePath="$PROJECT_DIR$/app/models/doenca.js" afterPath="$PROJECT_DIR$/app/models/doenca.js" />
-    </list>
+    <list default="true" id="5c166b3e-28fe-40c3-aa44-0c34b0e6c085" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bower_components.ember-try/" />
     <ignored path="$PROJECT_DIR$/.node_modules.ember-try/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -71,18 +68,6 @@
         </entry>
       </file>
       <file leaf-file-name="doenca.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/adapters/doenca.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doenca.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/doenca.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -403,12 +388,12 @@
       <workItem from="1520539874475" duration="939000" />
       <workItem from="1520540900024" duration="3047000" />
       <workItem from="1520616531602" duration="4203000" />
-      <workItem from="1520640108849" duration="7691000" />
+      <workItem from="1520640108849" duration="7746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21564000" />
+    <option name="totallyTimeSpent" value="21619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="115" width="1435" height="1036" extended-state="0" />
@@ -812,14 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/doenca.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/filtra-cid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -836,6 +813,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/adapters/doenca.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/busca.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -846,13 +831,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/adapters/doenca.js">
+    <entry file="file://$PROJECT_DIR$/app/models/doenca.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
