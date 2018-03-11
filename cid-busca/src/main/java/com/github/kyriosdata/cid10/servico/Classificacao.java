@@ -13,39 +13,24 @@ package com.github.kyriosdata.cid10.servico;
 import com.github.kyriosdata.cid10.busca.Cid;
 import com.github.kyriosdata.cid10.servico.modelo.Codigo;
 import com.github.kyriosdata.cid10.servico.modelo.Grupo;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
+/**
+ * Acesso aos serviços de informações sobre a CID-10.
+ */
 @RestController
 public class Classificacao {
 
     /**
-     * Classe que oferece acesso ao conteúdo da CID-10.
+     * Conteúdo da CID-10 (inclusive busca).
      */
     private Cid cid;
-
-    /**
-     * Lista contendo todas as entradas da CID-10.
-     * Sobre esta lista são feitas as operações de
-     * consulta.
-     */
-    private List<Codigo> codigos;
-
-    /**
-     * Lista de capítulos da CID-10.
-     */
-    private String capitulos;
-
-    /**
-     * Lista de grupos da CID-10 por capítulo. Inclui grupos da
-     * CID-10 oncologia.
-     */
-    private Map<Integer, List<Grupo>> grupos;
 
     public Classificacao() {
         cid = new Cid();
@@ -56,10 +41,11 @@ public class Classificacao {
      *
      * @return Os capítulos da CID-10.
      */
+    @CrossOrigin
     @GetMapping(value = "/capitulos")
-    public String capitulos() {
+    public List<String> capitulos() {
 
-        return capitulos;
+        return cid.capitulos();
     }
 
     /**
@@ -95,7 +81,7 @@ public class Classificacao {
     public List<Codigo> categorias(@PathVariable String faixa) {
         Codigo c = new Codigo();
         c.codigo = "A00";
-        c.descrica = "A descrição da categoria";
+        c.descricao = "A descrição da categoria";
         c.sexo = '-';
 
         List<Codigo> categorias = new ArrayList<>();
@@ -115,7 +101,7 @@ public class Classificacao {
     public List<Codigo> subcategorias(@PathVariable String categoria) {
         Codigo c = new Codigo();
         c.codigo = "B00";
-        c.descrica = "subcategoria";
+        c.descricao = "subcategoria";
         c.sexo = 'M';
 
         List<Codigo> subcategorias = new ArrayList<>();
@@ -131,14 +117,19 @@ public class Classificacao {
      * @param palavras Uma ou mais palavras que serão empregadas na busca
      *                 de categorias e/ou subcategorias correspondentes.
      *
+     * @param ordem A ordem do primeiro elemento da CID-10 a ser fornecido
+     *              como resposta.
+     *
      * @return A lista de categorias e/ou subcategorias correspondentes à
      * busca realizada com base nas palavras fornecidas. De forma simplificada,
      * cada item retornado contém em sua descrição as palavras fornecidas.
      * Os códigos dos itens retornados também são consultados nessa busca.
      */
-    @GetMapping(value = "/busca/{palavras}")
-    public List<String> busca(@PathVariable String palavras) {
+    @CrossOrigin
+    @GetMapping(value = "/busca/{palavras}/{ordem}")
+    public List<String> busca(@PathVariable String palavras,
+                              @PathVariable int ordem) {
         String[] words = palavras.split(" ");
-        return cid.encontre(words);
+        return cid.encontre(words, ordem);
     }
 }

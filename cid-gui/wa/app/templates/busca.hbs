@@ -1,0 +1,25 @@
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Classificação Internacional de Doenças (CID-10)
+      </h1>
+      <h2 class="subtitle">
+        Encontre o código correto.
+      </h2>
+      {{#link-to "about" class="button about"}}
+        Informações
+      {{/link-to}}
+    </div>
+  </div>
+</section>
+
+{{#filtra-cid filter=(action "filtraPorParte") as |resultado|}}
+  <ul>
+    {{#each resultado as |entrada|}}
+      <li>{{exibe-entrada-cid entrada}}</li>
+    {{/each}}
+  </ul>
+{{/filtra-cid}}
+
+{{outlet}}

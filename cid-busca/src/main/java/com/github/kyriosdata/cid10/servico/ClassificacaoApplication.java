@@ -15,6 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Contêiner no qual o serviço de busca na CID-10 é realizado.
+ * TODO https://spring.io/understanding/CORS
+ * TODO https://spring.io/guides/gs/rest-service-cors/
  */
 @SpringBootApplication
 public class ClassificacaoApplication {
