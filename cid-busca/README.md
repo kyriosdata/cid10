@@ -1,10 +1,13 @@
+
 Microserviço que fornece informações sobre a CID-10, inclusive consultas.
 
+# Configuração
+Defina a variável de ambiente **SPRING_BOOT_KEYSTORE_PASSWORD** com a senha empregada para criar
+o _keystore_. Detalhes em https://www.thomasvitale.com/https-spring-boot-ssl-certificate/. 
+
 # Uso
-O microserviço responde a uma única requisição POST cujo corpo fornece
-o parâmetro *q*. Por exemplo, a busca de um código
-que contém **engue** e **90**, a consulta correspondente é
 
 ```
-curl http://localhost:8080/cid -d "q=engue 90"
+curl https://localhost:8443/capitulos -k
+curl https://localhost:8443/busca/a923/0
 ```
