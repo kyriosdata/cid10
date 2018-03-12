@@ -2,9 +2,15 @@
 Microserviço que fornece informações sobre a CID-10, inclusive consultas.
 
 # Configuração
-Defina a variável de ambiente **SPRING_BOOT_KEYSTORE_PASSWORD** com a senha empregada para criar
-o _keystore_. Detalhes em https://www.thomasvitale.com/https-spring-boot-ssl-certificate/, caso
-o _profile_ ativo seja **https** e usa a porta 8443. O _profile_ padrão usa http (porta 8080).
+Defina a variável de ambiente **SPRING_BOOT_KEYSTORE_PASSWORD** com a senha 
+empregada para criar o _keystore_. No caso deste projeto, apenas para
+desenvolvimento, um certificado _self-signed_ faz uso da senha 
+"spring-boot-password". Consulte detalhes de como gerar um _keystore_ e,
+naturalmente, fazer uso de uma senha apropriada em 
+https://www.thomasvitale.com/https-spring-boot-ssl-certificate/.
+
+Caso o _profile_ ativo seja **https** a porta empregada é 8443. 
+O _profile_ padrão usa http e a porta 8080.
 
 # Para executar
 
