@@ -1,0 +1,6 @@
+<h1>ember-table</h1>
+{{#ember-table rows=rows columns=columns selectedRows=selectedRows onSelect="onSelect" as |t|}}
+  {{#ember-table-row row=t as |cell|}}
+    {{cell.value}}
+  {{/ember-table-row}}
+{{/ember-table}}
