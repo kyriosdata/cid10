@@ -1,5 +1,5 @@
 import { helper } from '@ember/component/helper';
-imort { htmlSafe } from '@ember/string';
+import { htmlSafe } from '@ember/string';
 
 export function exibeEntradaCid(entrada) {
   const campos = entrada.toString().split(";");
