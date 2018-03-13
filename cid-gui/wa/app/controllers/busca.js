@@ -12,8 +12,7 @@ export default Controller.extend({
     filtraPorParte(param) {
       if (param != "") {
         const tratado = param.toString().trim();
-        const url = montaURL(param, 0);
-        console.log(url);
+        const url = montaURL(tratado, 0);
         return $.getJSON(url);
       } else {
         return $.getJSON(montaURL("a923", 0));
