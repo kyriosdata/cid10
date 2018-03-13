@@ -14,9 +14,12 @@
   </div>
 </section>
 
+
 {{#filtra-cid filter=(action "filtraPorParte") as |resultado|}}
 
-  {{exibe-cids cids=resultado}}
+  <div class="section">
+    {{exibe-cids cids=resultado}}
+  </div>
 
 {{/filtra-cid}}
 
