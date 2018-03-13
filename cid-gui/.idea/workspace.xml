@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6c4a8aba-ae53-441f-bf83-5565fdd264be" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/wa/app/helpers/exibe-entrada-cid.js" afterPath="$PROJECT_DIR$/wa/app/helpers/exibe-entrada-cid.js" />
       <change beforePath="$PROJECT_DIR$/wa/app/templates/busca.hbs" afterPath="$PROJECT_DIR$/wa/app/templates/busca.hbs" />
-      <change beforePath="$PROJECT_DIR$/wa/app/templates/components/filtra-cid.hbs" afterPath="$PROJECT_DIR$/wa/app/templates/components/filtra-cid.hbs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,25 +44,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="busca.hbs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="busca.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wa/app/templates/busca.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="773">
-              <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            <state relative-caret-position="540">
+              <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exibe-entrada-cid.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wa/app/helpers/exibe-entrada-cid.js">
+      <file leaf-file-name="exibe-cids.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wa/app/templates/components/exibe-cids.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="4" column="85" lean-forward="false" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
-              <folding>
-                <marker date="1520901082700" expanded="true" signature="177:271" ph="..." />
-                <marker date="1520901082700" expanded="true" signature="181:271" ph="..." />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,8 +101,9 @@
       <list>
         <option value="$PROJECT_DIR$/wa/app/controllers/busca.js" />
         <option value="$PROJECT_DIR$/wa/app/templates/components/filtra-cid.hbs" />
-        <option value="$PROJECT_DIR$/wa/app/templates/busca.hbs" />
         <option value="$PROJECT_DIR$/wa/app/helpers/exibe-entrada-cid.js" />
+        <option value="$PROJECT_DIR$/wa/app/templates/components/exibe-cids.hbs" />
+        <option value="$PROJECT_DIR$/wa/app/templates/busca.hbs" />
       </list>
     </option>
   </component>
@@ -379,7 +375,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4003000" />
+    <option name="totallyTimeSpent" value="4850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="20" width="1911" height="2039" extended-state="0" />
@@ -577,12 +573,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wa/app/controllers/busca.js">
+    <entry file="file://$PROJECT_DIR$/wa/app/components/filtra-cid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wa/app/helpers/exibe-entrada-cid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <marker date="1520901082700" expanded="true" signature="177:271" ph="..." />
+            <marker date="1520901082700" expanded="true" signature="181:271" ph="..." />
           </folding>
         </state>
       </provider>
@@ -595,30 +600,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wa/app/components/filtra-cid.js">
+    <entry file="file://$PROJECT_DIR$/wa/app/controllers/busca.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        <state relative-caret-position="660">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wa/app/templates/components/exibe-cids.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wa/app/templates/busca.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        <state relative-caret-position="540">
+          <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wa/app/helpers/exibe-entrada-cid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="85" lean-forward="false" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
-          <folding>
-            <marker date="1520901082700" expanded="true" signature="177:271" ph="..." />
-            <marker date="1520901082700" expanded="true" signature="181:271" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Código</th>
+    <th>Descrição</th>
+  </tr>
+  </thead>
+  <tfoot></tfoot>
+  <tbody>
+  {{#each cids as |entrada|}}
+    {{exibe-entrada-cid entrada}}
+  {{/each}}
+  </tbody>
+</table>
+
+<b>{{mensagem}}</b>

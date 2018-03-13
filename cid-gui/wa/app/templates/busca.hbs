@@ -15,20 +15,8 @@
 </section>
 
 {{#filtra-cid filter=(action "filtraPorParte") as |resultado|}}
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Código</th>
-      <th>Descrição</th>
-    </tr>
-    </thead>
-    <tfoot></tfoot>
-    <tbody>
-    {{#each resultado as |entrada|}}
-      {{exibe-entrada-cid entrada}}
-    {{/each}}
-    </tbody>
-  </table>
+
+  {{exibe-cids cids=resultado}}
 
 {{/filtra-cid}}
 
