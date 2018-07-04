@@ -61,7 +61,13 @@ _Decisão 2_. O formato original dos dados de entrada servem de entrada para pro
    
 ### Geração dos aplicativos (e uso via linha de comandos)
 1. Execute `mvn package` 
-1. Na linha de comandos `java -jar cid10-dados-2008.1.0.jar dengue` fará com que todas as entradas contendo "dengue" sejam exibidas na saída padrão. Experimente com outros argumentos e o resultado deverá incluir todos os termos fornecidos.
+1. Na linha de comandos `java -jar cid10-dados-2008.1.0.jar 0 dengue` fará 
+com que todas as entradas contendo "dengue" sejam exibidas na saída padrão.
+Ou seja, duas linhas serão fornecidas. Se a chamada for 
+`java -jar cid10-dados-2008.1.0.jar 1 dengue` apenas a última entrada será
+fornecida, dado que a ordem inicial das entradas a serem fornecidas é 
+a segunda (aquela de índice 1).
+ 
 
 ### Como usar (desenvolvedores)
 
