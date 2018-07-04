@@ -32,21 +32,6 @@ public class Cid {
             Collections.unmodifiableList(new ArrayList<>(0));
 
     /**
-     * Trata argumentos fornecido ao aplicativo como partes de entradas da CID-10
-     * a serem localizadas. O conjunto daquelas encontradas é retornado.
-     *
-     * @param args Argumentos que serão tratados como partes ou componentes
-     *             de código e/ou descrição das entradas da CID-10. O primeiro
-     *             deles é a ordem inicial da entrada a ser considerada. Ou
-     *             seja, são esperados pelo menos dois argumentos.
-     */
-    public static void main(String[] args) {
-        int ordem = Integer.parseInt(args[0]);
-        String[] criterios = Arrays.copyOfRange(args, 1, args.length);
-        new Cid().encontre(criterios, ordem).forEach(System.out::println);
-    }
-
-    /**
      * Estrutura sobre a qual a busca é feita.
      */
     private List<String> busca;
@@ -192,9 +177,7 @@ public class Cid {
     private List<String> codigos(List<Integer> lista) {
         List<String> strs = new ArrayList<>(lista.size());
 
-        lista.forEach(i -> {
-            strs.add(original.get(i));
-        });
+        lista.forEach(i -> strs.add(original.get(i)));
 
         return strs;
     }
@@ -229,10 +212,9 @@ public class Cid {
 
     private List<Integer> consultaEm(String criterio, List<Integer> parcial) {
         List<Integer> encontrados = new ArrayList<>();
-        int dominioBusca = parcial.size();
 
-        for (int i = 0; i < dominioBusca; i++) {
-            int indiceParaBusca = parcial.get(i);
+        for (Integer aParcial : parcial) {
+            int indiceParaBusca = aParcial;
             if (busca.get(indiceParaBusca).contains(criterio)) {
                 encontrados.add(indiceParaBusca);
             }

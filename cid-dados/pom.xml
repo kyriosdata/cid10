@@ -101,7 +101,7 @@
                         <addMavenDescriptor>false</addMavenDescriptor>
                         <manifest>
                             <addClasspath>false</addClasspath>
-                            <mainClass>com.github.kyriosdata.cid10.busca.Cid</mainClass>
+                            <mainClass>com.github.kyriosdata.cid10.busca.Aplicacao</mainClass>
                         </manifest>
                     </archive>
                     <excludes>
