@@ -4,7 +4,7 @@ Profissionais de saúde empregam os códigos da CID-10 para se referirem a doen�
 
 Componentes do presente projeto:
 
-- Informações gerais sobre a CID-10 e produção de estruturas de dados para agilizar a consulta aos códigos ([cid-dados](https://github.com/kyriosdata/cid10/tree/master/cid-dados)).
+- Informações gerais, dados e as estruturas de dados para agilizar a consulta aos códigos da CID-10 ([cid-dados](https://github.com/kyriosdata/cid10/tree/master/cid-dados)).
 - Micro-serviço que oferece busca e informações sobre a CID-10 ([cid-busca](https://github.com/kyriosdata/cid10/tree/master/cid-busca)).
 - Web App para consulta e acesso ao conteúdo da CID-10 ([cid-gui](https://github.com/kyriosdata/cid10/tree/master/cid-gui)).
 
