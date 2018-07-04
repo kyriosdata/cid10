@@ -17,15 +17,19 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * Serviço de busca na CID-10.
  */
 public class Cid {
+
+    /**
+     * Cache de lista vazia (evita recriar instância desnecessariamente).
+     */
+    private static List<String> listaVazia =
+            Collections.unmodifiableList(new ArrayList<>(0));
 
     /**
      * Trata argumentos fornecido ao aplicativo como partes de entradas da CID-10
@@ -131,7 +135,7 @@ public class Cid {
      */
     public List<String> encontre(String[] criterios, int ordem) {
         if (ordem < 0) {
-            return new ArrayList<>(0);
+            return listaVazia;
         }
 
         List<String> parcial = encontre(criterios);
@@ -139,7 +143,7 @@ public class Cid {
         // Ordem além da resposta.
         int tamanhoRespostaParcial = parcial.size();
         if (ordem >= tamanhoRespostaParcial) {
-            return new ArrayList<>(0);
+            return listaVazia;
         }
 
         int superior = ordem + tamanhoPagina;
@@ -167,7 +171,7 @@ public class Cid {
         List<Integer> resultado = new ArrayList<>();
 
         if (criterios.length == 0) {
-            return new ArrayList<>(0);
+            return listaVazia;
         }
 
         String primeiro = criterios[0];
