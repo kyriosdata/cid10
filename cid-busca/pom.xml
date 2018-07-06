@@ -6,7 +6,7 @@
 
     <groupId>com.github.kyriosdata.cid10</groupId>
     <artifactId>cid-busca</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <!-- DEPLOY TO MAVEN CENTRAL -->
