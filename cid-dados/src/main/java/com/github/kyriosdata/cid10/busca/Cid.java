@@ -17,9 +17,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -28,19 +26,10 @@ import java.util.stream.Collectors;
 public class Cid {
 
     /**
-     * Trata argumentos fornecido ao aplicativo como partes de entradas da CID-10
-     * a serem localizadas. O conjunto daquelas encontradas é retornado.
-     *
-     * @param args Argumentos que serão tratados como partes ou componentes
-     *             de código e/ou descrição das entradas da CID-10. O primeiro
-     *             deles é a ordem inicial da entrada a ser considerada. Ou
-     *             seja, são esperados pelo menos dois argumentos.
+     * Cache de lista vazia (evita recriar instância desnecessariamente).
      */
-    public static void main(String[] args) {
-        int ordem = Integer.parseInt(args[0]);
-        String[] criterios = Arrays.copyOfRange(args, 1, args.length);
-        new Cid().encontre(criterios, ordem).forEach(System.out::println);
-    }
+    private static List<String> listaVazia =
+            Collections.unmodifiableList(new ArrayList<>(0));
 
     /**
      * Estrutura sobre a qual a busca é feita.
@@ -131,7 +120,7 @@ public class Cid {
      */
     public List<String> encontre(String[] criterios, int ordem) {
         if (ordem < 0) {
-            return new ArrayList<>(0);
+            return listaVazia;
         }
 
         List<String> parcial = encontre(criterios);
@@ -139,7 +128,7 @@ public class Cid {
         // Ordem além da resposta.
         int tamanhoRespostaParcial = parcial.size();
         if (ordem >= tamanhoRespostaParcial) {
-            return new ArrayList<>(0);
+            return listaVazia;
         }
 
         int superior = ordem + tamanhoPagina;
@@ -167,7 +156,7 @@ public class Cid {
         List<Integer> resultado = new ArrayList<>();
 
         if (criterios.length == 0) {
-            return new ArrayList<>(0);
+            return listaVazia;
         }
 
         String primeiro = criterios[0];
@@ -188,9 +177,7 @@ public class Cid {
     private List<String> codigos(List<Integer> lista) {
         List<String> strs = new ArrayList<>(lista.size());
 
-        lista.forEach(i -> {
-            strs.add(original.get(i));
-        });
+        lista.forEach(i -> strs.add(original.get(i)));
 
         return strs;
     }
@@ -225,10 +212,9 @@ public class Cid {
 
     private List<Integer> consultaEm(String criterio, List<Integer> parcial) {
         List<Integer> encontrados = new ArrayList<>();
-        int dominioBusca = parcial.size();
 
-        for (int i = 0; i < dominioBusca; i++) {
-            int indiceParaBusca = parcial.get(i);
+        for (Integer aParcial : parcial) {
+            int indiceParaBusca = aParcial;
             if (busca.get(indiceParaBusca).contains(criterio)) {
                 encontrados.add(indiceParaBusca);
             }

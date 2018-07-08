@@ -1,19 +1,22 @@
 ## CID-10 (inclusive oncologia) (Versão 2008)
 
-O presente projeto processa o conteúdo da CID-10 (versão 2008), obtido do DATASUS ([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)), visando a
-produção de um formato alternativo ao original adequado para a busca (localização de um código ou uma entrada a partir de parte da informação da entrada).
+A CID-10 é um instrumento empregado para associar a doenças códigos 
+únicos. Desta forma, de posse de um código e da versão da CID-10
+empregada, sabe-se exatamente qual a doença em questão, independente da
+língua ou cultura onde a consulta é realizada, por exemplo.
 
-## Versão original e copyright (licença) da CID-10
-A versão utilizada encontra-se disponível pelo portal do 
-DATASUS 
-([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)). 
-Em particular, trata-se da versão de 2008. Arquivos fazem uso 
-de ISO-8859-1. 
+### Versão original e copyright (licença) da CID-10
+Os dados da CID-10 empregados pelo presente projeto encontram-se disponíveis
+no portal do DATASUS 
+([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)).
+ 
+Esta versão é de 2008 e os arquivos originais fazem uso do _encoding_ 
+ISO-8859-1. 
 
 Detalhes da licença estão disponíveis 
 [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
 
-## Organização da CID-10
+### Organização da CID-10
 A CID-10 está organizada conforme a hierarquia ilustrada abaixo. 
 Cada capítulo reúne grupos. Cada grupo reúne categorias que,
 por sua vez, estão dividas em sub-categorias.
@@ -36,9 +39,12 @@ em três subcategorias: **A000** ("Cólera devida a Vibrio cholerae 01, biótipo
 cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e 
 **A009** ("Cólera não especificada"). 
 
----
 
-### Características principais
+## Solução
+O presente projeto visa produzir uma solução que permite consultas aos
+códigos da CID-10. 
+
+### Requisitos
 - _A busca pode ser feita apenas por parte do código e/ou parte da descrição_. A saída produzida deve ser uma entrada da CID-10 que contém todos os elementos fornecidos na entrada, conforme ilustrado abaixo. A busca por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue". A busca por "90" e por "dengue" apenas produz a entrada de código A90.
 
 - _Acentos podem ou não ser fornecidos_. Por exemplo, a busca por "infecção" e "infeccao" vão produzir o mesmo resultado. 
@@ -50,18 +56,25 @@ _Decisão 1_. As categorias e as subcategorias da CID-10 serão reunidas em uma 
 
 _Decisão 2_. O formato original dos dados de entrada servem de entrada para processo automático que produz dados usados pela solução. Ou seja, nenhum processo manual deverá ser utilizado para a produção da estrutura de dados usada pela solução.
 
-### Produção dos dados para busca (lista adicional)
+### Estrutura de dados para a busca (lista adicional)
+Tendo em vista os requisitos, é necessário processar os dados da 
+CID-10 conforme abaixo:
 
-1. Produzir dados que serão empregados pela solução a partir dos arquivos originais.
-   - Eliminar colunas não utilizadas, por exemplo, "descrição abreviada".
-   - Eliminar acentos. 
-   - Substituir terminações de plural pela palavra completa, ou seja, aceleração(oes) por "aceleração" e "acelerações", por exemplo.
-   - Eliminar duplicidades.
-   - Unir conteúdo de categorias, subcategorias e categorias para oncologia e ordenar a união pelo código. 
+1. Eliminar colunas não utilizadas, por exemplo, "descrição abreviada".
+1. Eliminar acentos. 
+1. Substituir terminações de plural pela palavra completa, ou seja, aceleração(oes) por "aceleração" e "acelerações", por exemplo.
+1. Eliminar duplicidades.
+1. Unir conteúdo de categorias, subcategorias e categorias para oncologia e ordenar a união pelo código. 
    
 ### Geração dos aplicativos (e uso via linha de comandos)
 1. Execute `mvn package` 
-1. Na linha de comandos `java -jar cid10-dados-2008.1.0.jar dengue` fará com que todas as entradas contendo "dengue" sejam exibidas na saída padrão. Experimente com outros argumentos e o resultado deverá incluir todos os termos fornecidos.
+1. Na linha de comandos `java -jar cid10-dados-2008.1.0.jar 0 dengue` fará 
+com que todas as entradas contendo "dengue" sejam exibidas na saída padrão.
+Ou seja, duas linhas serão fornecidas. Se a chamada for 
+`java -jar cid10-dados-2008.1.0.jar 1 dengue` apenas a última entrada será
+fornecida, dado que a ordem inicial das entradas a serem fornecidas é 
+a segunda (aquela de índice 1).
+ 
 
 ### Como usar (desenvolvedores)
 

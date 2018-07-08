@@ -6,13 +6,15 @@
 
     <groupId>com.github.kyriosdata.cid10</groupId>
     <artifactId>cid10-dados</artifactId>
-    <version>2008.1.0</version>
+    <version>2008.1.1</version>
     <packaging>jar</packaging>
 
-    <name>com.github.kyriosdata.cid10:cid10-dados</name>
+    <name>${project.groupId}:${project.artifactId}</name>
 
     <description>
-        Oferece código e dados para acesso eficiente (inclusive busca), ao conteúdo da CID-10 (inclusive Oncologia), versão 2008, disponibilizada pelo DATASUS.
+        Oferece código e dados para acesso eficiente (inclusive busca),
+        ao conteúdo da CID-10 (inclusive Oncologia), versão 2008,
+        disponibilizada pelo DATASUS.
     </description>
 
     <url>https://github.com/kyriosdata/cid10</url>
@@ -23,7 +25,7 @@
         <license>
             <name>Creative Commons Attribution 4.0 International (CC BY 4.0)</name>
             <comments>
-                Copyright (c) 2017. Fábio Nogueira de Lucena
+                Copyright (c) 2017, 2018. Fábio Nogueira de Lucena
                 Fábrica de Software - Instituto de Informática (UFG)
             </comments>
             <url>https://creativecommons.org/licenses/by/4.0/</url>
@@ -101,7 +103,7 @@
                         <addMavenDescriptor>false</addMavenDescriptor>
                         <manifest>
                             <addClasspath>false</addClasspath>
-                            <mainClass>com.github.kyriosdata.cid10.busca.Cid</mainClass>
+                            <mainClass>com.github.kyriosdata.cid10.busca.Aplicacao</mainClass>
                         </manifest>
                     </archive>
                     <excludes>
@@ -168,7 +170,13 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.0.0</version>
+                        <version>3.0.1</version>
+                        <configuration>
+                            <show>public</show>
+                            <additionalOptions>
+                                <additionalOption>-html5</additionalOption>
+                            </additionalOptions>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>package-javadoc</id>
