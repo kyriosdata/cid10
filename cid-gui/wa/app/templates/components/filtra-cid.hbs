@@ -1,23 +1,20 @@
-
-<section class="hero is-light">
-
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-one-third">
-          <div class="field">
-            <label class="label">CID-10</label>
-            <div class="control">
-              {{input value=value key-up=(action "handleEntradaFiltro")
-                      placeholder="Por exemplo, 'a9 w'"}}
-            </div>
-            <p class="help">Digite parte do código e/ou da descrição.</p>
+<section class="section">
+  <div class="container is-fluid">
+    <p class="title is-4">Faça a sua busca</p>
+    <p class="subtitle is-6">Digite parte do código e/ou da descrição</p>
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="field">
+          <div class="control">
+            {{input value=value key-up=(action "handleEntradaFiltro")
+                    placeholder="Por exemplo, 'a9 w'"}}
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  {{yield results}}
+
 </section>
 
-{{yield results}}
