@@ -1,0 +1,7 @@
+thead, tbody { display: block; }
+
+.tabelaCID {
+  height: 45vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
