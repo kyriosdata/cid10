@@ -1,7 +1,7 @@
 ## CID-10 (inclusive oncologia) (Versão 2008)
 
-A CID-10 é um instrumento empregado para associar a doenças códigos 
-únicos. Desta forma, de posse de um código e da versão da CID-10
+A CID-10 é um instrumento que associa códigos 
+únicos a doenças. Desta forma, de posse de um código e da versão da CID-10
 empregada, sabe-se exatamente qual a doença em questão, independente da
 língua ou cultura onde a consulta é realizada, por exemplo.
 
