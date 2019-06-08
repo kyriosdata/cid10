@@ -67,6 +67,8 @@ CID-10 conforme abaixo:
 1. Unir conteúdo de categorias, subcategorias e categorias para oncologia e ordenar a união pelo código. 
    
 ### Geração dos aplicativos (e uso via linha de comandos)
+1. Obtenha o código fonte `git clone https://github.com/kyriosdata/cid10`
+1. Execute `cd cid10/cid-dados`
 1. Execute `mvn package` 
 1. Na linha de comandos `java -jar cid10-dados-2008.1.0.jar 0 dengue` fará 
 com que todas as entradas contendo "dengue" sejam exibidas na saída padrão.
