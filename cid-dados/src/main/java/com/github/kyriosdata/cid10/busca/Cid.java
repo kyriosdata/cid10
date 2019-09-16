@@ -68,6 +68,7 @@ public class Cid {
      *                 "dir", contido no diretório "resources'.
      *
      * @return O conteúdo do arquivo em uma lista de linhas.
+     * TODO usado apenas em teste, será eliminada
      */
     public List<String> getConteudo(String fileName) {
 
