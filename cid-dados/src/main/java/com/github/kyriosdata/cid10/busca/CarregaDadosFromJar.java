@@ -17,24 +17,21 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CarregaCID implements CarregaDados {
-    public CarregaCID() {
-    }
-
+public class CarregaDadosFromJar implements CarregaDados {
     /**
      * Recupera conteúdo de arquivo contido no próprio jar file,
      * diretório "resources".
      *
-     * @param identificador O nome do arquivo contido no diretório "resources".
+     * @param filename O nome do arquivo contido no diretório "resources".
      *                 Por exemplo, "x.txt" para o arquivo em questão ou
      *                 "dir/x.txt" se este arquivo estiver no diretório
      *                 "dir", contido no diretório "resources'.
      * @return O conteúdo do arquivo em uma lista de linhas.
      */
     @Override
-    public List<String> getLinhas(String identificador) {
+    public List<String> getLinhas(String filename) {
         ClassLoader classLoader = this.getClass().getClassLoader();
-        InputStream is = classLoader.getResourceAsStream(identificador);
+        InputStream is = classLoader.getResourceAsStream(filename);
         Charset utf8 = StandardCharsets.UTF_8;
         InputStreamReader isr = new InputStreamReader(is, utf8);
         BufferedReader br = new BufferedReader(isr);
