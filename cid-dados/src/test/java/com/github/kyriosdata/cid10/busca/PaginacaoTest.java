@@ -33,7 +33,7 @@ public class PaginacaoTest {
 
     @BeforeClass
     public static void setUp() {
-        cid = new CidPaginacao();
+        cid = new Cid(new CidPaginacao());
     }
 
     @Test
@@ -68,7 +68,7 @@ public class PaginacaoTest {
     }
 }
 
-class CidPaginacao extends Cid {
+class CidPaginacao implements CarregaDados {
 
     @Override
     public List<String> getConteudo(String fileName) {

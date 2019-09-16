@@ -22,6 +22,7 @@ public class Aplicacao {
         // TODO retornar 0 em caso de sucesso e valor diferente em caso de erro
         int ordem = Integer.parseInt(args[0]);
         String[] criterios = Arrays.copyOfRange(args, 1, args.length);
-        new Cid().encontre(criterios, ordem).forEach(System.out::println);
+        final CarregaDados carregador = new CarregaCID();
+        new Cid(carregador).encontre(criterios, ordem).forEach(System.out::println);
     }
 }

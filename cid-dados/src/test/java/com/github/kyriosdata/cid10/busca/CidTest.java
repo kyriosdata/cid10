@@ -31,7 +31,7 @@ public class CidTest {
 
     @BeforeClass
     public static void setUp() {
-        cid = new Cid();
+        cid = new Cid(new CarregaCID());
     }
 
     @Test
