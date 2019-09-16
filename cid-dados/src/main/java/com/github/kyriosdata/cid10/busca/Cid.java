@@ -55,14 +55,11 @@ public class Cid {
      * @throws NullPointerException Se o carregador fornecido for {@code null}.
      */
     public Cid(final CarregaDados carregador) {
-        CarregaDados carregaCID = Objects.requireNonNull(carregador);
+        Objects.requireNonNull(carregador);
 
-        busca = carregaCID.getConteudo("cid/busca.csv");
-
-        original = carregaCID.getConteudo("cid/codigos.csv");
-
-        // Recupera capítulos e remove header.
-        capitulos = carregaCID.getConteudo("cid/capitulos.csv");
+        busca = carregador.getConteudo("cid/busca.csv");
+        original = carregador.getConteudo("cid/codigos.csv");
+        capitulos = carregador.getConteudo("cid/capitulos.csv");
     }
 
     /**
