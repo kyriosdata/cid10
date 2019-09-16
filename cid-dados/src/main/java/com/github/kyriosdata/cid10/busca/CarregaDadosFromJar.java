@@ -50,11 +50,7 @@ public class CarregaDadosFromJar implements CarregaDados {
         Charset utf8 = StandardCharsets.UTF_8;
         InputStreamReader isr = new InputStreamReader(is, utf8);
         BufferedReader br = new BufferedReader(isr);
-        List<String> linhas = br.lines().collect(Collectors.toList());
-        if (linhas.isEmpty()) {
-            throw new IOException("erro ao carregar dados de " + filename);
-        }
 
-        return linhas;
+        return br.lines().collect(Collectors.toList());
     }
 }
