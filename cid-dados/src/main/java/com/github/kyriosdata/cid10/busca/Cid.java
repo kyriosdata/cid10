@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2018
  *
@@ -11,14 +10,12 @@
 
 package com.github.kyriosdata.cid10.busca;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
 import java.text.Normalizer;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Serviço de busca na CID-10.
@@ -55,34 +52,20 @@ public class Cid {
      */
     private int tamanhoPagina = 50;
 
-    public Cid() {
-        busca = getConteudo("cid/busca.csv");
-
-        original = getConteudo("cid/codigos.csv");
-
-        // Recupera capítulos e remove header.
-        capitulos = getConteudo("cid/capitulos.csv");
-    }
-
     /**
-     * Recupera conteúdo de arquivo contido no próprio jar file,
-     * diretório "resources".
+     * Cria objeto para atender requisições de busca na CID-10.
+     * @param carregador Objeto empregado para recuperar as estruturas de
+     *                   dados empregadas para busca.
      *
-     * @param fileName O nome do arquivo contido no diretório "resources".
-     *                 Por exemplo, "x.txt" para o arquivo em questão ou
-     *                 "dir/x.txt" se este arquivo estiver no diretório
-     *                 "dir", contido no diretório "resources'.
-     *
-     * @return O conteúdo do arquivo em uma lista de linhas.
+     * @throws NullPointerException Se o carregador fornecido for {@code null}.
+     * @throws IOException Se não for possível carregar dados.
      */
-    public List<String> getConteudo(String fileName) {
-        ClassLoader classLoader = getClass().getClassLoader();
-        InputStream is = classLoader.getResourceAsStream(fileName);
-        Charset utf8 = StandardCharsets.UTF_8;
-        InputStreamReader isr = new InputStreamReader(is, utf8);
-        BufferedReader br = new BufferedReader(isr);
+    public Cid(final CarregaDados carregador) throws IOException {
+        Objects.requireNonNull(carregador);
 
-        return br.lines().collect(Collectors.toList());
+        busca = carregador.getLinhas("cid/busca.csv");
+        original = carregador.getLinhas("cid/codigos.csv");
+        capitulos = carregador.getLinhas("cid/capitulos.csv");
     }
 
     /**

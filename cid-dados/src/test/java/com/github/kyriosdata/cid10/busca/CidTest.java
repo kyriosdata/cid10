@@ -12,13 +12,14 @@
 
 package com.github.kyriosdata.cid10.busca;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.List;
 
-import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * IMPORTANTE: os arquivos empregados nos testes desta classe são gerados por
@@ -29,9 +30,9 @@ public class CidTest {
 
     private static Cid cid;
 
-    @BeforeClass
-    public static void setUp() {
-        cid = new Cid();
+    @BeforeAll
+    public static void setUp() throws IOException {
+        cid = new Cid(new CarregaDadosFromJar());
     }
 
     @Test
