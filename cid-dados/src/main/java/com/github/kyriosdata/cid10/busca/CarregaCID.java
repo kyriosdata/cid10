@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CarregaCID {
+public class CarregaCID implements CarregaDados {
     public CarregaCID() {
     }
 
