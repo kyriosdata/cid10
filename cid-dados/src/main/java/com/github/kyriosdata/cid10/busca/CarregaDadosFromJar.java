@@ -46,7 +46,6 @@ public class CarregaDadosFromJar implements CarregaDados {
             throw new IOException("erro ao acessar " + filename);
         }
 
-
         Path path = new File(url.getPath()).toPath();
         return Files.readAllLines(path, StandardCharsets.UTF_8);
     }
