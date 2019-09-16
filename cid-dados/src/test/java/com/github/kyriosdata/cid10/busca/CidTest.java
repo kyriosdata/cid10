@@ -15,6 +15,7 @@ package com.github.kyriosdata.cid10.busca;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,7 +31,7 @@ public class CidTest {
     private static Cid cid;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws IOException {
         cid = new Cid(new CarregaDadosFromJar());
     }
 

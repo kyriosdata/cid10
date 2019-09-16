@@ -10,6 +10,7 @@
 
 package com.github.kyriosdata.cid10.busca;
 
+import java.io.IOException;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -57,8 +58,9 @@ public class Cid {
      *                   dados empregadas para busca.
      *
      * @throws NullPointerException Se o carregador fornecido for {@code null}.
+     * @throws IOException Se não for possível carregar dados.
      */
-    public Cid(final CarregaDados carregador) {
+    public Cid(final CarregaDados carregador) throws IOException {
         Objects.requireNonNull(carregador);
 
         busca = carregador.getLinhas("cid/busca.csv");

@@ -1,5 +1,6 @@
 package com.github.kyriosdata.cid10.busca;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
@@ -16,7 +17,7 @@ public class Aplicacao {
      *             considerados trechos que deverão fazer parte de toda
      *             linha (código CID-10) fornecida como resultado.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO tratar argumentos (quantidade)
         // TODO realizar testes
         // TODO retornar 0 em caso de sucesso e valor diferente em caso de erro
