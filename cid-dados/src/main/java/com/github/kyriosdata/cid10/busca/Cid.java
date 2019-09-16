@@ -24,8 +24,6 @@ public class Cid {
     private static List<String> listaVazia =
             Collections.unmodifiableList(new ArrayList<>(0));
 
-    private CarregaDados carregaCID;
-
     /**
      * Estrutura sobre a qual a busca é feita.
      */
@@ -57,7 +55,7 @@ public class Cid {
      * @throws NullPointerException Se o carregador fornecido for {@code null}.
      */
     public Cid(final CarregaDados carregador) {
-        carregaCID = Objects.requireNonNull(carregador);
+        CarregaDados carregaCID = Objects.requireNonNull(carregador);
 
         busca = carregaCID.getConteudo("cid/busca.csv");
 
