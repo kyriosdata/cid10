@@ -68,23 +68,6 @@ public class Cid {
     }
 
     /**
-     * Recupera conteúdo de arquivo contido no próprio jar file,
-     * diretório "resources".
-     *
-     * @param fileName O nome do arquivo contido no diretório "resources".
-     *                 Por exemplo, "x.txt" para o arquivo em questão ou
-     *                 "dir/x.txt" se este arquivo estiver no diretório
-     *                 "dir", contido no diretório "resources'.
-     *
-     * @return O conteúdo do arquivo em uma lista de linhas.
-     * TODO usado apenas em teste, será eliminada
-     */
-    public List<String> getConteudo(String fileName) {
-
-        return carregaCID.getConteudo(fileName);
-    }
-
-    /**
      * O conjunto de capítulos da CID-10.
      *
      * @return Lista contendo os capítulos da CID-10.
