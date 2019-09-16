@@ -11,7 +11,10 @@
 package com.github.kyriosdata.cid10.busca;
 
 import java.text.Normalizer;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Serviço de busca na CID-10.
@@ -50,16 +53,17 @@ public class Cid {
 
     /**
      * Cria objeto para atender requisições de busca na CID-10.
-     * @param carregador
+     * @param carregador Objeto empregado para recuperar as estruturas de
+     *                   dados empregadas para busca.
      *
      * @throws NullPointerException Se o carregador fornecido for {@code null}.
      */
     public Cid(final CarregaDados carregador) {
         Objects.requireNonNull(carregador);
 
-        busca = carregador.getConteudo("cid/busca.csv");
-        original = carregador.getConteudo("cid/codigos.csv");
-        capitulos = carregador.getConteudo("cid/capitulos.csv");
+        busca = carregador.getLinhas("cid/busca.csv");
+        original = carregador.getLinhas("cid/codigos.csv");
+        capitulos = carregador.getLinhas("cid/capitulos.csv");
     }
 
     /**

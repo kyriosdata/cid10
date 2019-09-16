@@ -25,16 +25,16 @@ public class CarregaCID implements CarregaDados {
      * Recupera conteúdo de arquivo contido no próprio jar file,
      * diretório "resources".
      *
-     * @param fileName O nome do arquivo contido no diretório "resources".
+     * @param identificador O nome do arquivo contido no diretório "resources".
      *                 Por exemplo, "x.txt" para o arquivo em questão ou
      *                 "dir/x.txt" se este arquivo estiver no diretório
      *                 "dir", contido no diretório "resources'.
      * @return O conteúdo do arquivo em uma lista de linhas.
      */
     @Override
-    public List<String> getConteudo(String fileName) {
+    public List<String> getLinhas(String identificador) {
         ClassLoader classLoader = this.getClass().getClassLoader();
-        InputStream is = classLoader.getResourceAsStream(fileName);
+        InputStream is = classLoader.getResourceAsStream(identificador);
         Charset utf8 = StandardCharsets.UTF_8;
         InputStreamReader isr = new InputStreamReader(is, utf8);
         BufferedReader br = new BufferedReader(isr);
