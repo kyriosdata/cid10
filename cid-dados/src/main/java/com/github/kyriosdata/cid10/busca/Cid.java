@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2018
  *
@@ -11,14 +10,8 @@
 
 package com.github.kyriosdata.cid10.busca;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Serviço de busca na CID-10.
@@ -30,6 +23,7 @@ public class Cid {
      */
     private static List<String> listaVazia =
             Collections.unmodifiableList(new ArrayList<>(0));
+    private final CarregaCID carregaCID = new CarregaCID();
 
     /**
      * Estrutura sobre a qual a busca é feita.
@@ -56,12 +50,12 @@ public class Cid {
     private int tamanhoPagina = 50;
 
     public Cid() {
-        busca = getConteudo("cid/busca.csv");
+        busca = carregaCID.getConteudo("cid/busca.csv");
 
-        original = getConteudo("cid/codigos.csv");
+        original = carregaCID.getConteudo("cid/codigos.csv");
 
         // Recupera capítulos e remove header.
-        capitulos = getConteudo("cid/capitulos.csv");
+        capitulos = carregaCID.getConteudo("cid/capitulos.csv");
     }
 
     /**
@@ -76,13 +70,8 @@ public class Cid {
      * @return O conteúdo do arquivo em uma lista de linhas.
      */
     public List<String> getConteudo(String fileName) {
-        ClassLoader classLoader = getClass().getClassLoader();
-        InputStream is = classLoader.getResourceAsStream(fileName);
-        Charset utf8 = StandardCharsets.UTF_8;
-        InputStreamReader isr = new InputStreamReader(is, utf8);
-        BufferedReader br = new BufferedReader(isr);
 
-        return br.lines().collect(Collectors.toList());
+        return carregaCID.getConteudo(fileName);
     }
 
     /**
