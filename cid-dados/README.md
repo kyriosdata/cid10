@@ -48,13 +48,26 @@ códigos da CID-10.
 - _A busca pode ser feita apenas por parte do código e/ou parte da descrição_. A saída produzida deve ser uma entrada da CID-10 que contém todos os elementos fornecidos na entrada, conforme ilustrado abaixo. A busca por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue". A busca por "90" e por "dengue" apenas produz a entrada de código A90.
 
 - _Acentos podem ou não ser fornecidos_. Por exemplo, a busca por "infecção" e "infeccao" vão produzir o mesmo resultado. 
-- _Maiúsculas e minúsculas são tratadas igualmente_. Ou seja, "HIV" e "hIv" produzem o mesmo resultado.
+- _Maiúsculas e minúsculas são tratadas igualmente_. Ou seja, "dengue" e 
+"Dengue" produzem o mesmo resultado.
 
 ### Projeto (design) da solução
 
-_Decisão 1_. As categorias e as subcategorias da CID-10 serão reunidas em uma única lista e a busca será realizada sequencialmente nesta lista. Dado que a busca deve ignorar o uso ou não da acentuação, uma lista adicional deverá ser confeccionada e sobre a qual a busca será, de fato, realizada. A lista original será mantida para a montagem da resposta.
+_Decisão 1_. As categorias e as subcategorias da CID-10 serão reunidas
+em uma única lista e a busca será realizada sequencialmente nesta lista.
+Dado que a busca deve ignorar o uso ou não da acentuação, uma lista
+adicional deverá ser confeccionada e sobre a qual a busca será, de
+fato, realizada. A lista original será mantida para a montagem da resposta.
 
-_Decisão 2_. O formato original dos dados de entrada servem de entrada para processo automático que produz dados usados pela solução. Ou seja, nenhum processo manual deverá ser utilizado para a produção da estrutura de dados usada pela solução.
+_Decisão 2_. O formato original dos dados de entrada servem de entrada para
+processo automático que produz dados usados pela solução. Ou seja, nenhum
+processo manual deverá ser utilizado para a produção da estrutura de dados
+usada pela solução.
+
+_Decisão 3_. Classe específica deverá encapsular a obtenção (carga) dos dados,
+ou seja, deve haver separação entre o código que realiza a consulta e o 
+código que obtém os dados. Desta forma, o armazenamento dos dados pode 
+mudar de origem sem impacto na classe que realiza a busca.
 
 ### Estrutura de dados para a busca (lista adicional)
 Tendo em vista os requisitos, é necessário processar os dados da 
