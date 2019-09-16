@@ -12,15 +12,14 @@
 
 package com.github.kyriosdata.cid10.busca;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * IMPORTANTE: os arquivos empregados nos testes desta classe são gerados por
@@ -31,7 +30,7 @@ public class PaginacaoTest {
 
     private static Cid cid;
 
-    @BeforeClass
+    @AfterAll
     public static void setUp() {
         cid = new Cid(new CidPaginacao());
     }
