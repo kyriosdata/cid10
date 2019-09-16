@@ -23,7 +23,8 @@ public class Cid {
      */
     private static List<String> listaVazia =
             Collections.unmodifiableList(new ArrayList<>(0));
-    private final CarregaCID carregaCID = new CarregaCID();
+
+    private final CarregaDados carregaCID = new CarregaCID();
 
     /**
      * Estrutura sobre a qual a busca é feita.
