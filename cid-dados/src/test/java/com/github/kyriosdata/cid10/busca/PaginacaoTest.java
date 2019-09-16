@@ -13,6 +13,7 @@
 package com.github.kyriosdata.cid10.busca;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class PaginacaoTest {
 
     private static Cid cid;
 
-    @AfterAll
+    @BeforeAll
     public static void setUp() throws IOException {
         cid = new Cid(new CidPaginacao());
     }
