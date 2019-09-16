@@ -9,12 +9,12 @@
  */
 package com.github.kyriosdata.cid10.busca;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,16 +41,13 @@ public class CarregaDadosFromJar implements CarregaDados {
         }
 
         ClassLoader classLoader = this.getClass().getClassLoader();
-        InputStream is = classLoader.getResourceAsStream(filename);
-        if (is == null) {
+        URL url = classLoader.getResource(filename);
+        if (url == null) {
             throw new IOException("erro ao acessar " + filename);
         }
 
-        is.available();
-        Charset utf8 = StandardCharsets.UTF_8;
-        InputStreamReader isr = new InputStreamReader(is, utf8);
-        BufferedReader br = new BufferedReader(isr);
 
-        return br.lines().collect(Collectors.toList());
+        Path path = new File(url.getPath()).toPath();
+        return Files.readAllLines(path, StandardCharsets.UTF_8);
     }
 }
