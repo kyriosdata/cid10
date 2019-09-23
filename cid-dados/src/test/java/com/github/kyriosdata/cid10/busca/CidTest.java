@@ -9,18 +9,19 @@
  *
  *
  */
-
 package com.github.kyriosdata.cid10.busca;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * IMPORTANTE: os arquivos empregados nos testes desta classe são gerados por
@@ -46,19 +47,19 @@ class CidTest {
         try (Cid local = new Cid(new CarregaDadosFromJar())) {
             assertNotNull(local.capitulos());
         } catch (IOException exp) {
-            assertTrue(false, "não deveria ocorrer exceção");
+            fail("não deveria ocorrer exceção");
         }
     }
 
     @Test
-    public void umaEntradaExistente() {
+    void umaEntradaExistente() {
         List<String> search = cid.encontre(new String[]{"a9", "w"}, 0);
         assertEquals(1, search.size());
         assertTrue(search.get(0).startsWith("A923"));
     }
 
     @Test
-    public void criterioInexistenteNenhumCodigoEncontrado() {
+    void criterioInexistenteNenhumCodigoEncontrado() {
         assertEquals(0, cid.encontre(new String[] { "xyzw" }).size());
         assertEquals(0, cid.encontre(new String[] { "@" }).size());
         assertEquals(0, cid.encontre(new String[] { "-" }).size());
@@ -66,30 +67,30 @@ class CidTest {
     }
 
     @Test
-    public void maiusculasMinusculasIguais() {
+    void maiusculasMinusculasIguais() {
         assertEquals(1, cid.encontre(new String[] { "A000" }).size());
         assertEquals(1, cid.encontre(new String[] { "a000" }).size());
     }
 
     @Test
-    public void algunsSimbolosSaoIgnorados() {
+    void algunsSimbolosSaoIgnorados() {
         assertEquals(1, cid.encontre(new String[] { "a000,;" }).size());
     }
 
     @Test
-    public void acentosIgnorados() {
+    void acentosIgnorados() {
         String[] termos = { "CÓLERA", "NÃO" };
         assertEquals(1, cid.encontre(termos).size());
     }
 
     @Test
-    public void outrosCasos() {
+    void outrosCasos() {
         String[] termos = { "Paratifóide", "11" };
         assertEquals(1, cid.encontre(termos).size());
     }
 
     @Test
-    public void verificaCapitulos() {
+    void verificaCapitulos() {
         assertEquals(22, cid.capitulos().size());
     }
 }
