@@ -12,7 +12,9 @@
 
 package com.github.kyriosdata.cid10.busca;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -25,13 +27,18 @@ import static org.junit.jupiter.api.Assertions.*;
  * {@link com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado}.
  * Por comodidade estes arquivos já são persistidos no dirório resources/cid.
  */
-public class CidTest {
+class CidTest {
 
     private static Cid cid;
 
-    @BeforeAll
-    public static void setUp() throws IOException {
+    @BeforeEach
+    void setUp() throws IOException {
         cid = new Cid(new CarregaDadosFromJar());
+    }
+
+    @AfterEach
+    void tearDown() {
+        cid.close();
     }
 
     @Test
