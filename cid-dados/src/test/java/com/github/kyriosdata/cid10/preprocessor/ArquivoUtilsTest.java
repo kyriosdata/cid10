@@ -17,16 +17,16 @@ import java.nio.file.Path;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class ArquivoUtilsTest {
+class ArquivoUtilsTest {
 
     @Test
-    public void acessoCorretoEmResources() {
+    void acessoCorretoEmResources() {
         Path p = ArquivoUtils.getPath("datasus/CID-10-GRUPOS.CSV");
         assertNotNull(p);
     }
 
     @Test
-    public void arquivoInvalidoRetornaNull() {
+    void arquivoInvalidoRetornaNull() {
         Path p = ArquivoUtils.getPath("alguma coisa");
         assertNull(p);
     }
