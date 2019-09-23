@@ -18,8 +18,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * IMPORTANTE: os arquivos empregados nos testes desta classe são gerados por
@@ -33,6 +32,15 @@ public class CidTest {
     @BeforeAll
     public static void setUp() throws IOException {
         cid = new Cid(new CarregaDadosFromJar());
+    }
+
+    @Test
+    void autoCloseableCalled() {
+        try (Cid local = new Cid(new CarregaDadosFromJar())) {
+            assertNotNull(local.capitulos());
+        } catch (IOException exp) {
+            assertTrue(false, "não deveria ocorrer exceção");
+        }
     }
 
     @Test

@@ -20,7 +20,7 @@ import java.util.Objects;
 /**
  * Serviço de busca na CID-10.
  */
-public class Cid {
+public class Cid implements AutoCloseable {
 
     /**
      * Cache de lista vazia (evita recriar instância desnecessariamente).
@@ -204,5 +204,22 @@ public class Cid {
         }
 
         return encontrados;
+    }
+
+    /**
+     * Após chamada deste método não se espera nenhuma outra operação com o
+     * objeto em questão. Adicionalmente, a expectativa é que este método
+     * seja chamado implicitamente por meio de try-with-resources.
+     */
+    @Override
+    public void close() {
+        busca.clear();
+        busca = null;
+
+        original.clear();
+        original = null;
+
+        capitulos.clear();
+        capitulos = null;
     }
 }
