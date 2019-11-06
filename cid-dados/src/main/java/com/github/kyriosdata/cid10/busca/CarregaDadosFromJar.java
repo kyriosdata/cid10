@@ -9,13 +9,11 @@
  */
 package com.github.kyriosdata.cid10.busca;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CarregaDadosFromJar implements CarregaDados {
     /**
@@ -27,25 +25,27 @@ public class CarregaDadosFromJar implements CarregaDados {
      *                 "dir/x.txt" se este arquivo estiver no diretório
      *                 "dir", contido no diretório "resources'.
      * @return O conteúdo do arquivo em uma lista de linhas.
-     *
-     * @throws NullPointerException Se argumento é {@code null}.
+     * @throws NullPointerException     Se argumento é {@code null}.
      * @throws IllegalArgumentException Se nome de arquivo é {@code null} ou
-     * vazio.
-     * @throws IOException Se não for possível carregar dados.
+     *                                  vazio.
+     * @throws IOException              Se não for possível carregar dados.
      */
     @Override
-    public List<String> getLinhas(String filename) throws IOException {
-        if (filename == null || filename.isEmpty()) {
-            throw new IllegalArgumentException("nome de arquivo inválido");
+    public List<String> getLinhas(String filename) {
+        Objects.requireNonNull(filename, "filename");
+
+        if (filename.isEmpty()) {
+            throw new IllegalArgumentException("nome inválido");
         }
 
-        ClassLoader classLoader = this.getClass().getClassLoader();
-        URL url = classLoader.getResource(filename);
-        if (url == null) {
-            throw new IOException("erro ao acessar " + filename);
+        InputStream is = ClassLoader.getSystemResourceAsStream(filename);
+        InputStreamReader isr = new InputStreamReader(is,
+                StandardCharsets.UTF_8);
+        try (BufferedReader br = new BufferedReader(isr)) {
+            return br.lines().collect(Collectors.toList());
+        } catch (IOException e) {
+            throw new IllegalArgumentException("arquivo inválido");
         }
-
-        Path path = new File(url.getPath()).toPath();
-        return Files.readAllLines(path, StandardCharsets.UTF_8);
     }
+
 }
