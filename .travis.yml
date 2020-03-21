@@ -18,4 +18,11 @@ script:
   - gu install native-image
   - cd graal
   - mvn package -P native
-  - mvn verify -Pnative -Dnative-image.docker-build=true
+  
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: "target/cid-aws-1.0.0-SNAPSHOT-runner"
+  skip_cleanup: true
+  on:
+    tags: true
