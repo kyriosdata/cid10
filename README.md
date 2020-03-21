@@ -2,9 +2,11 @@
 
 ## Acesso à Classificação Internacional de Doenças (CID-10)
 
-Profissionais de saúde empregam os códigos da CID-10 para se referirem a doenças de forma não ambígua, por exemplo, usam o código **A90** em vez de "dengue". 
+Códigos da CID-10 são empregados para se referir a doenças de forma não ambígua, por exemplo, 
+o código **A90** é usado para se referir a "dengue". Desta forma, em vez de usar "dengue", o código
+**A90** é empregado.
 
-> O presente projeto visa oferecer acesso ao conteúdo da CID-10. 
+> O presente projeto visa oferecer acesso e facilidade de localização do conteúdo da CID-10 para a língua portuguesa.
 
 Componentes do presente projeto:
 
