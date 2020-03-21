@@ -21,8 +21,10 @@ public class Aplicacao {
         if (args.length < 2) {
             System.out.println("USO: <ordem> <termos>");
             System.out.println("\n\tExibe as entradas, a partir da ordem " +
+                    "(valor inteiro)" +
                     "fornecida, nas quais estão presentes os termos " +
-                    "fornecidos, seja no código ou na descrição.\n");
+                    "fornecidos, sequências de letras e/ou números que " +
+                    "devem fazer parte do código ou da descrição.\n");
             System.exit(1);
         }
 
