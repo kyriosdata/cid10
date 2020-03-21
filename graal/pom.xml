@@ -17,6 +17,8 @@
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.platform.version>1.3.0.Final</quarkus.platform.version>
     <surefire-plugin.version>2.22.1</surefire-plugin.version>
+
+    <executable.name>cid</executable.name>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -99,7 +101,7 @@
                 </goals>
                 <configuration>
                   <systemProperties>
-                    <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
+                    <native.image.path>${project.build.directory}/${executable.name}</native.image.path>
                   </systemProperties>
                 </configuration>
               </execution>
