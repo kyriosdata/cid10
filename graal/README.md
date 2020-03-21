@@ -1,12 +1,13 @@
-# cid-aws project
+# Graal project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+Este projeto usa o _framework_ Quarkus com o propósito de
+ilustrar o emprego de AWS Lambda com código nativo obtido
+da GraalVM.
 
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
+
 ```
 ./mvnw quarkus:dev
 ```
