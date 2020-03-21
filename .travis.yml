@@ -21,7 +21,7 @@ script:
   
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
+  api_key: "$GITHUB_OAUTH"
   file: "target/cid-aws-1.0.0-SNAPSHOT-runner"
   skip_cleanup: true
   on:
