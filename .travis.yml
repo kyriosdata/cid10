@@ -16,5 +16,6 @@ matrix:
 
 script:
   - gu install native-image
+  - cd graal
   - mvn package -P native
   - mvn verify -Pnative -Dnative-image.docker-build=true
