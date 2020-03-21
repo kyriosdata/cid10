@@ -12,10 +12,12 @@ package com.github.kyriosdata.cid10.busca;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CarregaDadosFromJarTest {
 
@@ -23,7 +25,7 @@ class CarregaDadosFromJarTest {
 
     @Test
     void contratoNomeDoArquivoNaoPodeSerNull() {
-        assertThrows(IllegalArgumentException.class, () ->
+        assertThrows(NullPointerException.class, () ->
                 fromJar.getLinhas(null));
     }
 
@@ -35,7 +37,14 @@ class CarregaDadosFromJarTest {
 
     @Test
     void contratoNomeDoArquivoNaoPodeSerInexistente() {
-        assertThrows(IOException.class, () ->
+        assertThrows(NullPointerException.class, () ->
                 fromJar.getLinhas(UUID.randomUUID().toString()));
+    }
+
+    @Test
+    void carregaArquivoDeBusca() {
+        List<String> linhas = fromJar.getLinhas("cid/busca.csv");
+        assertNotNull(linhas);
+        assertTrue(linhas.get(0).contains("a00;colera"));
     }
 }

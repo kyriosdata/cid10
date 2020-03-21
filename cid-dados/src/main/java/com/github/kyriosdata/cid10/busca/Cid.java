@@ -23,12 +23,6 @@ import java.util.Objects;
 public class Cid implements AutoCloseable {
 
     /**
-     * Cache de lista vazia (evita recriar instância desnecessariamente).
-     */
-    private static List<String> listaVazia =
-            Collections.unmodifiableList(new ArrayList<>(0));
-
-    /**
      * Estrutura sobre a qual a busca é feita.
      */
     private List<String> busca;
@@ -54,11 +48,11 @@ public class Cid implements AutoCloseable {
 
     /**
      * Cria objeto para atender requisições de busca na CID-10.
+     *
      * @param carregador Objeto empregado para recuperar as estruturas de
      *                   dados empregadas para busca.
-     *
      * @throws NullPointerException Se o carregador fornecido for {@code null}.
-     * @throws IOException Se não for possível carregar dados.
+     * @throws IOException          Se não for possível carregar dados.
      */
     public Cid(final CarregaDados carregador) throws IOException {
         Objects.requireNonNull(carregador);
@@ -88,22 +82,22 @@ public class Cid implements AutoCloseable {
      *
      * @param criterios Se uma entrada é retornada, então satisfaz ou contém
      *                  os critérios fornecidos.
-     *
-     * @param ordem A ordem da entrada a partir da qual será montada a
-     *               resposta. Se os critérios identificam N entradas, então
-     *              nenhuma resposta será fornecida se a ordem indicada
-     *              for igual ou superior a N. Se for igual a N - 1, então
-     *              apenas a última entrada das N encontradas será retornada.
-     *              Se a ordem for inferior a N - 1, serão retornadas todas as
-     *              entradas a partir da ordem fornecida até o limite de
-     *              {@link #tamanhoPagina}.
-     *
+     * @param ordem     A ordem da entrada a partir da qual será montada a
+     *                  resposta. Se os critérios identificam N entradas, então
+     *                  nenhuma resposta será fornecida se a ordem indicada
+     *                  for igual ou superior a N. Se for igual a N - 1, então
+     *                  apenas a última entrada das N encontradas será
+     *                  retornada.
+     *                  Se a ordem for inferior a N - 1, serão retornadas
+     *                  todas as
+     *                  entradas a partir da ordem fornecida até o limite de
+     *                  {@link #tamanhoPagina}.
      * @return As entradas que satisfazem os critérios a partir da ordem
      * indicada.
      */
     public List<String> encontre(String[] criterios, int ordem) {
         if (ordem < 0) {
-            return listaVazia;
+            return Collections.emptyList();
         }
 
         List<String> parcial = encontre(criterios);
@@ -111,7 +105,7 @@ public class Cid implements AutoCloseable {
         // Ordem além da resposta.
         int tamanhoRespostaParcial = parcial.size();
         if (ordem >= tamanhoRespostaParcial) {
-            return listaVazia;
+            return Collections.emptyList();
         }
 
         int superior = ordem + tamanhoPagina;
@@ -128,7 +122,6 @@ public class Cid implements AutoCloseable {
      *
      * @param criterios Elementos que devem estar presentes
      *                  em toda entrada da CID-10 retornada.
-     *
      * @return Lista com os identificadores de ordem das
      * entradas na CID-10 que satisfazem os critérios fornecidos.
      */
@@ -139,7 +132,7 @@ public class Cid implements AutoCloseable {
         List<Integer> resultado = new ArrayList<>();
 
         if (criterios.length == 0) {
-            return listaVazia;
+            return Collections.emptyList();
         }
 
         String primeiro = criterios[0];
@@ -166,7 +159,8 @@ public class Cid implements AutoCloseable {
     }
 
     // TODO limitar total de critérios (talvez 5, por exemplo) (ignora demais).
-    // TODO limitar tamanho maximo de cada critério (talvez 10 caracteres, ignore demais)
+    // TODO limitar tamanho maximo de cada critério (talvez 10 caracteres,
+    //  ignore demais)
     // TODO não alterar array original.
     private static void ajustaCriterios(String[] criterios) {
         for (int i = 0; i < criterios.length; i++) {
