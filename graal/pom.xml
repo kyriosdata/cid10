@@ -7,6 +7,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <properties>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
+    <executable.name>cid</executable.name>
     <maven.compiler.parameters>true</maven.compiler.parameters>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -17,9 +18,6 @@
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.platform.version>1.3.0.Final</quarkus.platform.version>
     <surefire-plugin.version>2.22.1</surefire-plugin.version>
-
-    <!--Nome do arquivo executável (native) -->
-    <executable.name>cid</executable.name>
   </properties>
   <dependencyManagement>
     <dependencies>

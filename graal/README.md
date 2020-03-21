@@ -4,6 +4,13 @@ Este projeto usa o _framework_ Quarkus com o propósito de
 ilustrar o emprego de AWS Lambda com código nativo obtido
 da GraalVM.
 
+## Tag (travis-ci)
+
+A sequência abaixo cria um _tagged commit_ e dispara travis-ci.
+
+- `git push --delete origin v0.0.0`
+- `git push origin v0.0.0`
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
