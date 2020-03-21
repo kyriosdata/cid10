@@ -20,6 +20,9 @@ public class Aplicacao {
     public static void main(String[] args) {
         if (args.length < 2) {
             System.out.println("USO: <ordem> <termos>");
+            System.out.println("\n\tExibe as entradas, a partir da ordem " +
+                    "fornecida, nas quais estão presentes os termos " +
+                    "fornecidos, seja no código ou na descrição.\n");
             System.exit(1);
         }
 
