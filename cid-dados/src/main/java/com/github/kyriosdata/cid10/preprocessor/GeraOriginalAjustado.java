@@ -82,7 +82,7 @@ public class GeraOriginalAjustado {
         String outputMsg = String.format("\nDiretório de saíde: %s", output);
         System.out.println(inputMsg);
         System.out.println(outputMsg);
-        
+
         gerador(input, output);
         geraEstruturaParaBusca(output);
     }
