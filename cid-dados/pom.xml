@@ -25,7 +25,7 @@
         <license>
             <name>Creative Commons Attribution 4.0 International (CC BY 4.0)</name>
             <comments>
-                Copyright (c) 2017, 2018. Fábio Nogueira de Lucena
+                Copyright (c) 2017, 2018, 2019, 2020 Fábio Nogueira de Lucena
                 Fábrica de Software - Instituto de Informática (UFG)
             </comments>
             <url>https://creativecommons.org/licenses/by/4.0/</url>
@@ -50,6 +50,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.mainClass>com.github.kyriosdata.cid10.busca.Aplicacao</project.mainClass>
     </properties>
 
     <dependencies>
@@ -130,6 +131,43 @@
     </build>
 
     <profiles>
+
+        <!-- Gerar jar executável (fat jar) -->
+        <!-- Jar file gerado é suficiente -->
+        <profile>
+            <id>executavel-unico</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.1.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>exemplo-unico</finalName>
+                                    <archive>
+                                        <manifest>
+                                            <mainClass>${project.mainClass}
+                                            </mainClass>
+                                        </manifest>
+                                    </archive>
+                                    <descriptorRefs>
+                                        <descriptorRef>jar-with-dependencies
+                                        </descriptorRef>
+                                    </descriptorRefs>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
         <!-- GERAR RELATÓRIO DE COBERTURA (target/site/jacoco/index.html) -->
         <!-- mvn clean package -P cobertura -->
