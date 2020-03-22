@@ -43,7 +43,9 @@ import java.util.List;
  */
 public class GeraOriginalAjustado {
 
-    public static final String DIR = "datasus/";
+    public static final String IN_DIR = "datasus/";
+    public static final String OUT_DIR = "./src/main/resources/cid/";
+
     public static final String CAPITULOS = "CID-10-CAPITULOS.CSV";
     public static final String GRUPOS = "CID-10-GRUPOS.CSV";
     public static final String CATEGORIAS = "CID-10-CATEGORIAS.CSV";
@@ -51,31 +53,47 @@ public class GeraOriginalAjustado {
     public static final String GRUPOS_ONCOLOGIA = "CID-O-GRUPOS.CSV";
     public static final String CATEGORIAS_ONCOLOGIA = "CID-O-CATEGORIAS.CSV";
 
-    public static final String OUT_DIR = "./src/main/resources/cid/";
     public static final String OUT_CAPITULOS = "capitulos.csv";
     public static final String OUT_GRUPOS = "grupos.csv";
     public static final String OUT_GO = "go.csv";
     public static final String OUT_CODIGOS = "codigos.csv";
 
     /**
-     * Apenas para viabilizar geração automática via Maven.
+     * Aplicação desenvolvida para executar a conversão dos dados da
+     * CID-10, entre o formato fornecido pelo DATASUS e aquele projetado para
+     * a busca. Arquivos correspondentes e predefinidos serão buscados no
+     * diretório de entrada e depositados no diretório de saída.
+     *
+     * <p>Se os diretórios de entrada e saída não forem fornecidos, então
+     * serão empregados os diretórios padrão, ou seja, aqueles indicados por
+     * {@link #IN_DIR} e {@link #OUT_DIR}.
+     * </p>
      *
      * @param args Nenhum argumento é esperado.
      * @throws Exception Operações com leitura e escrita de arquivos podem
-     * gerar exceções.
+     *                   gerar exceções.
      */
     public static void main(String[] args) throws Exception {
-        gerador();
-        geraEstruturaParaBusca();
+        if (args.length != 2) {
+            System.out.println("\nUso: <input dir> <output dir>\n");
+            System.out.println("Se os dois argumentos não forem fornecidos, " +
+                    "então serão empregados os valores predefinidos pelas " +
+                    "variáveis IN_DIR e OUT_DIR, respectivamente.");
+            System.exit(1);
+        }
+
+        gerador(IN_DIR, OUT_DIR);
+        geraEstruturaParaBusca(OUT_DIR);
     }
 
-    public static void gerador() throws Exception {
+    public static void gerador(final String inDir, final String outDir) throws Exception {
 
-        preparaDiretorio(OUT_DIR);
+        preparaDiretorio(outDir);
 
         // Capítulos
-        List<String> chapters = processaCapitulos(CAPITULOS);
-        Path chapter = Paths.get(OUT_DIR, OUT_CAPITULOS);
+        Path capitulosCsv = getPath(inDir, CAPITULOS);
+        List<String> chapters = processaCapitulos(capitulosCsv);
+        Path chapter = Paths.get(outDir, OUT_CAPITULOS);
         armazena(chapters, chapter);
 
         // Monta "cache" de capítulos
@@ -92,17 +110,25 @@ public class GeraOriginalAjustado {
         });
 
         // Grupos
-        List<String> groups = processaGrupo(GRUPOS);
-        armazena(groups, Paths.get(OUT_DIR, OUT_GRUPOS));
+        final Path gruposCsv = getPath(inDir, GRUPOS);
+        List<String> groups = processaGrupo(gruposCsv);
+        armazena(groups, Paths.get(outDir, OUT_GRUPOS));
 
         // Grupos oncologia
-        List<String> go = processaGrupo(GRUPOS_ONCOLOGIA);
-        armazena(go, Paths.get(OUT_DIR, OUT_GO));
+        Path gruposOncologiaCsv = getPath(inDir, GRUPOS_ONCOLOGIA);
+        List<String> go = processaGrupo(gruposOncologiaCsv);
+        armazena(go, Paths.get(outDir, OUT_GO));
 
         // Códigos = Categorias + Subcategorias + Categorias da oncologia
-        List<String> categorias = processaCategorias(CATEGORIAS);
-        List<String> subcategorias = processaSubcategorias(SUBCATEGORIAS);
-        List<String> co = processaCategoriasOncologia(CATEGORIAS_ONCOLOGIA);
+        final Path categoriasCsv = getPath(inDir, CATEGORIAS);
+        List<String> categorias = processaCategorias(categoriasCsv);
+
+        final Path subcategoriasCsv = getPath(inDir, SUBCATEGORIAS);
+        List<String> subcategorias = processaSubcategorias(subcategoriasCsv);
+
+        final Path categoriasOncologiaCsv = getPath(inDir,
+                CATEGORIAS_ONCOLOGIA);
+        List<String> co = processaCategoriasOncologia(categoriasOncologiaCsv);
 
         // Realiza a união
         List<String> codigos = new ArrayList<>();
@@ -131,7 +157,7 @@ public class GeraOriginalAjustado {
             pronta.add(l.substring(0, l.length() - 1));
         });
 
-        armazena(pronta, Paths.get(OUT_DIR, OUT_CODIGOS));
+        armazena(pronta, Paths.get(outDir, OUT_CODIGOS));
     }
 
     /**
@@ -141,7 +167,6 @@ public class GeraOriginalAjustado {
      * @param outDir Diretório a ser criado, caso não exista. Se o diretório
      *               indicado já existe, então será removido (inclusive seu
      *               conteúdo, arquivos e subdiretórios) e um novo será criado.
-     *
      * @throws IOException Se não for possível criar o diretório indicado.
      */
     private static void preparaDiretorio(String outDir) throws IOException {
@@ -182,8 +207,8 @@ public class GeraOriginalAjustado {
         return ajustado;
     }
 
-    private static List<String> processaCategoriasOncologia(String arquivo) {
-        List<String> linhas = getLinhas(arquivo);
+    private static List<String> processaCategoriasOncologia(Path csv) {
+        List<String> linhas = getLinhas(csv);
 
         // Remove header (nomes das colunas)
         linhas.remove(0);
@@ -199,8 +224,8 @@ public class GeraOriginalAjustado {
         return saida;
     }
 
-    private static List<String> processaCapitulos(String arquivo) {
-        List<String> linhas = getLinhas(arquivo);
+    private static List<String> processaCapitulos(Path csv) {
+        List<String> linhas = getLinhas(csv);
 
         // Remove header (nomes das colunas)
         linhas.remove(0);
@@ -217,8 +242,8 @@ public class GeraOriginalAjustado {
         return saida;
     }
 
-    private static List<String> processaGrupo(String arquivo) {
-        List<String> linhas = getLinhas(arquivo);
+    private static List<String> processaGrupo(Path csv) {
+        List<String> linhas = getLinhas(csv);
 
         // Remove header (nomes das colunas)
         linhas.remove(0);
@@ -233,8 +258,8 @@ public class GeraOriginalAjustado {
         return processadas;
     }
 
-    private static List<String> processaSubcategorias(String arquivo) {
-        List<String> linhas = getLinhas(arquivo);
+    private static List<String> processaSubcategorias(Path csv) {
+        List<String> linhas = getLinhas(csv);
 
         // Remove header (nomes das colunas)
         linhas.remove(0);
@@ -260,10 +285,10 @@ public class GeraOriginalAjustado {
      * A categoria é acrescida de um espaço em branco para facilitar
      * a ordenação lexicográfica. Este espaço é removido posteriormente.
      *
-     * @param entrada Nome do arquivo contendo as categorias.
+     * @param csv
      */
-    private static List<String> processaCategorias(String entrada) {
-        List<String> linhas = getLinhas(entrada);
+    private static List<String> processaCategorias(Path csv) {
+        List<String> linhas = getLinhas(csv);
 
         // Remove header (nomes das colunas)
         linhas.remove(0);
@@ -317,15 +342,13 @@ public class GeraOriginalAjustado {
     /**
      * Recupera lista de linhas de arquivo CSV.
      *
-     * @param entrada Nome do arquivo CSV.
+     * @param csv
      * @return Lista de linhas correspondentes ao conteúdo do arquivo CSV.
      */
-    public static List<String> getLinhas(String entrada) {
+    public static List<String> getLinhas(Path csv) {
         List<String> linhas = null;
         try {
-            String fileName = DIR + entrada;
-            Path grupos = ArquivoUtils.getPath(fileName);
-            linhas = Files.readAllLines(grupos, StandardCharsets.ISO_8859_1);
+            linhas = Files.readAllLines(csv, StandardCharsets.ISO_8859_1);
         } catch (Exception exp) {
             System.err.println(exp.toString());
         }
@@ -333,10 +356,14 @@ public class GeraOriginalAjustado {
         return linhas;
     }
 
-    public static void geraEstruturaParaBusca() {
+    private static Path getPath(String inDir, String entrada) {
+        return ArquivoUtils.getPath(inDir + entrada);
+    }
+
+    public static void geraEstruturaParaBusca(String outDir) {
         List<String> busca = new ArrayList<>();
 
-        Path path = Paths.get(OUT_DIR, "codigos.csv");
+        Path path = Paths.get(outDir, "codigos.csv");
         List<String> codes = ArquivoUtils.carrega(path);
 
         codes.forEach(l -> {
@@ -387,7 +414,7 @@ public class GeraOriginalAjustado {
             busca.add(nl);
         });
 
-        Path pathBusca = Paths.get(OUT_DIR, "busca.csv");
+        Path pathBusca = Paths.get(outDir, "busca.csv");
         armazena(busca, pathBusca);
     }
 
