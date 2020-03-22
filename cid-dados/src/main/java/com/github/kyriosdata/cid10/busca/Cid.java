@@ -18,9 +18,15 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Serviço de busca na CID-10.
+ * Serviço de busca por entradas na CID-10 que contêm os critérios
+ * (elementos) fornecidos.
  */
 public class Cid implements AutoCloseable {
+
+    /**
+     * Tamanho máximo de entradas da resposta.
+     */
+    public static final int MAX_ENTRADAS = 50;
 
     /**
      * Estrutura sobre a qual a busca é feita.
@@ -29,8 +35,9 @@ public class Cid implements AutoCloseable {
 
     /**
      * Estrutura que contém a versão "original" das
-     * entradas da CID. Empregada para montagem do
-     * retorno.
+     * entradas da CID. A versão original é empregada para
+     * a confecção da resposta, baseada nas entradas originais
+     * da CID.
      */
     private List<String> original;
 
@@ -41,10 +48,9 @@ public class Cid implements AutoCloseable {
 
     /**
      * A resposta será paginada, ou seja, conterá no máximo a quantidade
-     * de entradas dada pelo valor da presente variável. O valor padrão
-     * é 50.
+     * de entradas dada pelo valor da presente variável.
      */
-    private int tamanhoPagina = 50;
+    private int tamanhoPagina = MAX_ENTRADAS;
 
     /**
      * Cria objeto para atender requisições de busca na CID-10.

@@ -25,16 +25,20 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Aplicação que gera dados em formato alternativo ao original
- * obtido do DATASUS. Os dados são gerados no diretório "resources/cid".
+ * Gerador de estrutura de dados projetada para a eficiência da busca.
+ * Esta estrutura de dados DEVE permitir a localização eficiente de entradas
+ * da CID, a partir de códigos e da descrição de cada entrada. Naturalmente,
+ * a estrutura deve incluir todas as entradas correspondentes aos critérios
+ * da busca e apenas estes.
  *
  * <p><b>IMPORTANTE:</b> dados gerados pelo presente programa são necessários
- * para a execução dos testes da classe {@link com.github.kyriosdata.cid10.busca.Cid}.</p>
+ * para a execução dos testes da classe
+ * {@link com.github.kyriosdata.cid10.busca.Cid}.</p>
  *
- * <p>A intenção é eliminar informações que não serão
- * empregadas durante a execução, além de reduzir o tempo necessário
- * para "montagem" das estruturas de dados para busca. Ou seja, parte
- * considerável das operações são feitas pela presente classe, e não
+ * <p>A intenção é eliminar dados que não serão
+ * empregadas durante a execução, o que reduz o tempo necessário
+ * para "montagem" das estruturas de dados visando a eficiência da busca.
+ * Ou seja, parte das operações são feitas pela presente classe, e não
  * em tempo de execução do serviço.</p>
  */
 public class GeraOriginalAjustado {
@@ -67,7 +71,7 @@ public class GeraOriginalAjustado {
 
     public static void gerador() throws Exception {
 
-        preparaDiretorio();
+        preparaDiretorio(OUT_DIR);
 
         // Capítulos
         List<String> chapters = processaCapitulos(CAPITULOS);
@@ -130,8 +134,18 @@ public class GeraOriginalAjustado {
         armazena(pronta, Paths.get(OUT_DIR, OUT_CODIGOS));
     }
 
-    private static void preparaDiretorio() throws IOException {
-        Path outPath = Paths.get(OUT_DIR);
+    /**
+     * Prepara o diretório onde serão depositados os arquivos contendo a
+     * estrutura de dados produzida para busca eficiente.
+     *
+     * @param outDir Diretório a ser criado, caso não exista. Se o diretório
+     *               indicado já existe, então será removido (inclusive seu
+     *               conteúdo, arquivos e subdiretórios) e um novo será criado.
+     *
+     * @throws IOException Se não for possível criar o diretório indicado.
+     */
+    private static void preparaDiretorio(String outDir) throws IOException {
+        Path outPath = Paths.get(outDir);
 
         if (Files.exists(outPath)) {
             deleteDir(outPath.toFile());
@@ -280,11 +294,10 @@ public class GeraOriginalAjustado {
     /**
      * Exclui coluna de uma linha CSV.
      *
-     * @param linha  Linha CSV, cujo delimitador é ";" cuja coluna
-     *               indicada deve ser eliminada.
+     * @param linha  Linha CSV cujo delimitador é ";".
      * @param ignora Número da coluna a ser ignorada (zero-based).
-     * @return A linha CSV inicialmente fornecida com a coluna
-     * indicada excluída.
+     * @return A linha CSV inicialmente fornecida após a exclusão da coluna a
+     * ser ignorada.
      */
     private static String excluiColuna(String linha, int ignora) {
         String novaLinha = "";
