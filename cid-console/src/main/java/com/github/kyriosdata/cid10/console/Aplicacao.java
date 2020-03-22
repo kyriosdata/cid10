@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * Aplicação que faz uso do serviço de busca de dados na CID-10.
+ * Aplicação CLI para busca em entradas da CID-10.
  */
 public class Aplicacao {
     /**
@@ -47,7 +47,7 @@ public class Aplicacao {
             ordem = Integer.parseInt(args[0]);
         } catch (NumberFormatException nfe) {
             System.out.println("USO: <ordem> <termos>");
-            System.out.printf("<ordem> deve ser um número inteiro");
+            System.out.println("<ordem> deve ser um número inteiro");
             System.exit(1);
         }
 
