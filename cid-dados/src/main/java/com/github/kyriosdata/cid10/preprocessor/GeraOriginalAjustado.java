@@ -74,16 +74,17 @@ public class GeraOriginalAjustado {
      *                   gerar exceções.
      */
     public static void main(String[] args) throws Exception {
-        if (args.length != 2) {
-            System.out.println("\nUso: <input dir> <output dir>\n");
-            System.out.println("Se os dois argumentos não forem fornecidos, " +
-                    "então serão empregados os valores predefinidos pelas " +
-                    "variáveis IN_DIR e OUT_DIR, respectivamente.");
-            System.exit(1);
-        }
+        final boolean argsFornecidos = args.length == 2;
+        String input = argsFornecidos ? args[0] : IN_DIR;
+        String output = argsFornecidos ? args[1] : OUT_DIR;
 
-        gerador(IN_DIR, OUT_DIR);
-        geraEstruturaParaBusca(OUT_DIR);
+        String inputMsg = String.format("\nDiretório de entrada: %s", input);
+        String outputMsg = String.format("\nDiretório de saíde: %s", output);
+        System.out.println(inputMsg);
+        System.out.println(outputMsg);
+        
+        gerador(input, output);
+        geraEstruturaParaBusca(output);
     }
 
     public static void gerador(final String inDir, final String outDir) throws Exception {
