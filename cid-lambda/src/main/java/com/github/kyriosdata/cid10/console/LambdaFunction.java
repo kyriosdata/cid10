@@ -8,26 +8,25 @@
  *
  */
 
-package com.github.kyriosdata.cid10.busca;
+package com.github.kyriosdata.cid10.console;
+
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
+import com.github.kyriosdata.cid10.busca.CarregaDados;
+import com.github.kyriosdata.cid10.busca.CarregaDadosFromJar;
+import com.github.kyriosdata.cid10.busca.Cid;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Arrays;
 
 /**
- * Aplicação que faz uso do serviço de busca de dados na CID-10.
+ * Conector de serviço de localização para AWS Lambda.
  */
-public class Aplicacao {
-    /**
-     * Executa busca sobre os dados da CID-10.
-     *
-     * @param args O primeiro argumento é a ordem a partir da qual os
-     *             resultados serão fornecidos. A ordem 0 significa o
-     *             primeiro elemento, a ordem 1 o segundo e assim por
-     *             diante. A partir do segundo argumento, todos aqueles
-     *             fornecidos serão considerados trechos que deverão fazer
-     *             parte de toda linha (código CID-10) fornecida como resultado.
-     */
-    public static void main(String[] args) {
+public class LambdaFunction implements RequestStreamHandler {
+
+    static int start(String[] args) {
         if (args.length < 2) {
             System.out.println("USO: <ordem> <termos>");
             System.out.println("\n\tExibe as entradas, a partir da ordem " +
@@ -35,32 +34,37 @@ public class Aplicacao {
                     "fornecida, nas quais estão presentes os termos " +
                     "fornecidos, sequências de letras e/ou números que " +
                     "devem fazer parte do código ou da descrição.\n");
-            System.exit(1);
+            return 1;
         }
 
-        int ordem = 0;
+        int ordem;
         try {
             ordem = Integer.parseInt(args[0]);
         } catch (NumberFormatException nfe) {
             System.out.println("USO: <ordem> <termos>");
-            System.out.printf("<ordem> deve ser um número inteiro");
-            System.exit(1);
+            System.out.println("<ordem> deve ser um número inteiro");
+            return 1;
         }
 
         String[] criterios = Arrays.copyOfRange(args, 1, args.length);
 
-        Cid cid = null;
+        Cid cid;
         try {
             final CarregaDados carregador = new CarregaDadosFromJar();
             cid = new Cid(carregador);
         } catch (IOException exception) {
             System.out.println("Falha interna.");
-            System.exit(2);
+            return 2;
         }
 
         final String criteriosBusca = String.join(" ", criterios);
         System.out.println("RESULTADO PARA: " + criteriosBusca);
         cid.encontre(criterios, ordem).forEach(System.out::println);
-        System.exit(0);
+        return 0;
+    }
+
+    @Override
+    public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException {
+        outputStream.write(inputStream.readAllBytes());
     }
 }

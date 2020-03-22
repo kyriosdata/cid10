@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.kyriosdata</groupId>
-    <artifactId>cid10-dados</artifactId>
+    <artifactId>cid10-lambda</artifactId>
     <version>2008.1.1</version>
     <packaging>jar</packaging>
 
@@ -50,16 +50,28 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>nao.se.aplica.Classe</project.mainClass>
+        <project.mainClass>com.github.kyriosdata.cid10.console.LambdaFunction</project.mainClass>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.github.kyriosdata</groupId>
+            <artifactId>cid10-dados</artifactId>
+            <version>2008.1.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.6.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-core</artifactId>
+            <version>1.2.0</version>
         </dependency>
 
     </dependencies>
@@ -80,11 +92,28 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>9</source>
+                    <target>9</target>
                 </configuration>
             </plugin>
 
@@ -98,7 +127,7 @@
                         <addMavenDescriptor>false</addMavenDescriptor>
                         <manifest>
                             <addClasspath>false</addClasspath>
-                            <mainClass>nao.se.aplica.Classe</mainClass>
+                            <mainClass>com.github.kyriosdata.cid10.console.LambdaFunction</mainClass>
                         </manifest>
                     </archive>
                     <excludes>
