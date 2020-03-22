@@ -9,7 +9,10 @@
  */
 package com.github.kyriosdata.cid10.busca;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -17,6 +20,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CarregaDadosFromJar implements CarregaDados {
     /**
@@ -35,11 +40,18 @@ public class CarregaDadosFromJar implements CarregaDados {
      */
     @Override
     public List<String> getLinhas(String filename) {
-        try {
-            URL url = ClassLoader.getSystemResource(filename);
-            Path path = Paths.get(url.toURI());
-            return Files.readAllLines(path, StandardCharsets.UTF_8);
-        } catch (IOException | URISyntaxException e) {
+        Objects.requireNonNull(filename, "filename");
+
+        if (filename.isEmpty()) {
+            throw new IllegalArgumentException("nome inválido");
+        }
+
+        InputStream is = ClassLoader.getSystemResourceAsStream(filename);
+        InputStreamReader isr = new InputStreamReader(is,
+                StandardCharsets.UTF_8);
+        try (BufferedReader br = new BufferedReader(isr)) {
+            return br.lines().collect(Collectors.toList());
+        } catch (IOException e) {
             throw new IllegalArgumentException("arquivo inválido");
         }
     }
