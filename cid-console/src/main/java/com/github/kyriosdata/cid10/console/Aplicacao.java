@@ -32,6 +32,10 @@ public class Aplicacao {
      *             parte de toda linha (código CID-10) fornecida como resultado.
      */
     public static void main(String[] args) {
+        System.exit(start(args));
+    }
+
+    static int start(String[] args) {
         if (args.length < 2) {
             System.out.println("USO: <ordem> <termos>");
             System.out.println("\n\tExibe as entradas, a partir da ordem " +
@@ -39,32 +43,32 @@ public class Aplicacao {
                     "fornecida, nas quais estão presentes os termos " +
                     "fornecidos, sequências de letras e/ou números que " +
                     "devem fazer parte do código ou da descrição.\n");
-            System.exit(1);
+            return 1;
         }
 
-        int ordem = 0;
+        int ordem;
         try {
             ordem = Integer.parseInt(args[0]);
         } catch (NumberFormatException nfe) {
             System.out.println("USO: <ordem> <termos>");
             System.out.println("<ordem> deve ser um número inteiro");
-            System.exit(1);
+            return 1;
         }
 
         String[] criterios = Arrays.copyOfRange(args, 1, args.length);
 
-        Cid cid = null;
+        Cid cid;
         try {
             final CarregaDados carregador = new CarregaDadosFromJar();
             cid = new Cid(carregador);
         } catch (IOException exception) {
             System.out.println("Falha interna.");
-            System.exit(2);
+            return 2;
         }
 
         final String criteriosBusca = String.join(" ", criterios);
         System.out.println("RESULTADO PARA: " + criteriosBusca);
         cid.encontre(criterios, ordem).forEach(System.out::println);
-        System.exit(0);
+        return 0;
     }
 }
