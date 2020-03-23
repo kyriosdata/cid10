@@ -63,9 +63,9 @@ public class Cid implements AutoCloseable {
     public Cid(final CarregaDados carregador) throws IOException {
         Objects.requireNonNull(carregador);
 
-        busca = carregador.getLinhas("cid/busca.csv");
-        original = carregador.getLinhas("cid/codigos.csv");
-        capitulos = carregador.getLinhas("cid/capitulos.csv");
+        busca = carregador.getLinhas("/cid/busca.csv");
+        original = carregador.getLinhas("/cid/codigos.csv");
+        capitulos = carregador.getLinhas("/cid/capitulos.csv");
     }
 
     /**

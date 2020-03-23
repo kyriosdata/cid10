@@ -23,6 +23,10 @@ public class CarregaDadosFromJar implements CarregaDados {
      * Recupera conteúdo de arquivo contido no próprio jar file, diretório
      * "resources".
      *
+     * <p>Não há garantia de que este método funcione em outros cenários.
+     * Observe que faz uso do classloader empregado para carregar esta
+     * própria classe.</p>
+     *
      * @param filename O nome do arquivo contido no diretório "resources". Por
      *                 exemplo, "x.txt" para o arquivo em questão ou "dir/x.txt" se
      *                 este arquivo estiver no diretório "dir", contido no diretório
@@ -40,7 +44,11 @@ public class CarregaDadosFromJar implements CarregaDados {
             throw new IllegalArgumentException("nome inválido");
         }
 
-        InputStream is = ClassLoader.getSystemResourceAsStream(filename);
+        // IMPORTANTE: ANTES DE ALTERAR A ESTRATÉGIA
+        // filename deve iniciar por /
+        // Outras estratégias empregadas e que apresentaram falhas
+        InputStream is =
+                CarregaDadosFromJar.class.getResourceAsStream(filename);
         InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
         try (BufferedReader br = new BufferedReader(isr)) {
             return br.lines().collect(Collectors.toList());

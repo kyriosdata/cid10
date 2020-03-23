@@ -43,7 +43,7 @@ class CarregaDadosFromJarTest {
 
     @Test
     void carregaArquivoDeBusca() {
-        List<String> linhas = fromJar.getLinhas("cid/busca.csv");
+        List<String> linhas = fromJar.getLinhas("/cid/busca.csv");
         assertNotNull(linhas);
         assertTrue(linhas.get(0).contains("a00;colera"));
     }
