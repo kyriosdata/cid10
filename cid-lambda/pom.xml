@@ -50,7 +50,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>com.github.kyriosdata.cid10.console.LambdaFunction</project.mainClass>
+        <project.mainClass>com.github.kyriosdata.cid10.lambda.Funcao</project.mainClass>
     </properties>
 
     <dependencies>

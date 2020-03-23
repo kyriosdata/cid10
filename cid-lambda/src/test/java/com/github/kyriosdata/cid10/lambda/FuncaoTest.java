@@ -1,4 +1,4 @@
-package com.github.kyriosdata.cid10.console;
+package com.github.kyriosdata.cid10.lambda;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,14 +11,14 @@ import java.nio.charset.StandardCharsets;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class LambdaFunctionTest {
+class FuncaoTest {
 
     @Test
     void sequenciaVazia() throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
         final String entrada = "";
-        new LambdaFunction().handleRequest(getFor(entrada), baos, null);
+        new Funcao().handleRequest(getFor(entrada), baos, null);
 
         final String recuperada = new String(baos.toByteArray(),
                 StandardCharsets.UTF_8);
@@ -31,7 +31,7 @@ class LambdaFunctionTest {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
         final String entrada = "teste";
-        new LambdaFunction().handleRequest(getFor(entrada), baos, null);
+        new Funcao().handleRequest(getFor(entrada), baos, null);
 
         final String recuperada = new String(baos.toByteArray(),
                 StandardCharsets.UTF_8);
@@ -44,7 +44,7 @@ class LambdaFunctionTest {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
         final String entrada = "0 dengue 90";
-        new LambdaFunction().handleRequest(getFor(entrada), baos, null);
+        new Funcao().handleRequest(getFor(entrada), baos, null);
 
         final String recuperada = new String(baos.toByteArray(),
                 StandardCharsets.UTF_8);
