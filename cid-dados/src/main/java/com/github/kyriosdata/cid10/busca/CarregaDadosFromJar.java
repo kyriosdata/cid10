@@ -20,17 +20,16 @@ import java.util.stream.Collectors;
 
 public class CarregaDadosFromJar implements CarregaDados {
     /**
-     * Recupera conteúdo de arquivo contido no próprio jar file,
-     * diretório "resources".
+     * Recupera conteúdo de arquivo contido no próprio jar file, diretório
+     * "resources".
      *
-     * @param filename O nome do arquivo contido no diretório "resources".
-     *                 Por exemplo, "x.txt" para o arquivo em questão ou
-     *                 "dir/x.txt" se este arquivo estiver no diretório
-     *                 "dir", contido no diretório "resources'.
+     * @param filename O nome do arquivo contido no diretório "resources". Por
+     *                 exemplo, "x.txt" para o arquivo em questão ou "dir/x.txt" se
+     *                 este arquivo estiver no diretório "dir", contido no diretório
+     *                 "resources'.
      * @return O conteúdo do arquivo em uma lista de linhas.
      * @throws NullPointerException     Se argumento é {@code null}.
-     * @throws IllegalArgumentException Se nome de arquivo é {@code null} ou
-     *                                  vazio.
+     * @throws IllegalArgumentException Se nome de arquivo é {@code null} ou vazio.
      * @throws IOException              Se não for possível carregar dados.
      */
     @Override
@@ -42,12 +41,11 @@ public class CarregaDadosFromJar implements CarregaDados {
         }
 
         InputStream is = ClassLoader.getSystemResourceAsStream(filename);
-        InputStreamReader isr = new InputStreamReader(is,
-                StandardCharsets.UTF_8);
+        InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
         try (BufferedReader br = new BufferedReader(isr)) {
             return br.lines().collect(Collectors.toList());
         } catch (IOException e) {
-            throw new IllegalArgumentException("arquivo inválido");
+            throw new IllegalArgumentException("arquivo inválido: " + filename);
         }
     }
 }
