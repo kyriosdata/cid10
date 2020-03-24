@@ -14,4 +14,4 @@ com conta apta a executar operações no AWS Lambda e API Gateway.
 
 ### Executando função (AWS Lambda) (curl)
 
-- `curl -X POST --data '0 dengue' https://b610tsbf31.execute-api.sa-east-1.amazonaws.com/padrao`
+- `curl -X POST --data '"0 dengue"' https://b610tsbf31.execute-api.sa-east-1.amazonaws.com/padrao`
