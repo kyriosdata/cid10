@@ -3,7 +3,7 @@
 Aplicação (console) ou CLI (_Command Line Interface_) para localização de
  entradas na CID-10.
 
-### Executando função (AWS Lambda)
+### Executando função (AWS Lambda) (AWS CLI)
 
 - `aws configure` (caso ainda não configurado). Será necessário um usuário
 com conta apta a executar operações no AWS Lambda e API Gateway. 
@@ -12,4 +12,6 @@ com conta apta a executar operações no AWS Lambda e API Gateway.
  cid10 --payload "0 dengue" saida.txt` (observe que o nome da função pode ser
   outro e não necessariamente 'cid10', assim como a consulta)
 
+### Executando função (AWS Lambda) (curl)
 
+- `curl -X POST --data '0 dengue' https://b610tsbf31.execute-api.sa-east-1.amazonaws.com/padrao`

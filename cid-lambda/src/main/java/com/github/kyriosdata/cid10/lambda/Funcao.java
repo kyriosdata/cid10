@@ -11,22 +11,19 @@
 package com.github.kyriosdata.cid10.lambda;
 
 import com.amazonaws.services.lambda.runtime.Context;
-import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.github.kyriosdata.cid10.busca.CarregaDados;
 import com.github.kyriosdata.cid10.busca.CarregaDadosFromJar;
 import com.github.kyriosdata.cid10.busca.Cid;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Conector de serviço de localização para AWS Lambda.
  */
-public class Funcao implements RequestStreamHandler {
+public class Funcao implements RequestHandler<String, String> {
 
     private Cid cid;
 
@@ -39,15 +36,41 @@ public class Funcao implements RequestStreamHandler {
         }
     }
 
+    /**
+     * Transforma lista de sequências de caracteres em um vetor destas
+     * sequências em JSON.
+     *
+     * @param strs Lista de sequências de caracteres a ser convertida em
+     *             vetor de sequências no formato JSON. Não pode ser
+     *             {@code null}.
+     * @return Vetor JSON contendo as sequências fornecidas na entrada.
+     */
+    public static String toJson(List<String> strs) {
+        if (strs.isEmpty()) {
+            return "[]";
+        }
+
+        StringBuilder json = new StringBuilder("[");
+
+        final int ultimo = strs.size() - 1;
+        for (int i = 0; i < ultimo; i++) {
+            json.append("'");
+            json.append(strs.get(i));
+            json.append("', ");
+        }
+
+        json.append("'");
+        json.append(strs.get(ultimo));
+        json.append("']");
+
+        return json.toString();
+    }
+
     @Override
-    public void handleRequest(InputStream inputStream,
-                              OutputStream outputStream, Context context) throws IOException {
-        String entrada = new String(inputStream.readAllBytes(),
-                StandardCharsets.UTF_8);
+    public String handleRequest(String entrada, Context context) {
 
         if (entrada.isEmpty()) {
-            outputStream.write("entrada.isEmpty == true".getBytes());
-            return;
+            return "[]";
         }
 
         String[] args = entrada.split(" ");
@@ -57,19 +80,10 @@ public class Funcao implements RequestStreamHandler {
         try {
             ordem = Integer.parseInt(args[0]);
         } catch (NumberFormatException formato) {
-            final String fmt = "NumberFormatException %s %s";
-            final String msg = String.format(fmt, entrada, args[0]);
-            outputStream.write(msg.getBytes());
-            return;
+            return "NumberFormatException " + entrada + " " + args[0];
         }
 
         final List<String> entradas = cid.encontre(criterios, ordem);
-        final String saida = String.join("\n", entradas);
-
-        if (saida.isEmpty()) {
-            outputStream.write(("saida vazia para: " + entrada).getBytes());
-            return;
-        }
-        outputStream.write(saida.getBytes());
+        return toJson(entradas);
     }
 }

@@ -7,6 +7,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,45 +16,32 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class FuncaoTest {
 
     @Test
-    void sequenciaVazia() throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-        final String entrada = "";
-        new Funcao().handleRequest(getFor(entrada), baos, null);
-
-        final String recuperada = new String(baos.toByteArray(),
-                StandardCharsets.UTF_8);
-
-        assertEquals(entrada, recuperada);
+    void nenhumaSequencia() {
+        assertEquals("[]", Funcao.toJson(Collections.emptyList()));
     }
 
     @Test
-    void primeiroArgumentoDeveSerNumero() throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-        final String entrada = "teste";
-        new Funcao().handleRequest(getFor(entrada), baos, null);
-
-        final String recuperada = new String(baos.toByteArray(),
-                StandardCharsets.UTF_8);
-
-        assertTrue(recuperada.isEmpty());
+    void umaSequencia() {
+        assertEquals("['a']", Funcao.toJson(List.of("a")));
     }
 
     @Test
-    void dengue() throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    void duasSequencias() {
+        assertEquals("['a', 'b']", Funcao.toJson(List.of("a", "b")));
+    }
 
+    @Test
+    void sequenciaVazia() {
+        final String recuperada = new Funcao().handleRequest("", null);
+
+        assertEquals("[]", recuperada);
+    }
+
+    @Test
+    void dengue() {
         final String entrada = "0 dengue 90";
-        new Funcao().handleRequest(getFor(entrada), baos, null);
-
-        final String recuperada = new String(baos.toByteArray(),
-                StandardCharsets.UTF_8);
+        final String recuperada = new Funcao().handleRequest(entrada, null);
 
         assertTrue(recuperada.contains("A90"));
-    }
-
-    private InputStream getFor(final String entrada) {
-        return new ByteArrayInputStream(entrada.getBytes());
     }
 }
