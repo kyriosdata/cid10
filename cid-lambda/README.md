@@ -1,7 +1,6 @@
-## CID-10 CLI 
+## CID-10 (AWS Lambda)
 
-Aplicação (console) ou CLI (_Command Line Interface_) para localização de
- entradas na CID-10.
+Oferece serviço de consulta aos códigos da CID 10 por meio de uma Lambda function (AWS).
 
 ### Executando função (AWS Lambda) (AWS CLI)
 
@@ -13,5 +12,6 @@ com conta apta a executar operações no AWS Lambda e API Gateway.
   outro e não necessariamente 'cid10', assim como a consulta. Adicionalmente, as aspas entre 0 dengue é para indicar que se trata de uma sequência de caracteres, string, que está sendo enviada.)
 
 ### Executando função (AWS Lambda) (curl)
+Neste caso, por meio de API Gateway (AWS) configurado para oferecer _endpoint_ correspondente à função (Lambda Function).
 
 - `curl -X POST --data '"0 dengue"' https://b610tsbf31.execute-api.sa-east-1.amazonaws.com/padrao`
