@@ -7,7 +7,23 @@ Oferece serviço de consulta aos códigos da CID 10 por meio de uma Lambda funct
 - Crie um usuário no AWS para esta finalidade específica, por exemplo, 
 **ms-cid10**. Naturalmente, seu 
 projeto pode adotar várias outras alternativas. 
-- Atribua a este usuário a política (_policy_), acrescente a política para
+- Atribua a este usuário a _policy_ identificada por
+ _AWSCodeDeployRoleForLambda_. Esta já está predefinida dentre as disponíveis.
+- Crie uma política específica para permitir a atualização do código, por
+exemplo, **ms-cid10**, conforme abaixo:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "lambda:UpdateFunctionCode",
+            "Resource": "arn:aws:lambda:<region>:<user-id>:function:cid10"
+        }
+    ]
+}
+```
 permitir **update-function-code**. 
  
 - `mvn package` (arquivo fat jar será gerado no diretório **target**, neste
