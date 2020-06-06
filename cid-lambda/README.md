@@ -2,6 +2,12 @@
 
 Oferece serviço de consulta aos códigos da CID 10 por meio de uma Lambda function (AWS).
 
+### Como disponibilizar função?
+
+- `mvn package` (arquivo fat jar será gerado no diretório **target**, neste
+ momento o tamanho deste arquivo jar é 322K)
+- Via AWS Console, faça _upload_ e a função já estará disponível. 
+
 ### Executando função (AWS Lambda) (AWS CLI)
 
 - `aws configure` (caso ainda não configurado). Será necessário um usuário

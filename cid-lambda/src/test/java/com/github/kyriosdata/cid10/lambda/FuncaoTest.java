@@ -2,11 +2,6 @@ package com.github.kyriosdata.cid10.lambda;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,8 +28,13 @@ class FuncaoTest {
     @Test
     void sequenciaVazia() {
         final String recuperada = new Funcao().handleRequest("", null);
-
         assertEquals("[]", recuperada);
+    }
+
+    @Test
+    void entradaNull() {
+        final String resultado = new Funcao().handleRequest(null, null);
+        assertEquals("[]", resultado);
     }
 
     @Test

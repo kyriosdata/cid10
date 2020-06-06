@@ -21,9 +21,15 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Conector de serviço de localização para AWS Lambda.
+ * Conector (wrapper) de serviço de localização de CID para AWS Lambda.
  */
 public class Funcao implements RequestHandler<String, String> {
+
+    /**
+     * Tamanho máximo admitido para a entrada. Valores superiores serão
+     * ignorados, a resposta será um vetor vazio.
+     */
+    public static final int MAX_SIZE_INPUT = 40;
 
     private Cid cid;
 
@@ -68,21 +74,37 @@ public class Funcao implements RequestHandler<String, String> {
 
     @Override
     public String handleRequest(String entrada, Context context) {
-
-        if (entrada.isEmpty()) {
-            return "[]";
+        if (entrada == null) {
+            throw new IllegalArgumentException("entrada nula");
         }
 
-        String[] args = entrada.split(" ");
-        String[] criterios = Arrays.copyOfRange(args, 1, args.length);
-        int ordem;
+        if (entrada.length() > MAX_SIZE_INPUT) {
+            throw new IllegalArgumentException("tamanho maior que o máximo");
+        }
 
+        if (entrada.isEmpty()) {
+            throw new IllegalArgumentException("entrada vazia");
+        }
+
+        // Registra em log (CloudWatch) a requisição recebida
+        System.out.print("Recebido: ");
+        System.out.println(entrada);
+
+        // Primeiro argumento, se número, será a ordem a partir do qual
+        // elementos serão retornados, caso contrário, a ordem será 0 e
+        // será tratado como critério de busca.
+
+        String[] args = entrada.split(" ");
+
+        int ordem;
         try {
             ordem = Integer.parseInt(args[0]);
         } catch (NumberFormatException formato) {
-            return "NumberFormatException " + entrada + " " + args[0];
+            throw new IllegalArgumentException("primeiro argumento deve ser " +
+                    "número");
         }
 
+        String[] criterios = Arrays.copyOfRange(args, 1, args.length);
         final List<String> entradas = cid.encontre(criterios, ordem);
         return toJson(entradas);
     }
