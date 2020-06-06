@@ -10,7 +10,7 @@ projeto pode adotar várias outras alternativas.
 - Atribua a este usuário a _policy_ identificada por
  _AWSCodeDeployRoleForLambda_. Esta já está predefinida dentre as disponíveis.
 - Crie uma política específica para permitir a atualização do código, por
-exemplo, **ms-cid10**, conforme abaixo:
+exemplo, **ms-cid10**, conforme abaixo, para atualizar a função:
 ```json
 {
     "Version": "2012-10-17",
@@ -24,7 +24,9 @@ exemplo, **ms-cid10**, conforme abaixo:
     ]
 }
 ```
-permitir **update-function-code**. 
+
+- Observe que a permissão (_policy_) acima permite o uso de 
+**update-function-code** via linha de comandos, conforme ilustrado abaixo. 
  
 - `mvn package` (arquivo fat jar será gerado no diretório **target**, neste
  momento o tamanho deste arquivo jar é 322K)
