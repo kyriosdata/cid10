@@ -34,6 +34,7 @@ public class Funcao implements RequestHandler<String, String> {
     private Cid cid;
 
     public Funcao() {
+        System.out.println("Versão: 0.0.0");
         try {
             final CarregaDados carregador = new CarregaDadosFromJar();
             cid = new Cid(carregador);
