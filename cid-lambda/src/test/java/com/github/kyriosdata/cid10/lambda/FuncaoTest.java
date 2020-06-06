@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FuncaoTest {
@@ -27,14 +28,20 @@ class FuncaoTest {
 
     @Test
     void sequenciaVazia() {
-        final String recuperada = new Funcao().handleRequest("", null);
-        assertEquals("[]", recuperada);
+        assertThrows(IllegalArgumentException.class,
+                () -> new Funcao().handleRequest("", null));
     }
 
     @Test
     void entradaNull() {
-        final String resultado = new Funcao().handleRequest(null, null);
-        assertEquals("[]", resultado);
+        assertThrows(IllegalArgumentException.class,
+                () -> new Funcao().handleRequest("", null));
+    }
+
+    @Test
+    void primeiroArgumentoDeveSerNumero() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new Funcao().handleRequest("a x", null));
     }
 
     @Test
