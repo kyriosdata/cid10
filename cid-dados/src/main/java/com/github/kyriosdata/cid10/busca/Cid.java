@@ -189,9 +189,6 @@ public class Cid implements AutoCloseable {
      * {@link #MAX_SIZE_CRITERIO} e (d) ignora critérios além do total máximo
      * considerado ({@link #MAX_CRITERIOS}).
      */
-    // TODO limitar total de critérios (talvez 5, por exemplo) (ignora demais).
-    // TODO limitar tamanho maximo de cada critério (talvez 10 caracteres,
-    //  ignore demais)
     private static String[] ajustaCriterios(String[] criterios) {
         final int totalCriterios = Math.min(criterios.length, MAX_CRITERIOS);
         final String[] criteriosAjustados = new String[totalCriterios];
