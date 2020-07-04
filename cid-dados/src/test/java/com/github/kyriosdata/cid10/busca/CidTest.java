@@ -73,11 +73,6 @@ class CidTest {
     }
 
     @Test
-    void algunsSimbolosSaoIgnorados() {
-        assertEquals(1, cid.encontre(new String[] { "a000,;" }).size());
-    }
-
-    @Test
     void acentosIgnorados() {
         String[] termos = { "CÓLERA", "NÃO" };
         assertEquals(1, cid.encontre(termos).size());

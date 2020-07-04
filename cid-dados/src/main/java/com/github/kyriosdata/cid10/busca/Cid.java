@@ -24,6 +24,16 @@ import java.util.Objects;
 public class Cid implements AutoCloseable {
 
     /**
+     * Total máximo de critérios considerados.
+     */
+    public static final int MAX_CRITERIOS = 5;
+
+    /**
+     * Total máximo de caracteres do critério que são considerados.
+     */
+    public static final int MAX_SIZE_CRITERIO = 10;
+
+    /**
      * Tamanho máximo de entradas da resposta.
      */
     public static final int MAX_ENTRADAS = 50;
@@ -133,24 +143,27 @@ public class Cid implements AutoCloseable {
      */
     public List<String> encontre(String[] criterios) {
 
-        ajustaCriterios(criterios);
+        String[] ajustados = ajustaCriterios(criterios);
 
-        List<Integer> resultado = new ArrayList<>();
-
-        if (criterios.length == 0) {
+        if (ajustados.length == 0) {
             return Collections.emptyList();
         }
 
-        String primeiro = criterios[0];
+        List<Integer> resultado = new ArrayList<>();
+
+        String primeiro = ajustados[0];
         int total = busca.size();
         for (int i = 0; i < total; i++) {
+            // TODO estender busca para além da CID, se for o caso.
+            // TODO busca.get(i) acrescentada de sinônimo e característica,
+            //  conforme requisição
             if (busca.get(i).contains(primeiro)) {
                 resultado.add(i);
             }
         }
 
-        for (int i = 1; i < criterios.length; i++) {
-            resultado = consultaEm(criterios[i], resultado);
+        for (int i = 1; i < ajustados.length; i++) {
+            resultado = consultaEm(ajustados[i], resultado);
         }
 
         return codigos(resultado);
@@ -164,27 +177,33 @@ public class Cid implements AutoCloseable {
         return strs;
     }
 
+    /**
+     * Prepara novos critérios a partir daqueles recebidos. Entre as operações
+     * está a conversão para minúsculas e a exclusão de acentos.
+     *
+     * @param criterios Critérios conforme recebidos.
+     *
+     * @return Novo vetor, obtido a partir daquele fornecido, onde cada
+     * critério é "ajustado". Os ajustes incluem: (a) conversão para
+     * minúscula; (b) remoção de acentos; (c) ignora caracteres além de
+     * {@link #MAX_SIZE_CRITERIO} e (d) ignora critérios além do total máximo
+     * considerado ({@link #MAX_CRITERIOS}).
+     */
     // TODO limitar total de critérios (talvez 5, por exemplo) (ignora demais).
     // TODO limitar tamanho maximo de cada critério (talvez 10 caracteres,
     //  ignore demais)
-    // TODO não alterar array original.
-    private static void ajustaCriterios(String[] criterios) {
-        for (int i = 0; i < criterios.length; i++) {
-            criterios[i] = ajustaCriterio(criterios[i]);
-        }
-    }
+    private static String[] ajustaCriterios(String[] criterios) {
+        final int totalCriterios = Math.min(criterios.length, MAX_CRITERIOS);
+        final String[] criteriosAjustados = new String[totalCriterios];
 
-    private static String ajustaCriterio(String criterio) {
-        StringBuilder ajustado = new StringBuilder(criterio.toLowerCase());
-
-        for (int i = 0; i < ajustado.length(); i++) {
-            char letra = ajustado.charAt(i);
-            if (letra == ';' || letra == ',') {
-                ajustado.deleteCharAt(i);
-            }
+        for (int i = 0; i < totalCriterios; i++) {
+            final int maxSize = Math.min(criterios[i].length(), MAX_SIZE_CRITERIO);
+            String delimitado = criterios[i].substring(0, maxSize);
+            String miniscula = delimitado.toLowerCase();
+            criteriosAjustados[i] = removeAcentos(miniscula);
         }
 
-        return removeAcentos(ajustado.toString());
+        return criteriosAjustados;
     }
 
     private static String removeAcentos(String original) {
