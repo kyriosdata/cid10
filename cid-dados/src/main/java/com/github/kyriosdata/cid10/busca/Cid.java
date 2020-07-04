@@ -209,7 +209,7 @@ public class Cid implements AutoCloseable {
     /**
      * Após chamada deste método não se espera nenhuma outra operação com o
      * objeto em questão. Adicionalmente, a expectativa é que este método
-     * seja chamado implicitamente por meio de try-with-resources.
+     * seja chamado implicitamente (veja try-with-resources).
      */
     @Override
     public void close() {
