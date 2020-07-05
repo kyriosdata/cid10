@@ -34,7 +34,7 @@ class CidTest {
 
     @BeforeEach
     void setUp() throws IOException {
-        cid = new Cid(new CarregaDadosFromJar());
+        cid = new Cid(new Carregador());
     }
 
     @AfterEach
@@ -44,7 +44,7 @@ class CidTest {
 
     @Test
     void autoCloseableCalled() {
-        try (Cid local = new Cid(new CarregaDadosFromJar())) {
+        try (Cid local = new Cid(new Carregador())) {
             assertNotNull(local.capitulos());
         } catch (IOException exp) {
             fail("não deveria ocorrer exceção");

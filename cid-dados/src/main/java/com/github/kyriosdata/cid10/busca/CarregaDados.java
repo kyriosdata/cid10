@@ -26,5 +26,5 @@ public interface CarregaDados {
      * @return Lista de sequências de caracteres (linhas) dos dados
      * correspondentes ao identificador fornecido.
      */
-    List<String> getLinhas(String identificador) throws IOException;
+    List<String> fromJar(String identificador) throws IOException;
 }

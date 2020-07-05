@@ -11,15 +11,13 @@
 package com.github.kyriosdata.cid10.busca;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Serviço de busca por entradas na CID-10 que contêm os critérios
- * (elementos) fornecidos.
+ * fornecidos. Um critério é uma sequência de caracteres.
  */
 public class Cid implements AutoCloseable {
 
@@ -41,7 +39,7 @@ public class Cid implements AutoCloseable {
     /**
      * Estrutura sobre a qual a busca é feita.
      */
-    private List<String> busca;
+    private List<String> cid;
 
     /**
      * Estrutura que contém a versão "original" das
@@ -73,9 +71,9 @@ public class Cid implements AutoCloseable {
     public Cid(final CarregaDados carregador) throws IOException {
         Objects.requireNonNull(carregador);
 
-        busca = carregador.getLinhas("/cid/busca.csv");
-        original = carregador.getLinhas("/cid/codigos.csv");
-        capitulos = carregador.getLinhas("/cid/capitulos.csv");
+        cid = carregador.fromJar("/cid/busca.csv");
+        original = carregador.fromJar("/cid/codigos.csv");
+        capitulos = carregador.fromJar("/cid/capitulos.csv");
     }
 
     /**
@@ -151,17 +149,21 @@ public class Cid implements AutoCloseable {
 
         List<Integer> resultado = new ArrayList<>();
 
+        // PRIMEIRO PASSO. Localizar entradas que contêm o primeiro critério.
         String primeiro = ajustados[0];
-        int total = busca.size();
+        int total = cid.size();
         for (int i = 0; i < total; i++) {
-            // TODO estender busca para além da CID, se for o caso.
-            // TODO busca.get(i) acrescentada de sinônimo e característica,
-            //  conforme requisição
-            if (busca.get(i).contains(primeiro)) {
+            if (cid.get(i).contains(primeiro)) {
                 resultado.add(i);
+            } else {
+                // TODO se não encontra na descrição da CID, pode estar
+                // no texto adicional da entrada em questão. Se encontrado
+                // no texto adicional, então acrescente ao resultado.
             }
         }
 
+        // SEGUNDO PASSO. Procurar demais critérios apenas nas entradas
+        // identificadas no primeiro passo.
         for (int i = 1; i < ajustados.length; i++) {
             resultado = consultaEm(ajustados[i], resultado);
         }
@@ -214,7 +216,7 @@ public class Cid implements AutoCloseable {
 
         for (Integer aParcial : parcial) {
             int indiceParaBusca = aParcial;
-            if (busca.get(indiceParaBusca).contains(criterio)) {
+            if (cid.get(indiceParaBusca).contains(criterio)) {
                 encontrados.add(indiceParaBusca);
             }
         }
@@ -229,13 +231,17 @@ public class Cid implements AutoCloseable {
      */
     @Override
     public void close() {
-        busca.clear();
-        busca = null;
+        cid.clear();
+        cid = null;
 
         original.clear();
         original = null;
 
         capitulos.clear();
         capitulos = null;
+    }
+
+    public Map<String, String> fromCsv(final InputStream inputStream) {
+        return null;
     }
 }

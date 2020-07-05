@@ -25,10 +25,10 @@ A saída produzida deve ser uma entrada da CID-10 que contém todos os
 
 - _Busca estendida_. A busca por código e/ou descrição da CID pode ser
  estendida por textos (sequências de caracteres) associados às entradas da
-  CID. Por exemplo, o texto "Síndrome do desfiladeiro" pode ser associado ao
-  código CID G540 e, neste caso, a busca por "desfilad", por exemplo, incluir
-  á a CID G540, apesar de não incluir este texto em sua descrição. Vários
-  textos podem ser associados a uma mesma entrada.
+ CID. Por exemplo, o texto "Síndrome do desfiladeiro" pode ser associado ao
+ código CID G540 e, neste caso, a busca por "desfilad" irá incluir
+ a CID G540, apesar de "desfilad" não fazer parte da descrição desta CID. 
+ Vários textos podem ser associados a uma mesma entrada.
 
 ### Projeto (design) da solução
 
@@ -47,6 +47,12 @@ _Decisão 3_. Classe específica deverá encapsular a obtenção (carga) dos dad
 ou seja, deve haver separação entre o código que realiza a consulta e o 
 código que obtém os dados. Desta forma, o armazenamento dos dados pode 
 mudar de origem sem impacto na classe que realiza a busca.
+
+_Decisão 4_. Os dados de entrada, CID e sinônimos, serão fornecidos por 
+meio de arquivos no formato CSV (separador será ';').
+
+_Decisão 5_. O arquivo de sinônimos contém, por linha, código da CID 
+em questão seguido de sinônimos, cada um em sua própria "coluna". 
 
 ### Estrutura de dados para a busca (lista adicional)
 Tendo em vista os requisitos, é necessário processar os dados da 

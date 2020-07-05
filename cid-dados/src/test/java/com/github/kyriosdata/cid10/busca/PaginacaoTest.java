@@ -71,7 +71,7 @@ public class PaginacaoTest {
 class CidPaginacao implements CarregaDados {
 
     @Override
-    public List<String> getLinhas(String identificador) {
+    public List<String> fromJar(String identificador) {
         final int TOTAL = 1000;
         List<String> conteudo = new ArrayList<>(TOTAL);
         for(int i = 0; i < TOTAL; i++) {

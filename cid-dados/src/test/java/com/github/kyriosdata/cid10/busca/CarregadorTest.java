@@ -19,31 +19,31 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CarregaDadosFromJarTest {
+class CarregadorTest {
 
-    private CarregaDadosFromJar fromJar = new CarregaDadosFromJar();
+    private Carregador fromJar = new Carregador();
 
     @Test
     void contratoNomeDoArquivoNaoPodeSerNull() {
         assertThrows(NullPointerException.class, () ->
-                fromJar.getLinhas(null));
+                fromJar.fromJar((String)null));
     }
 
     @Test
     void contratoNomeDoArquivoNaoPodeSerVazio() {
         assertThrows(IllegalArgumentException.class, () ->
-                fromJar.getLinhas(""));
+                fromJar.fromJar(""));
     }
 
     @Test
     void contratoNomeDoArquivoNaoPodeSerInexistente() {
         assertThrows(NullPointerException.class, () ->
-                fromJar.getLinhas(UUID.randomUUID().toString()));
+                fromJar.fromJar(UUID.randomUUID().toString()));
     }
 
     @Test
     void carregaArquivoDeBusca() {
-        List<String> linhas = fromJar.getLinhas("/cid/busca.csv");
+        List<String> linhas = fromJar.fromJar("/cid/busca.csv");
         assertNotNull(linhas);
         assertTrue(linhas.get(0).contains("a00;colera"));
     }

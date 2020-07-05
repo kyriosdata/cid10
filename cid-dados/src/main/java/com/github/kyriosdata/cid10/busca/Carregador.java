@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class CarregaDadosFromJar implements CarregaDados {
+public class Carregador implements CarregaDados {
     /**
      * Recupera conteúdo de arquivo contido no próprio jar file, diretório
      * "resources".
@@ -37,7 +37,7 @@ public class CarregaDadosFromJar implements CarregaDados {
      * @throws IOException              Se não for possível carregar dados.
      */
     @Override
-    public List<String> getLinhas(String filename) {
+    public List<String> fromJar(String filename) {
         Objects.requireNonNull(filename, "filename");
 
         if (filename.isEmpty()) {
@@ -48,12 +48,16 @@ public class CarregaDadosFromJar implements CarregaDados {
         // filename deve iniciar por /
         // Outras estratégias empregadas e que apresentaram falhas
         InputStream is =
-                CarregaDadosFromJar.class.getResourceAsStream(filename);
+                Carregador.class.getResourceAsStream(filename);
+        return from(is);
+    }
+
+    public List<String> from(InputStream is) {
         InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
         try (BufferedReader br = new BufferedReader(isr)) {
             return br.lines().collect(Collectors.toList());
         } catch (IOException e) {
-            throw new IllegalArgumentException("arquivo inválido: " + filename);
+            throw new IllegalArgumentException("erro ao ler stream");
         }
     }
 }
