@@ -60,7 +60,6 @@ public class DescricaoAdicional {
      * fornecidas satisfazem o critério indicado.
      *
      * @param criterio Texto a ser localizado nas descrições adicionais.
-     *
      * @return Entradas da CID (códigos) para as quais as descrições
      * adicionais correspondentes contêm o texto (critério) fornecido.
      */
@@ -78,7 +77,6 @@ public class DescricaoAdicional {
      *
      * @param is A entrada a partir da qual uma descrição adicional será
      *           recuperada no formato CSV.
-     *
      * @return A instância correspondente aos dados obtidos da entrada
      * fornecida.
      */
@@ -87,9 +85,9 @@ public class DescricaoAdicional {
         descricao.base = new HashMap<>();
         descricao.busca = new HashMap<>();
 
-        InputStreamReader isr = new InputStreamReader(is,
-                StandardCharsets.UTF_8);
-        try (BufferedReader br = new BufferedReader(isr)) {
+        try (InputStreamReader isr = new InputStreamReader(is,
+                StandardCharsets.UTF_8)) {
+            BufferedReader br = new BufferedReader(isr);
             String first;
             while ((first = br.readLine()) != null) {
                 // Primeira linha (base)
@@ -101,8 +99,8 @@ public class DescricaoAdicional {
                 final String second = br.readLine();
                 descricao.busca.put(cid, second.substring(separador + 1));
             }
-        } catch (IOException e) {
-            throw new IllegalArgumentException("erro ao ler stream");
+        } catch (IOException | NullPointerException e) {
+            // TODO log exception
         }
 
         return descricao;
