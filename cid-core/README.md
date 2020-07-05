@@ -1,7 +1,8 @@
-## Projeto CID-CORE
+## CID-CORE
 
 O presente projeto visa produzir uma solução que permite consultas aos
-códigos da CID-10. 
+códigos da CID-10, seja fornecendo parte do código e/ou partes de palavras
+que compõem a descrição da entrada desejada. 
 
 A solução permite que cada entrada da CID possa ser acrescida de "texto" 
 adicional que também pode ser considerado na busca. Por exemplo, a busca por
