@@ -61,15 +61,20 @@ public class Cid implements AutoCloseable {
     private int tamanhoPagina = MAX_ENTRADAS;
 
     /**
+     * Serviço empregado para carregar dados empregados pela busca.
+     */
+    private final CarregaDados carregador;
+
+    /**
      * Cria objeto para atender requisições de busca na CID-10.
      *
-     * @param carregador Objeto empregado para recuperar as estruturas de
+     * @param loader Objeto empregado para recuperar as estruturas de
      *                   dados empregadas para busca.
-     * @throws NullPointerException Se o carregador fornecido for {@code null}.
+     * @throws NullPointerException Se o loader fornecido for {@code null}.
      * @throws IOException          Se não for possível carregar dados.
      */
-    public Cid(final CarregaDados carregador) throws IOException {
-        Objects.requireNonNull(carregador);
+    public Cid(final CarregaDados loader) throws IOException {
+        carregador = Objects.requireNonNull(loader);
 
         cid = carregador.fromJar("/cid/busca.csv");
         original = carregador.fromJar("/cid/codigos.csv");
