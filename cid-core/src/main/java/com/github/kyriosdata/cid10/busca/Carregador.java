@@ -16,7 +16,6 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Carregador implements CarregaDados {
@@ -48,16 +47,13 @@ public class Carregador implements CarregaDados {
         // IMPORTANTE: ANTES DE ALTERAR A ESTRATÉGIA
         // filename deve iniciar por /
         // Outras estratégias empregadas e que apresentaram falhas
-        InputStream is =
-                Carregador.class.getResourceAsStream(filename);
-        return from(is, l -> l);
+        return from(Carregador.class.getResourceAsStream(filename));
     }
 
-    public List<String> from(InputStream is,
-                             Function<String, String> processaLinha) {
+    public List<String> from(InputStream is) {
         InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
         try (BufferedReader br = new BufferedReader(isr)) {
-            return br.lines().map(processaLinha).collect(Collectors.toList());
+            return br.lines().collect(Collectors.toList());
         } catch (IOException e) {
             throw new IllegalArgumentException("erro ao ler stream");
         }

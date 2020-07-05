@@ -47,7 +47,7 @@ class CidTest {
         List<String> search = cid.encontre(new String[]{}, 0);
         assertEquals(0, search.size());
     }
-    
+
     @Test
     void autoCloseableCalled() {
         try (Cid local = new Cid(new Carregador())) {
