@@ -1,4 +1,4 @@
-## Projeto CID-DADOS
+## Projeto CID-CORE
 
 O presente projeto visa produzir uma solução que permite consultas aos
 códigos da CID-10. 
