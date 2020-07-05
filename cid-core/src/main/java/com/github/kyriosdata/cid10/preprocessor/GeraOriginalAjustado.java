@@ -10,6 +10,8 @@
 
 package com.github.kyriosdata.cid10.preprocessor;
 
+import com.github.kyriosdata.cid10.busca.Busca;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -33,7 +35,7 @@ import java.util.List;
  *
  * <p><b>IMPORTANTE:</b> dados gerados pelo presente programa são necessários
  * para a execução dos testes da classe
- * {@link com.github.kyriosdata.cid10.busca.Cid}.</p>
+ * {@link Busca}.</p>
  *
  * <p>A intenção é eliminar dados que não serão
  * empregadas durante a execução, o que reduz o tempo necessário

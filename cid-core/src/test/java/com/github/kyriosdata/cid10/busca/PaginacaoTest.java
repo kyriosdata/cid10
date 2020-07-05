@@ -29,21 +29,21 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  */
 public class PaginacaoTest {
 
-    private static Cid cid;
+    private static Busca busca;
 
     @BeforeAll
     public static void setUp() throws IOException {
-        cid = new Cid(new CidPaginacao());
+        busca = new Busca(new CidPaginacao());
     }
 
     @Test
     public void naoNull() {
-        assertNotNull(cid);
+        assertNotNull(busca);
     }
 
     @Test
     public void respostaDeMilCodigos() {
-        assertEquals(1000, cid.encontre(new String[] { "a" }).size());
+        assertEquals(1000, busca.encontre(new String[] { "a" }).size());
     }
 
     @Test
@@ -63,7 +63,7 @@ public class PaginacaoTest {
     }
 
     private void verificaPagina(int ordem, int esperado) {
-        List<String> encontradas = cid.encontre(new String[]{"a"}, ordem);
+        List<String> encontradas = busca.encontre(new String[]{"a"}, ordem);
         assertEquals(esperado, encontradas.size());
     }
 }
