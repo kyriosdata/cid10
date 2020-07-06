@@ -19,14 +19,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
- * Textos adicionais, ou descrições, associadas a entradas da CID.
- * O objetivo é permitir que a busca possa ser feita, além do código e da
- * descrição de uma CID, também pelo "texto adicional". Por exemplo,
- * o texto adicional "Síndrome do desfiladeiro" pode ser associado à entrada
- * G540 e, consequentemente, a busca por "desfilad" permitirá a recuperação
- * da G540.
+ * Serviço que permite a associação de textos adicionais, ou descrições,
+ * a entradas da CID. O objetivo é permitir que a busca possa ser feita,
+ * além do código e da descrição de uma CID, também pelo "texto adicional"
+ * associado. Por exemplo, o texto adicional "Síndrome do desfiladeiro"
+ * associado à entrada G540, permite que a busca por "desfilad"
+ * recupere a entrada G540.
+ *
+ * Uma descrição adicional, portanto, permite associar a uma ou mais entradas
+ * da CID um texto adicional a ser considerado durante a busca. Uma
+ * descrição adicional pode ser serializada em um arquivo CSV
+ * ({@link #fromCsv}. Este arquivo pode ser gerado pela própria classe
+ * por meio do método {@link #toCsv}.
  */
 public class DescricaoAdicional {
 
@@ -104,5 +111,34 @@ public class DescricaoAdicional {
         }
 
         return descricao;
+    }
+
+    /**
+     * Transforma o dicionário de associações no conteúdo CSV correspondente,
+     * empregado para construir uma instância de {@link DescricaoAdicional}.
+     *
+     * <p>O dicionário contém uma chave (String) que é o código da CID
+     * ao qual, todas as sequências de caracteres associadas é
+     * fornecida em uma lista. Por exemplo, para associar a sequência
+     * "Síndrome do desfiladeiro" à entrada G540, o dicionário deverá
+     * possuir conter a chave "G540" e como valor correspondente uma
+     * lista contendo uma única sequência, "Síndrome do desfiladeiro".</p>
+     *
+     * @param associacoes Dicionário que associada cada uma das sequências
+     *                    de uma lista à chave (código CID) correspondente.
+     *
+     * @return Sequência no formato CSV empregado para se obter uma instância
+     * da classe {@link DescricaoAdicional}.
+     */
+    public static String toCsv(Map<String, List<String>> associacoes) {
+        return associacoes.entrySet().stream()
+                .map(e -> montaLinha(e.getKey(), e.getValue()))
+                .collect(Collectors.joining());
+    }
+
+    private static String montaLinha(final String key,
+                                     final List<String> values) {
+        final String vals = values.stream().collect(Collectors.joining(";"));
+        return String.format("%s;%s\n", key, vals);
     }
 }

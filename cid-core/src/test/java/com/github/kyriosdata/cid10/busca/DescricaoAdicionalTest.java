@@ -15,7 +15,9 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -54,6 +56,16 @@ public class DescricaoAdicionalTest {
 
         final List<String> encontre = da.encontre("x");
         assertEquals(0, encontre.size());
+    }
+
+    @Test
+    void associacoesParaCsv() {
+        Map<String, List<String>> associacoes = new HashMap<>();
+        associacoes.put("a", List.of("a1", "a2", "a3"));
+        associacoes.put("b", List.of("b1"));
+
+        final String csv = DescricaoAdicional.toCsv(associacoes);
+        assertEquals("a;a1;a2;a3\nb;b1\n", csv);
     }
 
     private InputStream isFromString(final String entrada) {
