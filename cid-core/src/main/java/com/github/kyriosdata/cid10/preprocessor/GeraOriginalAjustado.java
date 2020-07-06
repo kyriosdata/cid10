@@ -371,37 +371,7 @@ public class GeraOriginalAjustado {
 
         codes.forEach(l -> {
             String nl = l;
-
-            // Minúsculas apenas
-            nl = l.toLowerCase();
-
-            // Eliminar vírgulas
-            nl = nl.replaceAll(",", "");
-
-            // Plural simples, troca "(s)" por "s" e "(es)" por "es"
-            nl = nl.replaceAll("\\(s\\)", "s");
-            nl = nl.replaceAll("\\(es\\)", "es");
-
-            // Troca colchete e parêntese por espaço
-            nl = nl.replaceAll("[\\[\\]\\(\\)]", " ");
-
-            // Troca hífen por espaço
-            nl = nl.replaceAll("-", " ");
-
-            // Remove acentos
-            nl = removeSinais(nl);
-
-            // Troca ª por a
-            nl = nl.replaceAll("ª", "a");
-
-            // Troca aspa por espaço
-            nl = nl.replaceAll("\"", " ");
-
-            // Elimina preposições, artigos,...
-            nl = eliminaAlgumasPalavras(nl);
-
-            // Troca dois ou mais espaços por apenas um espaço
-            nl = nl.replaceAll("[ ]{2,}", " ");
+            nl = ajusta(l);
 
             // Coluna sexo não empregada na busca
             String[] campos = nl.split(";");
@@ -419,6 +389,40 @@ public class GeraOriginalAjustado {
 
         Path pathBusca = Paths.get(outDir, "busca.csv");
         armazena(busca, pathBusca);
+    }
+
+    private static String ajusta(String entrada) {
+        // Minúsculas apenas
+        String nl = entrada.toLowerCase();
+
+        // Eliminar vírgulas
+        nl = nl.replaceAll(",", " ");
+
+        // Plural simples, troca "(s)" por "s" e "(es)" por "es"
+        nl = nl.replaceAll("\\(s\\)", "s");
+        nl = nl.replaceAll("\\(es\\)", "es");
+
+        // Troca colchete e parêntese por espaço
+        nl = nl.replaceAll("[\\[\\]\\(\\)]", " ");
+
+        // Troca hífen por espaço
+        nl = nl.replaceAll("-", " ");
+
+        // Remove acentos
+        nl = removeSinais(nl);
+
+        // Troca ª por a
+        nl = nl.replaceAll("ª", "a");
+
+        // Troca aspa por espaço
+        nl = nl.replaceAll("\"", " ");
+
+        // Elimina preposições, artigos,...
+        nl = eliminaAlgumasPalavras(nl);
+
+        // Troca dois ou mais espaços por apenas um espaço
+        nl = nl.replaceAll("[ ]{2,}", " ");
+        return nl;
     }
 
     /**
