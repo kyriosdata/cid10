@@ -6,7 +6,9 @@ Códigos da CID-10 são empregados para se referir a doenças de forma não amb�
 o código **A90** é usado para se referir a "dengue". Desta forma, em vez de usar "dengue", o código
 **A90** é empregado.
 
-> O presente projeto visa oferecer acesso e facilidade de localização do conteúdo da CID-10 para a língua portuguesa.
+Objetivo:
+
+> Oferecer qualidade de acesso e localização do conteúdo da CID-10.
 
 Componentes do presente projeto:
 
