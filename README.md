@@ -8,7 +8,7 @@ o código **A90** é usado para se referir a "dengue". Desta forma, em vez de us
 
 Objetivo:
 
-> Oferecer qualidade de acesso e localização do conteúdo da CID-10.
+> Biblioteca Java rápida e compacta para acesso e localização do conteúdo da CID-10.
 
 Componentes do presente projeto:
 
