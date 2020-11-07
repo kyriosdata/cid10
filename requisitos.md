@@ -35,3 +35,10 @@ para que eu possa executar consultas na CID-10._
 
 - _Como usuário eu desejo acrescentar sinônimos para os códigos da CID-10  
 para que buscas posteriores possam retornar o código correspondente pelo sinônimo._
+
+- _Como usuário eu desejo acrescentar um código a minha lista de favoritos (ou frequentes)  
+para permitir que eu possa navegar por eles._
+
+- _Como usuário eu desejo consultar a minha lista de códigos favoritos  
+para a minha ambientação com eles._
+
