@@ -53,12 +53,11 @@ A hierarquia exibida acima pode ser ilustrada, por exemplo, para o capítulo 1,
 que trada de _Algumas doenças infecciosas e parasitárias_, conforme abaixo. Em tempo,
 ao todo são 22 capítulos.
 
-O capítulo 1, _Algumas doenças infecciosas e parasitárias"_, está subdividido em 21 grupos. 
+O capítulo 1, _Algumas doenças infecciosas e parasitárias_, está subdividido em 21 grupos. 
 O primeiro deles é o grupo de _Doenças infecciosas intestinas_. O grupo seguinte é _Tuberculose_.
 O último dos grupos que faz parte do capítulo 1 é o grupo _Outras doenças infecciosas_. 
 
-O grupo _Doenças infecciosas intestinais_ é subdividido em 9 categorias. Apenas para ilustrar, 
-as categorias deste grupo são: 
+O grupo _Doenças infecciosas intestinais_ é subdividido em 9 categorias: 
 - cólera; 
 - febres tifóide e paratifóide; 
 - outras infecções por Salmonella; 
@@ -70,7 +69,7 @@ as categorias deste grupo são:
 - infecções intestinais virais, outras e as não especificadas; e, 
 - diarréia e gastroenterite de origem infecciosa presumível.
 
-As categorias possuem códigos únicos, por exemplo, a categoria _cólera_ possui o
+Cada categoria possui um código único, por exemplo, a categoria _cólera_ possui o
 código **A00**, enquanto _diarréia e gastroenterite de origem infecciosa presumível_ tem
 como código **A09**. Noutras palavras, o grupo _Doenças infecciosas intestinais_
 reúne as categorias que vão do código **A00** até **A09**, inclusive. 
