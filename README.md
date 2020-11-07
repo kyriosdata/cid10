@@ -4,7 +4,7 @@
 
 Objetivo:
 
-> Oferecer aos profissionais de saúde e desenvolvedores um acesso fácil e rápido à CID. 
+> Oferecer aos profissionais de saúde e desenvolvedores acesso fácil e rápido à CID. 
 
 Organização:
 
