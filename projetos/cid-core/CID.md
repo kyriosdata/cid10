@@ -1,11 +1,11 @@
-## CID-10 (inclusive oncologia) (Versão 2008)
+### CID-10 (inclusive oncologia) (Versão 2008)
 
 A CID-10 é um instrumento que associa códigos
 únicos a doenças. Desta forma, de posse de um código e da versão da CID-10
 empregada, sabe-se exatamente qual a doença em questão, independente da
 língua ou cultura onde a consulta é realizada, por exemplo.
 
-## Exemplos da CID-10
+### Exemplos da CID-10
 
 Neste trabalho uma entrada da CID-10 é representada pelo código,
 pela restrição de sexo e pela descrição em questão. A tabela abaixo ilustra
@@ -49,8 +49,10 @@ CID-10
          -- Sub-categoria
 </pre>
 
-A hierarquia acima pode ser ilustrada, por exemplo, para o capítulo 1,
-que trada de "Algumas doenças infecciosas e parasitárias". Este capítulo contém vários grupos, dentre eles o grupo "Doenças infecciosas intestinais" que, por sua vez, inclui as categorias que vão da **A00** até **A09**, inclusive. A categoria **A00** é denominada de "Cólera", enquanto a categoria **A09** é "Diarréia e gastroenterite de origem infecciosa presumível". Conforme acima, cada uma destas categorias está organizada em sub-categorias. A categoria **A00** está subdividida
+A hierarquia exibida acima pode ser ilustrada, por exemplo, para o capítulo 1,
+que trada de "Algumas doenças infecciosas e parasitárias". 
+
+Tal capítulo contém vários grupos, dentre eles o grupo "Doenças infecciosas intestinais" que, por sua vez, inclui as categorias que vão da **A00** até **A09**, inclusive. A categoria **A00** é denominada de "Cólera", enquanto a categoria **A09** é "Diarréia e gastroenterite de origem infecciosa presumível". Conforme acima, cada uma destas categorias está organizada em sub-categorias. A categoria **A00** está subdividida
 em três subcategorias: **A000** ("Cólera devida a Vibrio cholerae 01, biótipo
 cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e
 **A009** ("Cólera não especificada").
