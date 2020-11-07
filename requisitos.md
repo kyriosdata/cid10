@@ -32,3 +32,6 @@ nas aplicações que desenvolvo._
 - _Como usuário eu desejo obter um aplicativo, instalá-lo de forma trivial em
 meu computador  
 para que eu possa executar consultas na CID-10._
+
+- _Como usuário eu desejo acrescentar sinônimos para os códigos da CID-10  
+para que buscas posteriores possam retornar o código correspondente pelo sinônimo._
