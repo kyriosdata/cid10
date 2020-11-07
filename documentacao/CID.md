@@ -77,4 +77,4 @@ reúne as categorias que vão do código **A00** até **A09**, inclusive.
 As subcategorias subdividem as categorias. Por exemplo, a categoria _cólera_, **A00**,
 possui três subcategorias: (a) _cólera devida a Vibrio cholerae 01, biótipo cholerae_; (b) _cólera devida a Vibrio cholerae 01 biótipo El Tor_ e, por fim, (c) _cólera não especificada_. Respectivamente os
 códigos únicos destas subcategorias são **A000**, **A001** e **A009**. Observe que o
-código único de uma subcategoria possui como prefixo o código da categoria em questão. 
+código único de uma subcategoria possui como prefixo o código da categoria da qual faz parte.
