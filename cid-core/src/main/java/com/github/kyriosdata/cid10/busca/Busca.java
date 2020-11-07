@@ -18,8 +18,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Serviço de busca por entradas na CID-10 que contêm os critérios
- * fornecidos. Um critério é uma sequência de caracteres.
+ * Serviço de busca por entradas na CID-10.
+ * Entradas serão localizadas para satisfazer os critérios. Um
+ * critério é uma sequência de caracteres.
  */
 public class Busca implements AutoCloseable {
 
