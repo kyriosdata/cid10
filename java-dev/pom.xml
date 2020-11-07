@@ -12,6 +12,7 @@
     <modules>
         <module>../cid-core</module>
         <module>../cid-console</module>
+        <module>../cid-lambda</module>
     </modules>
 
 </project>

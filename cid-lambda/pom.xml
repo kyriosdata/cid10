@@ -57,7 +57,7 @@
 
         <dependency>
             <groupId>com.github.kyriosdata</groupId>
-            <artifactId>cid10-dados</artifactId>
+            <artifactId>cid10-core</artifactId>
             <version>2008.1.1</version>
         </dependency>
 

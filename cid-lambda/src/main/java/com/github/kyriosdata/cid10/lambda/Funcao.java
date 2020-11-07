@@ -12,9 +12,9 @@ package com.github.kyriosdata.cid10.lambda;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.github.kyriosdata.cid10.busca.Busca;
 import com.github.kyriosdata.cid10.busca.CarregaDados;
-import com.github.kyriosdata.cid10.busca.CarregaDadosFromJar;
-import com.github.kyriosdata.cid10.busca.Cid;
+import com.github.kyriosdata.cid10.busca.Carregador;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -31,13 +31,13 @@ public class Funcao implements RequestHandler<String, String> {
      */
     public static final int MAX_SIZE_INPUT = 40;
 
-    private Cid cid;
+    private Busca cid;
 
     public Funcao() {
         System.out.println("Versão: 0.0.0");
         try {
-            final CarregaDados carregador = new CarregaDadosFromJar();
-            cid = new Cid(carregador);
+            final CarregaDados carregador = new Carregador();
+            cid = new Busca(carregador);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
