@@ -15,14 +15,5 @@ matrix:
       install: . ./install-jdk.sh --url "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-amd64-20.0.0.tar.gz"
 
 script:
-  - gu install native-image
-  - cd sandbox/graal
-  - mvn package -P native
-  
-deploy:
-  provider: releases
-  api_key: "$GITHUB_OAUTH"
-  file: "target/cid-aws-1.0.0-SNAPSHOT-runner"
-  skip_cleanup: true
-  on:
-    tags: true
+  - cd projetos/java-dev
+  - mvn clean test
