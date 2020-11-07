@@ -50,9 +50,26 @@ CID-10
 </pre>
 
 A hierarquia exibida acima pode ser ilustrada, por exemplo, para o capítulo 1,
-que trada de "Algumas doenças infecciosas e parasitárias". 
+que trada de "Algumas doenças infecciosas e parasitárias", conforme abaixo. Em tempo,
+ao todo são 22 capítulos.
 
-Tal capítulo contém vários grupos, dentre eles o grupo "Doenças infecciosas intestinais" que, por sua vez, inclui as categorias que vão da **A00** até **A09**, inclusive. A categoria **A00** é denominada de "Cólera", enquanto a categoria **A09** é "Diarréia e gastroenterite de origem infecciosa presumível". Conforme acima, cada uma destas categorias está organizada em sub-categorias. A categoria **A00** está subdividida
+O capítulo 1, "Algumas doenças infecciosas e parasitárias", está subdividido em vários grupos. 
+O primeiro deles é o grupo de "Doenças infecciosas intestinas". O grupo seguinte é "Tuberculose".
+O último dos grupos que faz parte do capítulo 1 é o grupo "Outras doenças infecciosas". 
+
+O grupo "Doenças infecciosas intestinais" é subdividido em 9 categorias. Apenas para ilustrar, 
+as categorias deste grupo são: 
+- cólera; 
+- febres tifóide e paratifóide; 
+- outras infecções por Salmonella; 
+- shiguelose;
+- outras infecções instestinais bacterianas;
+- outras intoxicações alimentares bacterianas, não classificadas em outra parte; 
+- amebíase; 
+- outras doenças intestinais por protozoários; 
+- infecções intestinais virais, outras e as não especificadas; e, 
+- diarréia e gastroenterite de origem infecciosa presumível.
+**A00** ao **B99**, inclusive. O primeiro destes grupos é . A categoria **A00** é denominada de "Cólera", enquanto a categoria **A09** é "Diarréia e gastroenterite de origem infecciosa presumível". Conforme acima, cada uma destas categorias está organizada em sub-categorias. A categoria **A00** está subdividida
 em três subcategorias: **A000** ("Cólera devida a Vibrio cholerae 01, biótipo
 cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e
 **A009** ("Cólera não especificada").
