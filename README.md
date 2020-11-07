@@ -9,6 +9,7 @@ Objetivo:
 Organização:
 
 - [Informações](./documentacao/CID.md) sobre a CID-10
+- [Requisitos](documentacao/requisitos.md)
 
 Observe que o primeiro e segundo componentes acima podem ser empregados por outros softwares, enquanto o terceiro é para uso humano.
 
