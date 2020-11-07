@@ -61,14 +61,18 @@ public class GeraOriginalAjustado {
     public static final String OUT_CODIGOS = "codigos.csv";
 
     /**
-     * Aplicação desenvolvida para executar a conversão dos dados da
-     * CID-10, entre o formato fornecido pelo DATASUS e aquele projetado para
-     * a busca. Arquivos correspondentes e predefinidos serão buscados no
-     * diretório de entrada e depositados no diretório de saída.
+     * Aplicação desenvolvida para converter os dados da
+     * CID-10, do formato fornecido pelo DATASUS (original) para aquele
+     * projetado para a busca.
      *
-     * <p>Se os diretórios de entrada e saída não forem fornecidos, então
-     * serão empregados os diretórios padrão, ou seja, aqueles indicados por
-     * {@link #IN_DIR} e {@link #OUT_DIR}.
+     * <p>Os dados são obtidos de arquivos com nomes padronizados:
+     * {@link #CAPITULOS}, {@link #GRUPOS} e assim por diante.
+     * </p>
+     *
+     * <p>Os diretórios onde os arquivos padrão são obtidos e os resultados
+     * correspondentes depositados são indicados por
+     * {@link #IN_DIR} e {@link #OUT_DIR}, respectivamente, caso não sejam
+     * fornecidos como argumentos. 
      * </p>
      *
      * @param args Nenhum argumento é esperado.
