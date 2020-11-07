@@ -50,14 +50,14 @@ CID-10
 </pre>
 
 A hierarquia exibida acima pode ser ilustrada, por exemplo, para o capítulo 1,
-que trada de "Algumas doenças infecciosas e parasitárias", conforme abaixo. Em tempo,
+que trada de _Algumas doenças infecciosas e parasitárias_, conforme abaixo. Em tempo,
 ao todo são 22 capítulos.
 
-O capítulo 1, "Algumas doenças infecciosas e parasitárias", está subdividido em vários grupos. 
-O primeiro deles é o grupo de "Doenças infecciosas intestinas". O grupo seguinte é "Tuberculose".
-O último dos grupos que faz parte do capítulo 1 é o grupo "Outras doenças infecciosas". 
+O capítulo 1, _Algumas doenças infecciosas e parasitárias"_, está subdividido em 21 grupos. 
+O primeiro deles é o grupo de _Doenças infecciosas intestinas_. O grupo seguinte é _Tuberculose_.
+O último dos grupos que faz parte do capítulo 1 é o grupo _Outras doenças infecciosas_. 
 
-O grupo "Doenças infecciosas intestinais" é subdividido em 9 categorias. Apenas para ilustrar, 
+O grupo _Doenças infecciosas intestinais_ é subdividido em 9 categorias. Apenas para ilustrar, 
 as categorias deste grupo são: 
 - cólera; 
 - febres tifóide e paratifóide; 
@@ -69,7 +69,13 @@ as categorias deste grupo são:
 - outras doenças intestinais por protozoários; 
 - infecções intestinais virais, outras e as não especificadas; e, 
 - diarréia e gastroenterite de origem infecciosa presumível.
-**A00** ao **B99**, inclusive. O primeiro destes grupos é . A categoria **A00** é denominada de "Cólera", enquanto a categoria **A09** é "Diarréia e gastroenterite de origem infecciosa presumível". Conforme acima, cada uma destas categorias está organizada em sub-categorias. A categoria **A00** está subdividida
-em três subcategorias: **A000** ("Cólera devida a Vibrio cholerae 01, biótipo
-cholerae"); **A001** ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e
-**A009** ("Cólera não especificada").
+
+As categorias possuem códigos únicos, por exemplo, a categoria _cólera_ possui o
+código **A00**, enquanto _diarréia e gastroenterite de origem infecciosa presumível_ tem
+como código **A09**. Noutras palavras, o grupo _Doenças infecciosas intestinais_
+reúne as categorias que vão do código **A00** até **A09**, inclusive. 
+
+As subcategorias subdividem as categorias. Por exemplo, a categoria _cólera_, **A00**,
+possui três subcategorias: (a) _cólera devida a Vibrio cholerae 01, biótipo cholerae_; (b) _cólera devida a Vibrio cholerae 01 biótipo El Tor_ e, por fim, (c) _cólera não especificada_. Respectivamente os
+códigos únicos destas subcategorias são **A000**, **A001** e **A009**. Observe que o
+código único de uma subcategoria possui como prefixo o código da categoria em questão. 
