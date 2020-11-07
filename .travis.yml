@@ -16,7 +16,7 @@ matrix:
 
 script:
   - gu install native-image
-  - cd projetos/graal
+  - cd sandbox/graal
   - mvn package -P native
   
 deploy:
