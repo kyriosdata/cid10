@@ -10,9 +10,9 @@
 
 package com.github.kyriosdata.cid10.console;
 
+import com.github.kyriosdata.cid10.busca.Busca;
 import com.github.kyriosdata.cid10.busca.CarregaDados;
-import com.github.kyriosdata.cid10.busca.CarregaDadosFromJar;
-import com.github.kyriosdata.cid10.busca.Cid;
+import com.github.kyriosdata.cid10.busca.Carregador;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -57,10 +57,10 @@ public class Aplicacao {
 
         String[] criterios = Arrays.copyOfRange(args, 1, args.length);
 
-        Cid cid;
+        Busca cid;
         try {
-            final CarregaDados carregador = new CarregaDadosFromJar();
-            cid = new Cid(carregador);
+            final CarregaDados carregador = new Carregador();
+            cid = new Busca(carregador);
         } catch (IOException exception) {
             System.out.println("Falha interna.");
             return 2;
