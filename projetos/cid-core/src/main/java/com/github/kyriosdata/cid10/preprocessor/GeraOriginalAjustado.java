@@ -59,6 +59,7 @@ public class GeraOriginalAjustado {
     public static final String OUT_GRUPOS = "grupos.csv";
     public static final String OUT_GO = "go.csv";
     public static final String OUT_CODIGOS = "codigos.csv";
+    public static final String OUT_BUSCA = "busca.csv";
 
     /**
      * Aplicação desenvolvida para converter os dados da
@@ -72,7 +73,7 @@ public class GeraOriginalAjustado {
      * <p>Os diretórios onde os arquivos padrão são obtidos e os resultados
      * correspondentes depositados são indicados por
      * {@link #IN_DIR} e {@link #OUT_DIR}, respectivamente, caso não sejam
-     * fornecidos como argumentos. 
+     * fornecidos como argumentos.
      * </p>
      *
      * @param args Nenhum argumento é esperado.
@@ -391,7 +392,7 @@ public class GeraOriginalAjustado {
             busca.add(nl);
         });
 
-        Path pathBusca = Paths.get(outDir, "busca.csv");
+        Path pathBusca = Paths.get(outDir, OUT_BUSCA);
         armazena(busca, pathBusca);
     }
 
