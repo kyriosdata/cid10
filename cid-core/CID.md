@@ -5,7 +5,7 @@ A CID-10 é um instrumento que associa códigos
 empregada, sabe-se exatamente qual a doença em questão, independente da
 língua ou cultura onde a consulta é realizada, por exemplo.
 
-## Exemplo de código da CID-10
+## Exemplos da CID-10
 
 Neste trabalho uma entrada da CID-10 é representada pelo código,
 pela restrição de sexo e pela descrição em questão. A tabela abaixo ilustra
