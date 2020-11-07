@@ -26,7 +26,7 @@ eficiente os códigos da CID-10.
 ### Requisitos de usuários
 
 - _Como desenvolvedore eu desejo incluir uma dependência em meu projeto  
-e usar uma API simples para eu oferecer o mecanismo de busca de código na CID-10  
+e usar uma API simples para eu criar software que oferece busca de código na CID-10  
 nas aplicações que desenvolvo._
 
 - _Como usuário eu desejo obter um aplicativo, instalá-lo de forma trivial em
