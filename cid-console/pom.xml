@@ -149,7 +149,7 @@
                                     <goal>single</goal>
                                 </goals>
                                 <configuration>
-                                    <finalName>exemplo-unico</finalName>
+                                    <finalName>cid10-console</finalName>
                                     <archive>
                                         <manifest>
                                             <mainClass>${project.mainClass}
