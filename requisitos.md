@@ -4,5 +4,21 @@ A classificação CID-10 é amplamente empregada no Brasil, em particular, por s
 de informação em saúde. Adicionalmente, profissionais de saúde, estudantes e 
 pesquisadores, também precisam ter acesso a tal classificação, seja para localizar
 um código ou saber do que se trata determinado código. Convém ressaltar que há mais de
-10.000 entradas na CID-10. Neste contexto, ferramentas para auxiliar tanto 
-desenvolvedores quanto seres humanos são bem-vindas.
+10.000 entradas na CID-10. 
+
+Neste contexto, há dois usuários principais: (a) desenvolvedores que precisam criar código 
+para localização de códigos da CID-10 e (b) usuários (profissionais de saúde, estudantes, 
+pesquisadores e outros).
+
+## Visão desenvolvedores
+
+Para desenvolvedores, o presente projeto oferece uma biblioteca para localização dos
+códigos da CID. Esta biblioteca tem como objetivo ser rápida, mínima e, de forma
+simples, oferecer acesso por meio de código.
+
+## Visão de usuários
+
+Para usuários (por exemplo, profissionais de saúde), o presente projeto oferece 
+aplicação de linha de comandos de instalação trivial (copiar e colar), para vários
+ambientes (Windows, Linux e MacOS), por meio da qual é possível localizar de forma
+eficiente os códigos da CID-10.
