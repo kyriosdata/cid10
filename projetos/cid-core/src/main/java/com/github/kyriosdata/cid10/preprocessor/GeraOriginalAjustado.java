@@ -371,7 +371,7 @@ public class GeraOriginalAjustado {
     public static void geraEstruturaParaBusca(String outDir) {
         List<String> busca = new ArrayList<>();
 
-        Path path = Paths.get(outDir, "codigos.csv");
+        Path path = Paths.get(outDir, OUT_CODIGOS);
         List<String> codes = ArquivoUtils.carrega(path);
 
         codes.forEach(l -> {
