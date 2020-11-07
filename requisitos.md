@@ -42,3 +42,7 @@ para permitir que eu possa navegar por eles._
 - _Como usuário eu desejo consultar a minha lista de códigos favoritos  
 para a minha ambientação com eles._
 
+### Diagrama de contexto
+
+<img src="./media/contexto.svg">
+
