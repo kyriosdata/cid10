@@ -15,7 +15,6 @@ Observe que o primeiro e segundo componentes acima podem ser empregados por outr
 
 ## Projetos correlatos
 
-- [SIGTAP](https://github.com/kyriosdata/sigtap)
 - [CBO](https://github.com/kyriosdata/cbo)
 - [CIAP-2](https://github.com/kyriosdata/ciap2)
-
+- [SIGTAP](https://github.com/kyriosdata/sigtap)
