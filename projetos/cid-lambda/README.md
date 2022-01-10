@@ -42,6 +42,10 @@ com conta apta a executar operações no AWS Lambda e API Gateway.
 - `aws lambda invoke --cli-binary-format raw-in-base64-out --function-name
  cid10 --payload '"0 dengue"' saida.txt` (observe que o nome da função pode ser
   outro e não necessariamente 'cid10', assim como a consulta. Adicionalmente, as aspas entre 0 dengue é para indicar que se trata de uma sequência de caracteres, string, que está sendo enviada.)
+  
+- `aws lambda invoke --function-name cid10 --payload file://payload.json --profile farol --cli-binary-format raw-in-base64-out saida` neste caso
+a entrada é fornecida no arquivo indicado e empregando o perfil fornecido, caso seja usado um perfile diferente daquele
+configurado como padrão.
 
 ### Executando função (AWS Lambda) (curl)
 Neste caso, por meio de API Gateway (AWS) configurado para oferecer _endpoint_ correspondente à função (Lambda Function).
