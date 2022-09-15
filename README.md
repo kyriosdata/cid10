@@ -12,10 +12,3 @@ Organização:
 - [Documentação](documentacao/requisitos.md) do projeto
 
 Observe que o primeiro e segundo componentes acima podem ser empregados por outros softwares, enquanto o terceiro é para uso humano.
-
-## Projetos correlatos
-
-- [CBO](https://github.com/kyriosdata/cbo)
-- [CIAP-2](https://github.com/kyriosdata/ciap2)
-- [CNES](https://github.com/kyriosdata/cnes)
-- [SIGTAP](https://github.com/kyriosdata/sigtap)
