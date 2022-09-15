@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.com/kyriosdata/cid10.svg?branch=master)](https://travis-ci.com/kyriosdata/cid10)
+
+[![Build Status](https://app.travis-ci.com/kyriosdata/cid10.svg?branch=master)](https://app.travis-ci.com/kyriosdata/cid10)
 
 ## Classificação Internacional de Doenças (CID-10 versão 2008)
 
