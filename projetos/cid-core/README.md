@@ -1,12 +1,13 @@
 ## CID-CORE
 
-O presente projeto visa produzir uma solução que permite consultas aos
-códigos da CID-10, seja fornecendo parte do código e/ou partes de palavras
+O presente projeto disponibiliza uma solução para consultas aos
+códigos da CID-10 (**versão 2008**), seja fornecendo parte do código e/ou partes de palavras
 que compõem a descrição da entrada desejada. 
 
 A solução permite que cada entrada da CID possa ser acrescida de "texto" 
-adicional que também pode ser considerado na busca. Por exemplo, a busca por
- "Síndrome do desfiladeiro" também irá retornar a CID de código G540.  
+adicional que também pode ser considerado na busca. Por exemplo, a solução
+pode ser configurada para que a busca por
+ "Síndrome do desfiladeiro" também retorne a CID de código **G540**.  
 
 ### Requisitos
 - _A busca pode ser feita apenas por parte do código e/ou parte da descrição_. 
@@ -67,7 +68,7 @@ CID-10 conforme abaixo:
    
 ### Geração dos aplicativos (e uso via linha de comandos)
 1. Obtenha o código fonte `git clone https://github.com/kyriosdata/cid10`
-1. Execute `cd cid10/cid-dados`
+1. Execute `cd cid10/cid-core`
 1. Execute `mvn package` 
 1. Na linha de comandos `java -jar cid10-dados-2008.1.0.jar 0 dengue` fará 
 com que todas as entradas contendo "dengue" sejam exibidas na saída padrão.
