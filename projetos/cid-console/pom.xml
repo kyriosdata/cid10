@@ -85,6 +85,15 @@
         <plugins>
 
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>${project.mainClass}</mainClass>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
@@ -104,7 +113,7 @@
                         <addMavenDescriptor>false</addMavenDescriptor>
                         <manifest>
                             <addClasspath>false</addClasspath>
-                            <mainClass>com.github.kyriosdata.cid10.console.Aplicacao</mainClass>
+                            <mainClass>${project.mainClass}</mainClass>
                         </manifest>
                     </archive>
                     <excludes>
@@ -126,13 +135,14 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            
+
         </plugins>
     </build>
 
     <profiles>
 
         <!-- Gerar jar executável (fat jar) -->
+        <!-- mvn package -P executavel-unico -->
         <!-- Jar file gerado é suficiente -->
         <profile>
             <id>executavel-unico</id>
@@ -171,7 +181,7 @@
 
         <!-- GERAR RELATÓRIO DE COBERTURA (target/site/jacoco/index.html) -->
         <!-- mvn clean package -P cobertura -->
-         <profile>
+        <profile>
             <id>cobertura</id>
             <build>
                 <plugins>
@@ -216,7 +226,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.github.kyriosdata.cid10.preprocessor.GeraOriginalAjustado</mainClass>
+                                    <mainClass>${project.mainClass}</mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
