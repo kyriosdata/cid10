@@ -5,7 +5,7 @@
 
 Objetivo:
 
-> Oferecer aos profissionais de saúde e desenvolvedores acesso fácil e rápido à CID. 
+> Biblioteca de conveniência para acesso fácil e rápido à CID-10 (versão 2008). 
 
 ### Importante
 
@@ -15,5 +15,12 @@ Organização:
 
 - [Informações](./documentacao/CID.md) sobre a CID-10
 - [Documentação](documentacao/requisitos.md) do projeto
+
+
+### Projetos
+
+- [Console](./projetos/cid-console) para consulta via linha de comandos. Ilustra uso.
+- [CID-10](./projetos/cid-core) implementa biblioteca que oferece consulta sobre a CID-10 (versão 2008). Inclui tratamento de dados para agilizar a consulta. Solução "caseira". 
+- [cid-lucene](./projetos/cid-lucene) implementação usando a biblioteca Apache [Lucene](https://lucene.apache.org/).
 
 
