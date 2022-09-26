@@ -31,7 +31,7 @@ exemplo, **ms-cid10**, conforme abaixo, para atualizar a função:
 - `mvn package` (arquivo fat jar será gerado no diretório **target**, neste
  momento o tamanho deste arquivo jar é 322K)
 - `aws lambda update-function-code --function-name cid10 --zip-file fileb
-://./target/cid10-lambda-2008.1.1.jar`
+://./target/cid10-lambda-2008.1.1.jar --profile=farol`
 - Via AWS Console, faça _upload_ e a função já estará disponível. 
 
 ### Executando função (AWS Lambda) (AWS CLI)
@@ -40,15 +40,16 @@ exemplo, **ms-cid10**, conforme abaixo, para atualizar a função:
 com conta apta a executar operações no AWS Lambda e API Gateway. 
 
 - `aws lambda invoke --cli-binary-format raw-in-base64-out --function-name
- cid10 --payload '"0 dengue"' saida.txt` (observe que o nome da função pode ser
+ cid10 --payload "\"0 dengue\"" --profile farol saida.txt` (observe que o nome da função pode ser
   outro e não necessariamente 'cid10', assim como a consulta. Adicionalmente, as aspas entre 0 dengue é para indicar que se trata de uma sequência de caracteres, string, que está sendo enviada.)
   
 - `aws lambda invoke --function-name cid10 --payload file://payload.json --profile farol --cli-binary-format raw-in-base64-out saida` neste caso
-a entrada é fornecida no arquivo indicado e empregando o perfil fornecido, caso seja usado um perfile diferente daquele
+a entrada é fornecida no arquivo indicado e empregando o perfil fornecido, caso seja usado um perfil diferente daquele
 configurado como padrão.
 
 ### Executando função (AWS Lambda) (curl)
-Neste caso, por meio de API Gateway (AWS) configurado para oferecer _endpoint_ correspondente à função (Lambda Function).
+Neste caso, por meio de API Gateway (AWS) configurado para oferecer _endpoint_ correspondente à função (Lambda Function),
+cuja URL pode ser obtida em Configuration/Triggers
 
-- `curl -X POST --data '"0 dengue"' https://<id da funcao>.execute-api.sa-east-1
-.amazonaws.com/padrao`
+- `curl -X POST --data "\"0 dengue\"" https://<id da funcao>.execute-api.sa-east-1
+.amazonaws.com/teste`
