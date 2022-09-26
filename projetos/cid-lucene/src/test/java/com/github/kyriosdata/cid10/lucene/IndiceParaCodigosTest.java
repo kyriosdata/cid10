@@ -16,7 +16,7 @@ import org.apache.lucene.util.BytesRef;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LuceneInMemorySearchIntegrationTest {
+public class IndiceParaCodigosTest {
 
     @Test
     public void givenBuscaComMinúsculaEncontrada() {
