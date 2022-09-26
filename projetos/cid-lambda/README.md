@@ -34,7 +34,7 @@ exemplo, **ms-cid10**, conforme abaixo, para atualizar a função:
 ://./target/cid10-lambda-2008.1.1.jar --profile=farol`
 - Via AWS Console, faça _upload_ e a função já estará disponível. 
 
-### Executando função (AWS Lambda) (AWS CLI)
+### Executando a função (AWS Lambda) (AWS CLI)
 
 - `aws configure` (caso ainda não configurado). Será necessário um usuário
 com conta apta a executar operações no AWS Lambda e API Gateway. 
@@ -53,3 +53,7 @@ cuja URL pode ser obtida em Configuration/Triggers
 
 - `curl -X POST --data "\"0 dengue\"" https://<id da funcao>.execute-api.sa-east-1
 .amazonaws.com/teste`
+
+### Removendo a função
+
+- `aws lambda delete-function --function-name cid10 --profile farol`
