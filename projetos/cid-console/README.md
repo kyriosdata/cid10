@@ -1,7 +1,7 @@
 ## CID-10 CLI 
 
 Aplicação (console) ou CLI (_Command Line Interface_) para localização de
- entradas na CID-10. 
+ entradas na CID-10 que faz uso do projeto [cid10-core](https://github.com/kyriosdata/cid10/tree/master/projetos/cid-core). 
  
 A execução desta aplicação depende da disponibilidade da Máquina Virtual Java.
 
