@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.kyriosdata.cid10.busca.Carregador;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -24,38 +25,77 @@ import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.util.BytesRef;
 
-public class IndiceParaCodigos {
+/**
+ * O índice segundo o Lucene é formado por um Document para
+ * cada entrada da CID. Este Document tem dois campos (field):
+ * (a) código, por exemplo "a250" e (b) descrição, por exemplo
+ * "espirilose".
+ */
+public class IndiceCid {
 
     private Directory indice;
     private Analyzer analyzer;
+    private List<String> codigos;
 
-    public IndiceParaCodigos(Directory indice, Analyzer analyzer) {
+    public IndiceCid(Directory indice, Analyzer analyzer) {
         super();
         this.indice = indice;
         this.analyzer = analyzer;
+
+        codigos = new Carregador().fromJar("/cid/codigos.csv");
+        geraIndiceParaCid10();
+    }
+
+    public void geraIndiceParaCid10() {
+        IndexWriterConfig indexWriterConfig = new IndexWriterConfig(analyzer);
+        try {
+            IndexWriter writter = new IndexWriter(indice, indexWriterConfig);
+
+            codigos.stream()
+                    .map(e -> e.split(";"))
+                    .forEach(t -> {
+                        try {
+                            writter.addDocument(createDocument(t[0], t[1], t[2]));
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
+
+            writter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
      * Cada documento é formado por um código e a semântica a ele atribuída.
-     * @param codigo Código de uma terminologia.
+     *
      * @param descricao Descrição da terminologia.
+     * @param codigo    Código de uma terminologia.
+     * @param sexo
      */
-    public void indexDocument(String codigo, String descricao) {
+    public void acrescenteEntrada(String descricao, String codigo, String sexo) {
 
         IndexWriterConfig indexWriterConfig = new IndexWriterConfig(analyzer);
         try {
             IndexWriter writter = new IndexWriter(indice, indexWriterConfig);
-            Document document = new Document();
-
-            document.add(new TextField("codigo", codigo, Field.Store.YES));
-            document.add(new TextField("descricao", descricao, Field.Store.YES));
-            document.add(new SortedDocValuesField("codigo", new BytesRef(codigo)));
+            Document document = createDocument(descricao, codigo, sexo);
 
             writter.addDocument(document);
             writter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static Document createDocument(String descricao, String codigo, String sexo) {
+        Document document = new Document();
+        document.add(new TextField("codigo", codigo, Field.Store.YES));
+        document.add(new TextField("descricao", descricao, Field.Store.YES));
+        document.add(new TextField("sexo", sexo, Field.Store.YES));
+        document.add(new SortedDocValuesField("codigo", new BytesRef(codigo)));
+        return document;
     }
 
     public List<Document> searchIndex(String inField, String queryString) {
