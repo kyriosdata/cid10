@@ -2,7 +2,6 @@ package com.github.kyriosdata.cid10.lucene;
 
 import java.util.List;
 
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.search.BooleanClause;
@@ -11,27 +10,76 @@ import org.apache.lucene.search.PhraseQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.WildcardQuery;
-import org.apache.lucene.store.ByteBuffersDirectory;
+import org.apache.lucene.store.*;
 import org.apache.lucene.util.BytesRef;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.TestInstance;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IndiceCidTest {
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+public class ConstrucaoIndiceParaPortuguesTest {
+
+    private IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new Cid10Analyzer());
 
     @Test
-    public void buscaPorCodigo() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new Cid10Analyzer());
-
+    public void encontraConformeDescricao() {
         List<Document> documents = indiceCid.searchIndex("descricao", "Cólera");
-        assertTrue(documents.size() > 0);
+        assertEquals(6, documents.size());
+    }
+
+    @Test
+    public void encontraSemAcento() {
+        List<Document> documents = indiceCid.searchIndex("descricao", "Colera");
+        assertEquals(6, documents.size());
+    }
+
+    @Test
+    public void encontraMinusculasSemAcento() {
+        List<Document> documents = indiceCid.searchIndex("descricao", "colera");
+        assertEquals(6, documents.size());
+    }
+
+    @Test
+    public void encontraTudoMaiuscula() {
+        List<Document> documents = indiceCid.searchIndex("descricao", "CÓLERA");
+        assertEquals(6, documents.size());
+    }
+
+    @Test
+    public void encontraComEspaco() {
+        List<Document> documents = indiceCid.searchIndex("descricao", "el tor");
+        assertEquals("A001", documents.get(0).get("codigo"));
+    }
+
+    @Test
+    public void independenteDoPrimeiroCaractere() {
+        Term term = new Term("descricao", "?aratifoide");
+        Query query = new WildcardQuery(term);
+        List<Document> novos = indiceCid.searchIndex(query);
+        assertEquals(6, novos.size());
+    }
+
+    @Test
+    public void independenteDasDuasPrimeirasLetras() {
+        Term term = new Term("descricao", "??ratifoide");
+        Query query = new WildcardQuery(term);
+        List<Document> novos = indiceCid.searchIndex(query);
+        assertEquals(6, novos.size());
+    }
+
+    @Test
+    public void ultimaLetraDesconhecida() {
+        Term term = new Term("descricao", "Paratifoide");
+        Query query = new WildcardQuery(term);
+        List<Document> novos = indiceCid.searchIndex(query);
+        assertEquals(6, novos.size());
     }
 
     @Test
     public void givenBuscaComMinúsculaEncontrada() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new Cid10Analyzer());
-        indiceCid.acrescenteEntrada("Seja bem-vindo!", "Olá Fábio", "-");
+        indiceCid.acrescenteEntrada("Olá Fábio", "-", "Seja bem-vindo!");
 
         List<Document> documents = indiceCid.searchIndex("descricao", "seja");
         Assert.assertEquals("Olá Fábio", documents.get(0).get("codigo"));
@@ -39,8 +87,7 @@ public class IndiceCidTest {
 
     @Test
     public void semAcentoEncontrada() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new Cid10Analyzer());
-        indiceCid.acrescenteEntrada("Seja bem-vindo!", "Açaí é bom", "-");
+        indiceCid.acrescenteEntrada( "Açaí é bom", "-", "Seja bem-vindo!");
 
         List<Document> documents = indiceCid.searchIndex("codigo", "acai");
         Assert.assertEquals("Açaí é bom", documents.get(0).get("codigo"));
@@ -48,8 +95,7 @@ public class IndiceCidTest {
 
     @Test
     public void comAcentoMaiusculasEncontrada() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new Cid10Analyzer());
-        indiceCid.acrescenteEntrada("Seja bem-vindo!", "Açaí é bom", "-");
+        indiceCid.acrescenteEntrada( "Açaí é bom", "-", "Seja bem-vindo!");
 
         List<Document> documents = indiceCid.searchIndex("codigo", "AçaÍ");
         Assert.assertEquals("Açaí é bom", documents.get(0).get("codigo"));
@@ -57,8 +103,7 @@ public class IndiceCidTest {
 
     @Test
     public void givenSearchQueryWhenFetchedDocumentThenCorrect() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new StandardAnalyzer());
-        indiceCid.acrescenteEntrada("Seja bem-vindo!", "Olá Fábio", "-");
+        indiceCid.acrescenteEntrada( "Olá Fábio", "-", "Seja bem-vindo!");
 
         List<Document> documents = indiceCid.searchIndex("descricao", "seja");
         Assert.assertEquals("Olá Fábio", documents.get(0).get("codigo"));
@@ -66,9 +111,8 @@ public class IndiceCidTest {
 
     @Test
     public void givenTermQueryWhenFetchedDocumentThenCorrect() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new Cid10Analyzer());
-        indiceCid.acrescenteEntrada("código contém código", "c1", "-");
-        indiceCid.acrescenteEntrada("outro código na descrição", "c2", "-");
+        indiceCid.acrescenteEntrada( "c1", "-", "código contém código");
+        indiceCid.acrescenteEntrada( "c2", "-", "outro código na descrição");
 
         Term term = new Term("descricao", "codigo");
         Query query = new TermQuery(term);
@@ -79,9 +123,8 @@ public class IndiceCidTest {
 
     @Test
     public void givenBooleanQueryWhenFetchedDocumentThenCorrect() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new StandardAnalyzer());
-        indiceCid.acrescenteEntrada("yes success ok", "loinc", "-");
-        indiceCid.acrescenteEntrada("ok tudo bem yes", "rnds", "-");
+        indiceCid.acrescenteEntrada("loinc", "-", "yes success ok");
+        indiceCid.acrescenteEntrada( "rnds", "-", "ok tudo bem yes");
 
         Term term1 = new Term("descricao", "yes");
         Term term2 = new Term("descricao", "ok");
@@ -98,10 +141,9 @@ public class IndiceCidTest {
 
     @Test
     public void givenPhraseQueryWhenFetchedDocumentThenCorrect() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new StandardAnalyzer());
-        indiceCid.acrescenteEntrada("yes ok tudo bem", "descricao", "-");
+        indiceCid.acrescenteEntrada("yes ok tudo bem", "-", "descricao");
 
-        Query query = new PhraseQuery(1, "descricao", new BytesRef("yes"), new BytesRef("ok"));
+        Query query = new PhraseQuery(1, "codigo", new BytesRef("yes"), new BytesRef("ok"));
         List<Document> documents = indiceCid.searchIndex(query);
 
         Assert.assertEquals(1, documents.size());
@@ -109,14 +151,10 @@ public class IndiceCidTest {
 
     @Test
     public void givenWildCardQueryWhenFetchedDocumentThenCorrect() {
-        IndiceCid indiceCid = new IndiceCid(new ByteBuffersDirectory(), new StandardAnalyzer());
-        indiceCid.acrescenteEntrada("success", "loinc", "-");
-        indiceCid.acrescenteEntrada("sucesso", "rnds", "-");
-
         Term term = new Term("descricao", "*cess*");
         Query query = new WildcardQuery(term);
 
         List<Document> documents = indiceCid.searchIndex(query);
-        Assert.assertEquals(2, documents.size());
+        Assert.assertEquals(10, documents.size());
     }
 }

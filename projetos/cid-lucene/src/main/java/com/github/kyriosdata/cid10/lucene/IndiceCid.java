@@ -75,12 +75,12 @@ public class IndiceCid {
      * @param codigo    Código de uma terminologia.
      * @param sexo
      */
-    public void acrescenteEntrada(String descricao, String codigo, String sexo) {
+    public void acrescenteEntrada(String codigo, String sexo, String descricao) {
 
         IndexWriterConfig indexWriterConfig = new IndexWriterConfig(analyzer);
         try {
             IndexWriter writter = new IndexWriter(indice, indexWriterConfig);
-            Document document = createDocument(descricao, codigo, sexo);
+            Document document = createDocument(codigo, sexo, descricao);
 
             writter.addDocument(document);
             writter.close();
@@ -89,7 +89,7 @@ public class IndiceCid {
         }
     }
 
-    private static Document createDocument(String descricao, String codigo, String sexo) {
+    private static Document createDocument(String codigo, String sexo, String descricao) {
         Document document = new Document();
         document.add(new TextField("codigo", codigo, Field.Store.YES));
         document.add(new TextField("descricao", descricao, Field.Store.YES));

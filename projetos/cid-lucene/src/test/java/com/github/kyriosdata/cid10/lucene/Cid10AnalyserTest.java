@@ -18,6 +18,13 @@ public class Cid10AnalyserTest {
 
     @Test
     public void quandoTransformacao_quebraCorreta() throws IOException {
+        List<String> result = analyze("Febre paratifóide B", new Cid10Analyzer());
+
+        assertThat(result, contains("febre", "paratifoide", "b"));
+    }
+
+    @Test
+    public void termoComVariacoes() throws IOException {
         List<String> result = analyze("A vida É bem-vinda 110", new Cid10Analyzer());
 
         assertThat(result, contains("a", "vida", "e", "bem", "vinda", "110"));
