@@ -24,6 +24,13 @@ public class Cid10AnalyserTest {
     }
 
     @Test
+    public void hifenSeparado() throws IOException {
+        List<String> result = analyze("pós-cirúrgicos", new Cid10Analyzer());
+
+        assertThat(result, contains("pos", "cirurgicos"));
+    }
+
+    @Test
     public void termoComVariacoes() throws IOException {
         List<String> result = analyze("A vida É bem-vinda 110", new Cid10Analyzer());
 
