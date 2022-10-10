@@ -2,12 +2,9 @@ package com.github.kyriosdata.cid10.lucene;
 
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.Term;
-import org.apache.lucene.search.BooleanQuery;
-import org.apache.lucene.search.PhraseQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.WildcardQuery;
 import org.apache.lucene.store.ByteBuffersDirectory;
-import org.apache.lucene.util.BytesRef;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.TestInstance;
