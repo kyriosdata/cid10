@@ -80,4 +80,10 @@ public class TiposDeBuscasTest {
 
         Assert.assertEquals(1, documents.size());
     }
+
+    @Test
+    public void singular() {
+        List<Document> documents = indiceCid.searchIndex("descricao", "respiração");
+        documents.stream().forEach(System.out::println);
+    }
 }

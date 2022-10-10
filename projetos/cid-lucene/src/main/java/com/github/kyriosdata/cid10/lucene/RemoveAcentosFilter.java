@@ -1,6 +1,5 @@
 package com.github.kyriosdata.cid10.lucene;
 
-import org.apache.lucene.analysis.CharacterUtils;
 import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;

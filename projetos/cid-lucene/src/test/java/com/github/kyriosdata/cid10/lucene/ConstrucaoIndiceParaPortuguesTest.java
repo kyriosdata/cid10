@@ -55,11 +55,4 @@ public class ConstrucaoIndiceParaPortuguesTest {
         List<Document> novos = indiceCid.searchIndex("descricao", "Paratifoide");
         assertEquals(6, novos.size());
     }
-
-    @Test
-    public void singular() {
-        List<Document> novos = indiceCid.searchIndex("descricao", "roda");
-        assertEquals(10, novos.size());
-    }
-
 }

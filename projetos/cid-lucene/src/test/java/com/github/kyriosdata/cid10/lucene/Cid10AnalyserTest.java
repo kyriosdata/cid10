@@ -2,7 +2,6 @@ package com.github.kyriosdata.cid10.lucene;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.br.BrazilianStemFilter;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.junit.jupiter.api.Test;
 
@@ -21,21 +20,21 @@ public class Cid10AnalyserTest {
     public void quandoTransformacao_quebraCorreta() throws IOException {
         List<String> result = analyze("Febre paratifóide B", new Cid10Analyzer());
 
-        assertThat(result, contains("febre", "paratifoide", "b"));
+        assertThat(result, contains("febr", "paratifoid"));
     }
 
     @Test
     public void hifenSeparado() throws IOException {
         List<String> result = analyze("pós-cirúrgicos", new Cid10Analyzer());
 
-        assertThat(result, contains("pos", "cirurgicos"));
+        assertThat(result, contains("pos", "cirurg"));
     }
 
     @Test
     public void termoComVariacoes() throws IOException {
         List<String> result = analyze("A vida É bem-vinda 110", new Cid10Analyzer());
 
-        assertThat(result, contains("a", "vida", "e", "bem", "vinda", "110"));
+        assertThat(result, contains("vid", "bem", "vind", "110"));
     }
 
     public List<String> analyze(String text, Analyzer analyzer) throws IOException {
