@@ -15,6 +15,7 @@ import org.junit.jupiter.api.TestInstance;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TiposDeBuscasTest {
@@ -24,39 +25,20 @@ public class TiposDeBuscasTest {
     @Test
     public void encontraComEspaco() {
         List<Document> documents = indiceCid.searchIndex("descricao", "el tor");
+        assertEquals(1, documents.size());
         assertEquals("A001", documents.get(0).get("codigo"));
     }
 
     @Test
     public void independenteDoPrimeiroCaractere() {
-        Term term = new Term("descricao", "?aratifoide");
-        Query query = new WildcardQuery(term);
-        List<Document> novos = indiceCid.searchIndex(query);
-        assertEquals(6, novos.size());
-    }
-
-    @Test
-    public void independenteDasDuasPrimeirasLetras() {
-        Term term = new Term("descricao", "??ratifoide");
-        Query query = new WildcardQuery(term);
-        List<Document> novos = indiceCid.searchIndex(query);
-        assertEquals(6, novos.size());
-    }
-
-    @Test
-    public void encontraIndependenDoUltimoCaractere() {
-        Term term = new Term("descricao", "paratifoid?");
-        Query query = new WildcardQuery(term);
-        List<Document> novos = indiceCid.searchIndex(query);
-        assertEquals(6, novos.size());
+        List<Document> novos = indiceCid.searchIndex("descricao", "paratifoide");
+        assertEquals(8, novos.size());
     }
 
     @Test
     public void inicioFimQuaisquer() {
-        Term term = new Term("descricao", "?aratifoid?");
-        Query query = new WildcardQuery(term);
-        List<Document> novos = indiceCid.searchIndex(query);
-        assertEquals(6, novos.size());
+        List<Document> novos = indiceCid.searchIndex("descricao", "paratifoid");
+        assertEquals(8, novos.size());
     }
 
     @Test
@@ -69,21 +51,13 @@ public class TiposDeBuscasTest {
 
     @Test
     public void givenBooleanQueryWhenFetchedDocumentThenCorrect() {
-        List<Document> documents = indiceCid.searchIndex("descricao", "dependencia && respirado?");
-        Assert.assertEquals(1, documents.size());
-    }
-
-    @Test
-    public void givenPhraseQueryWhenFetchedDocumentThenCorrect() {
-        Query query = new PhraseQuery(1, "descricao", new BytesRef("dependencia"), new BytesRef("respirador"));
-        List<Document> documents = indiceCid.searchIndex(query);
-
+        List<Document> documents = indiceCid.searchIndex("descricao", "dependencia && respirador");
         Assert.assertEquals(1, documents.size());
     }
 
     @Test
     public void singular() {
         List<Document> documents = indiceCid.searchIndex("descricao", "respiração");
-        documents.stream().forEach(System.out::println);
+        assertTrue(documents.size() > 4);
     }
 }
