@@ -11,6 +11,7 @@ Objetivo:
 
 - A CID-10 é um sistema de codificação ([aqui](https://www.hl7.org/fhir/r4/icd.html)) identificado por
 http://hl7.org/fhir/sid/icd-10-2008, dado que a versão empregada é de 2008. O OID da CID-10 é	2.16.840.1.113883.6.3.
+Uma instância de CodeSystem para a CID-10 encontra-se dispon~ivel em https://simplifier.net/redenacionaldedadosemsaude/26ffd8a9-8510-42e3-9b9d-bbc048a63dac.
 
 - A versão 2008 não é a mais recente. Portanto, não encontrará, por exemplo, **A92.8**, dentre outros. 
 
