@@ -9,7 +9,10 @@ Objetivo:
 
 ### Importante
 
-A versão 2008 não é a mais recente. Portanto, não encontrará, por exemplo, **A92.8**, dentre outros. 
+- A CID-10 é um sistema de codificação ([aqui](https://www.hl7.org/fhir/r4/icd.html)) identificado por
+_http://hl7.org/fhir/sid/icd-10-2008_, dado que a versão empregada é de 2008. O OID da CID-10 é 
+
+- A versão 2008 não é a mais recente. Portanto, não encontrará, por exemplo, **A92.8**, dentre outros. 
 
 Organização:
 
